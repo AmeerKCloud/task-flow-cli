@@ -11,3 +11,9 @@ class Task:
         else:
             self.priority = priority
         self.done = False
+
+    def mark_done(self):
+        self.done = True
+
+    def describe(self):
+        return f"{self.title}"
