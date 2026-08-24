@@ -8,4 +8,6 @@ class Task:
         self.title = title
         if priority == "":
             self.priority = "medium"
+        else:
+            self.priority = priority
         self.done = False
