@@ -13,6 +13,8 @@
 # Random extras — a motivational quote, or a shuffle feature to "surprise" you with what to work on next.
 # Persistence — saves to a file on exit, loads from it on startup, so your list survives between sessions.
 
+
+# ⬇️ Part of the 'Add Tasks' functionality. To be transferred to a module once completed.
 class Task:
     def __init__(self, title, priority):
         self.title = title
