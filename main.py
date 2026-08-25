@@ -53,3 +53,6 @@ try:
 except ValueError:
     print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
 
+if user_choice in options:
+    print("Exists")
+
