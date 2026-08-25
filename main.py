@@ -42,5 +42,13 @@ options = {
     5 : "Exit",
 }
 
+print("\n" * 20)
 print("=== TaskFlow ===")
+
+for key, value in options.items():
+    print(f"{key}. {value}")
+
+try:
+    user_choice = int(input("Choose one numerical option:\n"))
+except: ValueError
 
