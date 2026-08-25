@@ -50,5 +50,6 @@ for key, value in options.items():
 
 try:
     user_choice = int(input("Choose one numerical option:\n"))
-except: ValueError
+except ValueError:
+    print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
 
