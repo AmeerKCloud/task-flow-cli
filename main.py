@@ -35,11 +35,11 @@ class Task:
 #⬇️ Main 'main.py' program:
 
 options = {
-    1 : "",
-    2 : "",
-    3 : "",
-    4 : "",
-    5 : "",
+    1 : "Add task",
+    2 : "List tasks",
+    3 : "Mark task done",
+    4 : "Show stats",
+    5 : "Exit",
 }
 
 print("=== TaskFlow ===")
