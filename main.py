@@ -34,19 +34,16 @@ class Task:
 
 #⬇️ Main 'main.py' program:
 
-options = {
-    1 : "Add task",
-    2 : "List tasks",
-    3 : "Mark task done",
-    4 : "Show stats",
-    5 : "Exit",
-}
-
 print("\n" * 20)
-print("=== TaskFlow ===")
+print("""
+=== TaskFlow ===
+1. Add task
+2. List tasks
+3. Mark task done
+4. Show stats
+5. Exit
+""")
 
-for key, value in options.items():
-    print(f"{key}. {value}")
 
 try:
     user_choice = int(input("Choose one numerical option:\n"))
