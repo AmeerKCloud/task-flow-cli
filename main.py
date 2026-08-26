@@ -52,7 +52,17 @@ except ValueError:
 
 
 # ⬇️Add tasks — give it a title and a priority (low/medium/high).
-if user_choice in options:
-    print("Exists")
+if user_choice == 1:
+    pass
+elif user_choice == 2:
+    pass
+elif user_choice == 3:
+    pass
+elif user_choice == 4:
+    pass
+elif user_choice == 5:
+    pass
+else:
+    print(f"{user_choice} is not a option. Try again.")
 
 # Saved to github.
