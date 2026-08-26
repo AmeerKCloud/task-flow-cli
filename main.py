@@ -34,7 +34,7 @@ except ValueError:
 
 # ⬇️Add tasks — give it a title and a priority (low/medium/high).
 if user_choice == 1:
-    pass
+    title_input = input("Enter task title:\n")
 elif user_choice == 2:
     pass
 elif user_choice == 3:
@@ -46,4 +46,3 @@ elif user_choice == 5:
 else:
     print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github.

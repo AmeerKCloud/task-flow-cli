@@ -1,6 +1,7 @@
-# Here, all of the main task classes will exist.
 # This module demonstrates the use of the following python concepts: 
 # Classes, Objects, Attributes, Methods, Object State & Instances
+
+# Here, all of the main task classes will exist.
 
 
 class Task:
