@@ -13,18 +13,12 @@
 # Random extras — a motivational quote, or a shuffle feature to "surprise" you with what to work on next.
 # Persistence — saves to a file on exit, loads from it on startup, so your list survives between sessions.
 
+from task_utils import Menu
+
+menus = Menu()
+
 #⬇️ Main 'main.py' program:
-
-print("\n" * 20)
-print("""
-=== TaskFlow ===
-1. Add task
-2. List tasks
-3. Mark task done
-4. Show stats
-5. Exit
-""")
-
+menus.menu_1()
 
 try:
     user_choice = int(input("Choose one numerical option:\n"))
@@ -35,6 +29,7 @@ except ValueError:
 # ⬇️Add tasks — give it a title and a priority (low/medium/high).
 if user_choice == 1:
     title_input = input("Enter task title:\n")
+    priority_input = input("Enter one of the following choices (low/medium/high):\n")
 elif user_choice == 2:
     pass
 elif user_choice == 3:
