@@ -34,18 +34,21 @@ class Task:
 
 #⬇️ Main 'main.py' program:
 
-options = {
-    1 : "Add task",
-    2 : "List tasks",
-    3 : "Mark task done",
-    4 : "Show stats",
-    5 : "Exit",
-}
+def menu_options():
+    options = {
+        1 : "Add task",
+        2 : "List tasks",
+        3 : "Mark task done",
+        4 : "Show stats",
+        5 : "Exit",
+    }
+
+    return options
 
 print("\n" * 20)
 print("=== TaskFlow ===")
 
-for key, value in options.items():
+for key, value in menu_options().items():
     print(f"{key}. {value}")
 
 try:
@@ -53,7 +56,10 @@ try:
 except ValueError:
     print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
 
-if user_choice in options:
-    print("Exists")
+
+# ⬇️ Add tasks — give it a title and a priority (low/medium/high).
+for key in menu_options():
+    if user_choice == key:
+        Task.
 
 # Saved to github.
