@@ -18,6 +18,9 @@ from task_utils import Menu
 
 menus = Menu()
 
+#⬇️ Store tasks as a list of Task/RecurringTask objects.
+all_tasks = []
+
 #⬇️ Main 'main.py' program:
 menus.menu_1()
 
@@ -29,9 +32,12 @@ except ValueError:
 
 # ⬇️Add tasks — give it a title and a priority (low/medium/high).
 if user_choice == 1:
-    title_input = input("Enter task title:\n")
-    priority_input = input("Enter one of the following choices (low/medium/high):\n").lower()
-    new_task = Task(title=title_input, priority=priority_input)
+    task_type = input("Task type — (1) One-time or (2) Recurring?:\n")
+
+    if task_type == 1:
+        title_input = input("Enter task title:\n")
+        priority_input = input("Enter one of the following choices (low/medium/high):\n").lower()
+        new_task = Task(title=title_input, priority=priority_input)
 elif user_choice == 2:
     pass
 elif user_choice == 3:
