@@ -20,9 +20,9 @@ class Task:
 
 
 class RecurringTask(Task):
-    def __init__(self, title, priority="medium", done=False, frequency="d"):
-        super().__init__(title, priority, done)           #⬅️ taps into superclass' (Task) init method
-        self.frequency = frequency
+    def __init__(self, title, priority="medium", done=False, frequency="d"): #⬅️[1] 
+        super().__init__(title, priority, done)           #⬅️[1a] Taps into superclass' (Task class) init method, see notes for more.
+        self.frequency = frequency                        #⬅️[1b] 
 
     def describe(self):
         super().describe()
@@ -33,3 +33,6 @@ class RecurringTask(Task):
         elif self.frequency == "w":
             self.frequency == "weekly"
             print(f"Frequency = {self.frequency}")
+
+# NOTE:
+#[1]-[1b] To demonstrate class inheritance
