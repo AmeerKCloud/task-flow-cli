@@ -20,3 +20,6 @@ class Task:
         return f"Task: {self.title}| Priority: {self.priority}| Completed: {self.done}"
 
 
+class RecurringTask(Task):
+    def __init__(self, title, priority="medium", done=False):
+        super().__init__(title, priority, done)
