@@ -21,7 +21,7 @@ class Task:
 
 class RecurringTask(Task):
     def __init__(self, title, priority="medium", done=False, frequency="d"):
-        super().__init__(title, priority, done)
+        super().__init__(title, priority, done)             #⬅️ It is necessary 2 inherit parameters from super class.
         self.frequency = frequency
 
     def describe(self):
