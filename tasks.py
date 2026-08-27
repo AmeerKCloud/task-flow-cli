@@ -21,5 +21,8 @@ class Task:
 
 
 class RecurringTask(Task):
-    def __init__(self, title, priority="medium", done=False):
-        super().__init__(title, priority, done)
+    def __init__(self):
+        super().__init__()
+
+    def describe(self):
+        return super().describe()
