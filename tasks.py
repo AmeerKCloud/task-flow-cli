@@ -17,12 +17,14 @@ class Task:
 
     def describe(self):
         """Returns a formatted string using the object's attributes"""
-        return f"Task: {self.title}| Priority: {self.priority}| Completed: {self.done}"
+        return f"Task: {self.title}| Priority: {self.priority}| Completed: {self.done}|"
 
 
 class RecurringTask(Task):
-    def __init__(self):
+    def __init__(self, frequency):
         super().__init__()
+        self.frequency = frequency
 
     def describe(self):
-        return super().describe()
+        super().describe()
+        print(f"Frequency = {self.frequency}")
