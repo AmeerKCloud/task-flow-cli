@@ -35,9 +35,11 @@ class RecurringTask(Task):
             print(f"Frequency = {self.frequency}")
 
 # NOTE:
-#[1]-[1b] To demonstrate class inheritance
-#   - [1] Parameters/ local vars RecurringTask class shares with Task class
-#   - [1a] So, to reduce redundancy & maintain effeciency, RecurringTask passes on 
+#[1]-[1b] To demonstrate class inheritance.
+#   - [1] Parameters/local vars that RecurringTask class shares with Task class.
+#   - [1a] So, to reduce redundancy & maintain effeciency, RecurringTask passes on the 
+#          shared params/vars & their values to Task class & by calling the superclass' 
+#          __init__ method
 
 
 
