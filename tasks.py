@@ -38,8 +38,11 @@ class RecurringTask(Task):
 #[1]-[1b] To demonstrate class inheritance.
 #   - [1] Parameters/local vars that RecurringTask class shares with Task class.
 #   - [1a] So, to reduce redundancy & maintain effeciency, RecurringTask passes on the 
-#          shared params/vars & their values to Task class & by calling the superclass' 
-#          __init__ method
+#          shared params/vars & their values to Task class by calling the superclass' 
+#          __init__ method, where said values get turned into attributes which the 
+#          inheriting class (RecurringTask) then inherits via the 'super.__init__()' call.
+#   - [1b] 'frequency' is the only param/var that RecurringTask does not share with Task. 
+#          Therefor, it has to create a local attribute to store the value.
 
 
 
