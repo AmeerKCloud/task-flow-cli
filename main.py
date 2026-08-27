@@ -13,7 +13,7 @@
 # Random extras — a motivational quote, or a shuffle feature to "surprise" you with what to work on next.
 # Persistence — saves to a file on exit, loads from it on startup, so your list survives between sessions.
 
-from tasks import Task
+from tasks import Task, RecurringTask
 from task_utils import Menu
 
 menus = Menu()
@@ -41,7 +41,8 @@ if user_choice == 1:
     elif task_type == 2:
         title_input = input("Enter task title:\n")
         priority_input = input("Enter one of the following choices (low/medium/high):\n").lower()
-        frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
+        habit = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
+        new_task = RecurringTask(frequency=habit)
 elif user_choice == 2:
     pass
 elif user_choice == 3:
