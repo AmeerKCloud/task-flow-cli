@@ -36,3 +36,9 @@ class RecurringTask(Task):
 
 # NOTE:
 #[1]-[1b] To demonstrate class inheritance
+#   - [1] Parameters/ local vars RecurringTask class shares with Task class
+#   - [1a] So, to reduce redundancy & maintain effeciency, RecurringTask passes on 
+
+
+
+
