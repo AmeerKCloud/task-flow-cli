@@ -32,12 +32,16 @@ except ValueError:
 
 # ⬇️Add tasks — give it a title and a priority (low/medium/high).
 if user_choice == 1:
-    task_type = input("Task type — (1) One-time or (2) Recurring?:\n")
+    task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
     if task_type == 1:
         title_input = input("Enter task title:\n")
         priority_input = input("Enter one of the following choices (low/medium/high):\n").lower()
         new_task = Task(title=title_input, priority=priority_input)
+    elif task_type == 2:
+        title_input = input("Enter task title:\n")
+        priority_input = input("Enter one of the following choices (low/medium/high):\n").lower()
+        frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
 elif user_choice == 2:
     pass
 elif user_choice == 3:
