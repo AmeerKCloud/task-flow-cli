@@ -41,8 +41,8 @@ if user_choice == 1:
     elif task_type == 2:
         title_input = input("Enter task title:\n")
         priority_input = input("Enter one of the following choices (low/medium/high):\n").lower()
-        habit = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
-        new_task = RecurringTask(frequency=habit)
+        frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
+        new_task = RecurringTask(frequency=frequency)
 elif user_choice == 2:
     pass
 elif user_choice == 3:

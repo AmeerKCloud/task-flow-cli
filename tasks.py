@@ -20,10 +20,16 @@ class Task:
 
 
 class RecurringTask(Task):
-    def __init__(self, frequency):
-        super().__init__()
+    def __init__(self, title, priority="medium", done=False, frequency="d"):
+        super().__init__(title, priority, done)
         self.frequency = frequency
 
     def describe(self):
         super().describe()
-        print(f"Frequency = {self.frequency}")
+
+        if self.frequency == "d":
+            self.frequency = "daily"
+            print(f"Frequency = {self.frequency}")
+        elif self.frequency == "w":
+            self.frequency == "weekly"
+            print(f"Frequency = {self.frequency}")
