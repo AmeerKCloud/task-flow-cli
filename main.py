@@ -24,34 +24,38 @@ all_tasks = []
 #⬇️ Main 'main.py' program:
 menus.menu_1()
 
-try:
-    user_choice = int(input("Choose one numerical option:\n"))
-except ValueError:
-    print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
+
+while True:
+
+    try:
+        user_choice = int(input("Choose one numerical option:\n"))
+    except ValueError:
+        print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
 
 
-# ⬇️Add tasks — give it a title and a priority (low/medium/high).
-if user_choice == 1:
+    # ⬇️Add tasks — give it a title and a priority (low/medium/high).
+    if user_choice == 1:
 
-    title_input = input("Enter task title:\n")
-    priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
-    task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
+        title_input = input("Enter task title:\n")
+        priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
+        task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
-    if task_type == 1:
-        one_time = Task(title=title_input, priority=priority_input)
-        all_tasks.append(one_time)
-    elif task_type == 2:
-        frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
-        habit = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
-        all_tasks.append(habit)
-elif user_choice == 2:
-    pass
-elif user_choice == 3:
-    pass
-elif user_choice == 4:
-    pass
-elif user_choice == 5:
-    pass
-else:
-    print(f"{user_choice} is not a option. Try again.")
+        if task_type == 1:
+            one_time = Task(title=title_input, priority=priority_input)
+            all_tasks.append(one_time)
+        elif task_type == 2:
+            frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
+            habit = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
+            all_tasks.append(habit)
+    elif user_choice == 2:
+        for task in all_tasks:
+            print(task)
+    elif user_choice == 3:
+        pass
+    elif user_choice == 4:
+        pass
+    elif user_choice == 5:
+        break
+    else:
+        print(f"{user_choice} is not a option. Try again.")
 
