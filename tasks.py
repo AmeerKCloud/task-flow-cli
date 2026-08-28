@@ -8,7 +8,7 @@ class Task:
         self.title = title
         self.priority = priority
         self.done = done
-        self.count = 0          #⬅️ tracks how many Task objects have been created.
+        self.count += 1          #⬅️ tracks how many Task objects have been created.
 
     def mark_done(self):
         """Marks task as completed."""
