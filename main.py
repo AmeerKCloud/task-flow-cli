@@ -21,7 +21,7 @@ menus = Menu()
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
 all_tasks = []
 
-#⬇️ Main 'main.py' program:
+#⬇️ Main 'main.py' program from here onwards:
 menus.menu_1()
 
 
