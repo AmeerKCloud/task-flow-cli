@@ -38,10 +38,12 @@ if user_choice == 1:
     task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
     if task_type == 1:
-        new_task = Task(title=title_input, priority=priority_input)
+        one_time = Task(title=title_input, priority=priority_input)
+        all_tasks.append(one_time)
     elif task_type == 2:
         frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
-        new_task = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
+        habit = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
+        all_tasks.append(habit)
 elif user_choice == 2:
     pass
 elif user_choice == 3:
