@@ -20,6 +20,7 @@ menus = Menu()
 
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
 all_tasks = []
+valid_priorities = ["low", "medium", "high"]
 
 #⬇️ Main 'main.py' program from here onwards:
 menus.menu_1()
@@ -41,7 +42,12 @@ while True:
         task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
         if task_type == 1:
-            one_time = Task(title=title_input, priority=priority_input)
+            if priority_input == "":
+                one_time = Task(title=title_input)
+            elif priority_input in valid_priorities:
+                one_time = Task(title=title_input, priority=priority_input)
+            else:
+                print("That is not a valid option.")
             all_tasks.append(one_time)
         elif task_type == 2:
             frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
@@ -49,7 +55,7 @@ while True:
             all_tasks.append(habit)
     elif user_choice == 2:
         for task in all_tasks:
-            print(task)
+            print(task.describe())
     elif user_choice == 3:
         pass
     elif user_choice == 4:
