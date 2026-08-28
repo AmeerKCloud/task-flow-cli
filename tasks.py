@@ -4,13 +4,13 @@
 # Here, all of the main task classes will exist.
 
 class Task:
-    count = 0          #⬅️ tracks how many Task objects have been created.
+    count = 0     #⬅️ # class attribute — one shared value between all objects, exists before any object is made. Tracks how many Task objects have been created.
 
     def __init__(self, title, priority = "medium", done = False):
         self.title = title
         self.priority = priority
         self.done = done
-        self.count += 1
+        Task.count += 1     #⬅️ Updates the shared class attribute.
 
     def mark_done(self):
         """Marks task as completed."""
