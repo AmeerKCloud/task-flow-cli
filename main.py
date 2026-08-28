@@ -5,8 +5,8 @@
 # save/load their data to a file — with a small stats report at the end
 
 # ______________ Core functionalities
-# Add tasks — give it a title and a priority (low/medium/high).
-# Add recurring tasks — same as above, but tagged with a frequency (daily/weekly), so they behave a little differently from a normal one-off task.
+# Add tasks — give it a title and a priority (low/medium/high). ✅
+# Add recurring tasks — same as above, but tagged with a frequency (daily/weekly), so they behave a little differently from a normal one-off task. ⚠️
 # List tasks — see everything, or just what's pending vs. completed.
 # Mark tasks done — updates the task's internal state.
 # View stats — completion percentage, counts, and a couple of small computed numbers.
