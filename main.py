@@ -23,10 +23,10 @@ all_tasks = []
 valid_priorities = ["low", "medium", "high"]
 
 #⬇️ Main 'main.py' program from here onwards:
-menus.menu_1()
-
 
 while True:
+
+    menus.menu_1()
 
     try:
         user_choice = int(input("Choose one numerical option:\n"))
