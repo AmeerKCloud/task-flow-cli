@@ -32,6 +32,7 @@ while True:
         user_choice = int(input("Choose one numerical option:\n"))
     except ValueError:
         print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
+        continue   #⬅️ skip everything below, go re-print the menu and ask again
 
 
     # ⬇️Add tasks — give it a title and a priority (low/medium/high).
