@@ -20,7 +20,7 @@ menus = Menu()
 
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
 all_tasks = []
-valid_priorities = ["low", "medium", "high"]
+VALID_PRIORITIES = ("low", "medium", "high")
 
 #⬇️ Main 'main.py' program from here onwards:
 
@@ -45,7 +45,7 @@ while True:
         if task_type == 1:
             if priority_input == "":
                 one_time = Task(title=title_input)
-            elif priority_input in valid_priorities:
+            elif priority_input in VALID_PRIORITIES:
                 one_time = Task(title=title_input, priority=priority_input)
             else:
                 print("That is not a valid option.")
