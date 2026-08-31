@@ -55,7 +55,7 @@ while True:
             all_tasks.append(habit)
     elif user_choice == 2:
         for task in all_tasks:
-            task.describe()
+            print(task.describe())
     elif user_choice == 3:
         pass
     elif user_choice == 4:
