@@ -1,5 +1,7 @@
 # module: helper functions, constants
 
+VALID_PRIORITIES = ("low", "medium", "high")
+
 PRIORITY_WEIGHTS = {
     "low" : 1,
     "medium" : 2,

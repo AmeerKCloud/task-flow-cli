@@ -14,13 +14,12 @@
 # Persistence — saves to a file on exit, loads from it on startup, so your list survives between sessions.
 
 from tasks import Task, RecurringTask
-from task_utils import Menu
+from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS
 
 menus = Menu()
 
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
 all_tasks = []
-VALID_PRIORITIES = ("low", "medium", "high")
 
 #⬇️ Main 'main.py' program from here onwards:
 
