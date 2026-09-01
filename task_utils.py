@@ -17,6 +17,11 @@ def filter_tasks(tasks, done=False):
     """Returns tasks matching a status."""
     pass
 
+
+def sort_tasks():
+    """Accepts a function (e.g. lambda t: PRIORITY_WEIGHTS[t.priority]) to sort by."""
+    pass
+
 class Menu:
     def menu_1(self):
         print("\n" * 20)

@@ -13,6 +13,10 @@
 # Random extras — a motivational quote, or a shuffle feature to "surprise" you with what to work on next.
 # Persistence — saves to a file on exit, loads from it on startup, so your list survives between sessions.
 
+# TODO:
+# Currently working on Part 3 — Data & Logic: 11, 12, 13, & 14 (see 'taskflow_project_spec' doc in google drive).
+
+
 from tasks import Task, RecurringTask
 from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS
 
