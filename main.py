@@ -22,7 +22,7 @@ from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS
 
 menus = Menu()
 
-MAX_TASKS = 20
+MAX_TASKS = 20      #⬅️ Blocks "Add task" once the 'all_tasks' list is full
 
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
 all_tasks = []
