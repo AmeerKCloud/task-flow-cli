@@ -64,10 +64,13 @@ while True:
                 habit = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
                 all_tasks.append(habit)
         else:
-            print(f"You have reached your limit of {MAX_TASKS}. Complete some tasks before adding more.")
+            print(f"You have reached your limit of {MAX_TASKS} tasks. Complete some tasks before adding more.")
     elif user_choice == 2:
-        for task in all_tasks:
-            print(task.describe())
+        if len(all_tasks) > 0:
+            for task in all_tasks:
+                print(task.describe())
+        else:
+            print("You have no tasks to show.")
     elif user_choice == 3:
         pass
     elif user_choice == 4:

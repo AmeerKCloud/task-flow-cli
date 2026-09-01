@@ -24,7 +24,6 @@ def sort_tasks():
 
 class Menu:
     def menu_1(self):
-        print("\n" * 20)
         print("""
         === TaskFlow ===
         1. Add task
