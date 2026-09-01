@@ -18,6 +18,8 @@ from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS
 
 menus = Menu()
 
+MAX_TASKS = 20
+
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
 all_tasks = []
 
@@ -37,22 +39,26 @@ while True:
     # ⬇️Add tasks — give it a title and a priority (low/medium/high).
     if user_choice == 1:
 
-        title_input = input("Enter task title:\n")
-        priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
-        task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
+        if len(all_tasks) < 20:
 
-        if task_type == 1:
-            if priority_input == "":
-                one_time = Task(title=title_input)
-            elif priority_input in VALID_PRIORITIES:
-                one_time = Task(title=title_input, priority=priority_input)
-            else:
-                print("That is not a valid option.")
-            all_tasks.append(one_time)
-        elif task_type == 2:
-            frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
-            habit = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
-            all_tasks.append(habit)
+            title_input = input("Enter task title:\n")
+            priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
+            task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
+
+            if task_type == 1:
+                if priority_input == "":
+                    one_time = Task(title=title_input)
+                elif priority_input in VALID_PRIORITIES:
+                    one_time = Task(title=title_input, priority=priority_input)
+                else:
+                    print("That is not a valid option.")
+                all_tasks.append(one_time)
+            elif task_type == 2:
+                frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
+                habit = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
+                all_tasks.append(habit)
+        else:
+            print(f"You have reached your limit of {MAX_TASKS}. Complete some tasks before adding more.")
     elif user_choice == 2:
         for task in all_tasks:
             print(task.describe())

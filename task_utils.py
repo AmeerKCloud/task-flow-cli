@@ -7,6 +7,11 @@ PRIORITY_WEIGHTS = {
     "medium" : 2,
     "high" : 3,
     }
+
+
+def validate_priority():
+    pass
+
 class Menu:
     def menu_1(self):
         print("\n" * 20)
