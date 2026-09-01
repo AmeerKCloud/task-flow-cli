@@ -23,6 +23,8 @@ MAX_TASKS = 20
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
 all_tasks = []
 
+total_completed = 0
+
 #⬇️ Main 'main.py' program from here onwards:
 
 while True:
