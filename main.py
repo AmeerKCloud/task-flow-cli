@@ -48,8 +48,8 @@ while True:
         if len(all_tasks) < 20:
 
             title_input = input("Enter task title:\n")
-            priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
             task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
+            priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
 
             if task_type == 1:
                 if priority_input == "":
