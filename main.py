@@ -48,8 +48,8 @@ while True:
         if len(all_tasks) < 20:
 
             title_input = input("Enter task title:\n")
-            task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
+            task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
             if priority_input != "" and priority_input not in VALID_PRIORITIES:      #⬅️ Checks 4 input in 'priority_input' other than empty strng & those allowed.
                 print("That is not a valid option.")
