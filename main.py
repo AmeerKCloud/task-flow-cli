@@ -69,6 +69,7 @@ while True:
         if len(all_tasks) > 0:
             for task in all_tasks:
                 print(task.describe())
+                print(task.done)
         else:
             print("You have no tasks to show.")
     elif user_choice == 3:
