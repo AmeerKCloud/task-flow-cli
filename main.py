@@ -51,19 +51,19 @@ while True:
             task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
 
-            if priority_input != "" and priority_input not in VALID_PRIORITIES:      #⬅️ Checks 4 inputs other than empty strng & those allowed.
+            if priority_input != "" and priority_input not in VALID_PRIORITIES:      #⬅️ Checks 4 input in 'priority_input' other than empty strng & those allowed.
                 print("That is not a valid option.")
                 priority_input = ""
 
             if task_type == 1:
-                if priority_input == "":
+                if priority_input == "":                                             #⬅️ Checks 4 empty strng input in 'priority_input'. 'Task' class then assigns default "medium".
                     one_time = Task(title=title_input)
                 else:
-                    one_time = Task(title=title_input, priority=priority_input)
+                    one_time = Task(title=title_input, priority=priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
                 all_tasks.append(one_time)
             elif task_type == 2:
                 frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
-                if priority_input == "":
+                if priority_input == "":                                            #⬅️ Checks 4 empty strng input in 'priority_input'. 'RecurringTask' class then assigns default "medium".
                     habit = RecurringTask(title=title_input, frequency=frequency)
                 else:
                     habit = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
