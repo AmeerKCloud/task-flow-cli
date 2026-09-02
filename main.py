@@ -58,10 +58,6 @@ while True:
             if task_type == 1:
                 if priority_input == "":
                     one_time = Task(title=title_input)
-                elif priority_input in VALID_PRIORITIES:
-                    one_time = Task(title=title_input, priority=priority_input)
-                else:
-                    print("That is not a valid option.")
                 all_tasks.append(one_time)
             elif task_type == 2:
                 frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
