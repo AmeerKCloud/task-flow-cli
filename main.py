@@ -57,17 +57,17 @@ while True:
 
             if task_type == 1:
                 if priority_input == "":                                             #⬅️ if empty strng input in 'priority_input', 'Task' class then assigns default "medium".
-                    one_time = Task(title=title_input)
+                    one_time_task = Task(title=title_input)
                 else:
-                    one_time = Task(title=title_input, priority=priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
-                all_tasks.append(one_time)
+                    one_time_task = Task(title=title_input, priority=priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
+                all_tasks.append(one_time_task)
             elif task_type == 2:
                 frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n")
                 if priority_input == "":                                            #⬅️ if empty strng input in 'priority_input', 'RecurringTask' class then assigns default "medium".
-                    habit = RecurringTask(title=title_input, frequency=frequency)
+                    habitual_task = RecurringTask(title=title_input, frequency=frequency)
                 else:
-                    habit = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
-                all_tasks.append(habit)
+                    habitual_task = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
+                all_tasks.append(habitual_task)
         else:
             print(f"You have reached your limit of {MAX_TASKS} tasks. Complete some tasks before adding more.")
     elif user_choice == 2:
