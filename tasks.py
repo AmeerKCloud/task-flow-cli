@@ -36,7 +36,7 @@ class RecurringTask(Task):
         else:
             frequency_display = "unknown"
 
-        return f"{description_from_task} Frequency: {frequency_display}"
+        return f"{description_from_task} Frequency: {frequency_display}"    #⬅️[2a]
 
 # NOTE:
 #[1]-[1b] To demonstrate class inheritance.
@@ -48,8 +48,9 @@ class RecurringTask(Task):
 #   - [1b] 'frequency' is the only param/var that RecurringTask does not share with Task. 
 #          Therefor, it has to create a local attribute to store the value.
 
-#[2] Bug fixed: Initially, before adding 'frequency_display', i was:
-# - mutating 'self.frequency' by reassigning it 'd' from 'daily' or 'w' from 'weekyly'.
-# > This caused 
+#[2]- Bug fixed: Initially, before adding local variable 'frequency_display', i was:
+# - mutating 'self.frequency' by reassigning it 'daily' from 'd' or 'weekly' from 'w'.
+# > This caused a bug where when i tried to access the description of any recurring_task object, it would return 'None' after the initial creation.
+#   > This is because 'self.frequency' would fail to match any of the conditions in the if-elif-else statement as its value had mutated.
 
 
