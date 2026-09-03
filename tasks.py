@@ -30,11 +30,13 @@ class RecurringTask(Task):
         description_from_task = super().describe()
 
         if self.frequency == "d":
-            self.frequency = "daily"
-            return f"{description_from_task} Frequency: {self.frequency}"
+            frequency_display = "daily"
         elif self.frequency == "w":
-            self.frequency = "weekly"
-            return f"{description_from_task} Frequency: {self.frequency}"
+            frequency_display = "weekly"
+        else:
+            frequency_display = "unknown"
+
+        return f"{description_from_task} Frequency: {frequency_display}"
 
 # NOTE:
 #[1]-[1b] To demonstrate class inheritance.
