@@ -48,9 +48,14 @@ class RecurringTask(Task):
 #   - [1b] 'frequency' is the only param/var that RecurringTask does not share with Task. 
 #          Therefor, it has to create a local attribute to store the value.
 
-#[2]- Bug fixed: Initially, before adding local variable 'frequency_display', i was:
+#[2] - Bug fixed: Initially, before adding local variable 'frequency_display', i was:
 # - mutating 'self.frequency' by reassigning it 'daily' from 'd' or 'weekly' from 'w'.
-# > This caused a bug where when i tried to access the description of any recurring_task object, it would return 'None' after the initial creation.
-#   > This is because 'self.frequency' would fail to match any of the conditions in the if-elif-else statement as its value had mutated.
+# > This caused a bug where when i tried to access the description of any recurring_task 
+#   object, it would return 'None' after the initial creation.
+#   > This is because 'self.frequency' would fail to match any of the conditions in the 
+#     if-elif-else statement as its value had mutated.
+#   > IMPORTANT: a method called 'describe()' should NOT  be mutating data if it's only 
+#     purpose is to return a description.
+# - Solution: Adding a local variable 'frequency_display' which is assigned and shows 'weekly' or 'daily'.
 
 
