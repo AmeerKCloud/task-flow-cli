@@ -56,6 +56,10 @@ class RecurringTask(Task):
 #     if-elif-else statement as its value had mutated.
 #   > IMPORTANT: a method called 'describe()' should NOT  be mutating data if it's only 
 #     purpose is to return a description.
-# - Solution: Adding a local variable 'frequency_display' which is assigned and shows 'weekly' or 'daily'.
+# - Solution: Adding a local variable 'frequency_display' which is assigned and shows 
+#   'weekly' or 'daily' instead of overwriting self.frequency.
+#   > Now self.frequency stays "d" or "w" permanently (the actual stored data), while 
+#     frequency_display is just a temporary, readable version used only for this one 
+#     printout — calling describe() any number of times will always work correctly.
 
 
