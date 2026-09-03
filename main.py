@@ -31,6 +31,15 @@ total_completed = 0
 
 #⬇️ Main 'main.py' program from here onwards:
 
+def mark_done():
+    global total_completed
+    total_completed += 1
+    return total_completed
+
+# mark_done()
+# mark_done()
+# print(total_completed)
+
 while True:
 
     menus.menu_1()
