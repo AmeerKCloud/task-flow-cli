@@ -30,7 +30,7 @@ class RecurringTask(Task):
         description_from_task = super().describe()
 
         if self.frequency == "d":
-            frequency_display = "daily"
+            frequency_display = "daily"                   #⬅️[2] 'self.frequency' mutation bug fixed by adding 'frequency_display'.  See notes.
         elif self.frequency == "w":
             frequency_display = "weekly"
         else:
@@ -48,6 +48,6 @@ class RecurringTask(Task):
 #   - [1b] 'frequency' is the only param/var that RecurringTask does not share with Task. 
 #          Therefor, it has to create a local attribute to store the value.
 
-
+#[2]
 
 
