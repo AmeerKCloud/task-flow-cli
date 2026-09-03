@@ -48,6 +48,8 @@ class RecurringTask(Task):
 #   - [1b] 'frequency' is the only param/var that RecurringTask does not share with Task. 
 #          Therefor, it has to create a local attribute to store the value.
 
-#[2] Initially, before adding 'frequency_display', i was mutating 'self.frequency' by reassigning it 'd' from 'daily' or 'w' from 'weekyl'.
+#[2] Bug fixed: Initially, before adding 'frequency_display', i was:
+# - mutating 'self.frequency' by reassigning it 'd' from 'daily' or 'w' from 'weekyly'.
+# > This caused 
 
 
