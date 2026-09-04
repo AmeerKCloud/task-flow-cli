@@ -27,6 +27,8 @@ class RecurringTask(Task):
         self.frequency = frequency                        #⬅️[1b] 
 
     def describe(self):
+        """Calls super().describe() first and extends 
+        it to include a frequency attribute."""
         description_from_task = super().describe()
 
         if self.frequency == "d":
