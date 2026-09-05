@@ -95,7 +95,6 @@ while True:
         if len(all_tasks) > 0:
             for task in all_tasks:
                 print(task.describe())
-                print(task.done)
         else:
             print("You have no tasks to show.")
     elif user_choice == 3:
@@ -105,7 +104,7 @@ while True:
                 if task.done == False:
                     task.done = True
                 else:
-                    print(f"You've completed this task: {task.title}")
+                    print(f"You've already completed this task: {task.title}")
         pass
     elif user_choice == 4:
         pass
