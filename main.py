@@ -106,6 +106,7 @@ while True:
             if task.title == title_input:
                 if task.done == False:
                     task.done = True
+                    mark_done()
                 else:
                     print(f"You've already completed this task: {task.title}")
         pass
