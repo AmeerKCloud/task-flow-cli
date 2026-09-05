@@ -26,8 +26,13 @@ def sort_tasks():
     pass
 
 
-def validate_input(user_input):
-    
+def validate_input():
+    try:
+        user_input = int(input("Choose one numerical option:\n"))
+        return user_input
+    except ValueError:
+        print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
+        return False
 
 class Menu:
     def menu_1(self):

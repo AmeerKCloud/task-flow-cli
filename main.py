@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, validate_priority, filter_tasks
+from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, validate_priority, filter_tasks, validate_input
 
 menus = Menu()
 
@@ -62,14 +62,18 @@ while True:
 
     menus.menu_1()
 
-    try:
-        user_choice = int(input("Choose one numerical option:\n"))
-    except ValueError:
-        print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
-        continue   #⬅️ skip everything below, go re-print the menu and ask again
+    # try:
+    #     user_choice = int(input("Choose one numerical option:\n"))
+    # except ValueError:
+    #     print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
+    #     continue   #⬅️ skip everything below, go re-print the menu and ask again
+
+    user_choice = validate_input()
 
     # ⬇️Add tasks — give it a title and a priority (low/medium/high).
-    if user_choice == 1:
+    if user_choice == False:
+        continue
+    elif user_choice == 1:
 
         if len(all_tasks) < 20:
 
