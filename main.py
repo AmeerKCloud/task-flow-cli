@@ -6,10 +6,10 @@
 
 # ______________ Core functionalities
 # Add tasks — give it a title and a priority (low/medium/high). ✅
-# Add recurring tasks — same as above, but tagged with a frequency (daily/weekly), so they behave a little differently from a normal one-off task. ⚠️
-# List tasks — see everything, or just what's pending vs. completed.
-# Mark tasks done — updates the task's internal state.
-# View stats — completion percentage, counts, and a couple of small computed numbers.
+# Add recurring tasks — same as above, but tagged with a frequency (daily/weekly), so they behave a little differently from a normal one-off task. ✅
+# List tasks — see everything, or just what's pending vs. completed. ✅
+# Mark tasks done — updates the task's internal state. ✅
+# View stats — completion percentage, counts, and a couple of small computed numbers. ✅
 # Random extras — a motivational quote, or a shuffle feature to "surprise" you with what to work on next.
 # Persistence — saves to a file on exit, loads from it on startup, so your list survives between sessions.
 
