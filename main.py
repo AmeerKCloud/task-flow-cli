@@ -110,7 +110,7 @@ while True:
             else:
                 print("You have no tasks to show.")
         elif view_tasks_type == 2:
-            pass                                        #⬅️ Currently here. Do completed tasks need to go in their own list? If no task done, then list empty, user notified.
+            pass                                        #⬅️⚠️ Currently here. Do completed tasks need to go in their own list? If no task done, then list empty, user notified.
     elif user_choice == 3:
         title_input = input("Enter task title:\n")
         for task in all_tasks:
