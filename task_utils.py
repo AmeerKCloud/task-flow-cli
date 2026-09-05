@@ -35,4 +35,13 @@ class Menu:
         4. Show stats
         5. Exit
         """)
-        
+
+    def menu_2(self):
+        print("""
+        === TaskFlow ===
+        1. Add task
+        2. List tasks
+        3. Mark task done
+        4. Show stats
+        5. Exit
+        """)

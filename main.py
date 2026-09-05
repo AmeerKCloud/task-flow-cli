@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS
+from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, validate_priority, filter_tasks
 
 menus = Menu()
 
