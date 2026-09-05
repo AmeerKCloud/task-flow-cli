@@ -42,7 +42,7 @@ def print_summary(all_tasks):
     percent_completed = round((num_tasks_completed / total_tasks) * 100)
 
     print(f"""Total number of tasks: {total_tasks}
-    Tasks completed: {num_tasks_completed}")
+    Tasks completed: {num_tasks_completed}
     Tasks remaining: {total_tasks - num_tasks_completed}
     % completed: {percent_completed}""")
 
@@ -110,6 +110,7 @@ while True:
                     print(f"You've already completed this task: {task.title}")
         pass
     elif user_choice == 4:
+        print_summary(all_tasks=all_tasks)
         pass
     elif user_choice == 5:
         break
