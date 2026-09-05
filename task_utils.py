@@ -38,10 +38,9 @@ class Menu:
 
     def menu_2(self):
         print("""
-        === TaskFlow ===
-        1. Add task
-        2. List tasks
-        3. Mark task done
-        4. Show stats
-        5. Exit
+        === Select an Option ===
+        1. View all tasks
+        2. View completed tasks only
+        3. View incomplete tasks only
+        4. Return to main menu
         """)
