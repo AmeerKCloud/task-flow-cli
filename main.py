@@ -99,6 +99,13 @@ while True:
         else:
             print("You have no tasks to show.")
     elif user_choice == 3:
+        title_input = input("Enter task title:\n")
+        for task in all_tasks:
+            if task.title == title_input:
+                if task.done == False:
+                    task.done = True
+                else:
+                    print(f"You've completed this task: {task.title}")
         pass
     elif user_choice == 4:
         pass

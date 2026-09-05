@@ -1,2 +1,4 @@
-percent_completed = round((7 / 35) * 100)
-print(percent_completed)
+class SampleClass:
+    def __init__(self, title, done=False):
+        self.title = title
+        self.done = done
