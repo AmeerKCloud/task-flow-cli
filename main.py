@@ -32,7 +32,8 @@ total_completed = 0
 #⬇️ Main 'main.py' program from here onwards:
 
 def print_summary(all_tasks):
-    """Recieves the 'all_tasks' list; calculates & prints the % of tasks completed."""
+    """Recieves the 'all_tasks' list; calculates & prints the # & % 
+    of tasks completed from the current list of task objects."""
     num_tasks_completed = 0
     total_tasks = len(all_tasks)
     for task in all_tasks:
