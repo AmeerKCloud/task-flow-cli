@@ -31,6 +31,16 @@ total_completed = 0
 
 #⬇️ Main 'main.py' program from here onwards:
 
+def print_summary(all_tasks):
+    """Recieves the 'all_tasks' list; calculates & prints the % of tasks completed."""
+    num_completed = 0
+    len_all_tasks = len(all_tasks)
+    for task in all_tasks:
+        if task.done == True:
+            num_completed += 1
+
+    pass
+
 def mark_done():
     """Increments 'total_completed' every time a task is marked done."""
     global total_completed
