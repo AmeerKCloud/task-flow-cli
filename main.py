@@ -49,7 +49,11 @@ def print_summary(all_tasks):
 
 
 def mark_done():
-    """Increments 'total_completed' every time a task is marked done."""
+    """
+    Increments 'total_completed' every time a task is marked done.
+    Accumulates & tracks total # of tasks completed over the life 
+    of this program.
+    """
     global total_completed
     total_completed += 1
     return total_completed
