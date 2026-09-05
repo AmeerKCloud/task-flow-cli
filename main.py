@@ -34,15 +34,18 @@ total_completed = 0
 def print_summary(all_tasks):
     """Recieves the 'all_tasks' list; calculates & prints the % of tasks completed."""
     num_tasks_completed = 0
-    len_all_tasks = len(all_tasks)
+    total_tasks = len(all_tasks)
     for task in all_tasks:
         if task.done == True:
             num_tasks_completed += 1
 
-    percent_completed = round((num_tasks_completed / len_all_tasks) * 100)
+    percent_completed = round((num_tasks_completed / total_tasks) * 100)
 
-    print(f"Total number of tasks: {len_all_tasks}")
-    print(f"% completed: {percent_completed}")
+    print(f"""Total number of tasks: {total_tasks}
+    Tasks completed: {num_tasks_completed}")
+    Tasks remaining: {total_tasks - num_tasks_completed}
+    % completed: {percent_completed}""")
+
 
 
 def mark_done():
