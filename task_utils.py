@@ -38,7 +38,7 @@ class Menu:
 
     def menu_2(self):
         print("""
-        === Select an Option ===
+        === 🌸 ===
         1. View all tasks
         2. View completed tasks only
         3. View incomplete tasks only
