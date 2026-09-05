@@ -46,8 +46,6 @@ def print_summary(all_tasks):
     Tasks remaining: {total_tasks - num_tasks_completed}
     % completed: {percent_completed}""")
 
-
-
 def mark_done():
     """
     Increments 'total_completed' every time a task is marked done.
@@ -68,7 +66,6 @@ while True:
     except ValueError:
         print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
         continue   #⬅️ skip everything below, go re-print the menu and ask again
-
 
     # ⬇️Add tasks — give it a title and a priority (low/medium/high).
     if user_choice == 1:
