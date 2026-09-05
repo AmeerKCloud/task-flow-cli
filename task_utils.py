@@ -25,6 +25,10 @@ def sort_tasks():
     """Accepts a function (e.g. lambda t: PRIORITY_WEIGHTS[t.priority]) to sort by."""
     pass
 
+
+def validate_input(user_input):
+    
+
 class Menu:
     def menu_1(self):
         print("""

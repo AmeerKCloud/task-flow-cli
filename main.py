@@ -98,12 +98,13 @@ while True:
             print(f"You have reached your limit of {MAX_TASKS} tasks. Complete some tasks before adding more.")
     elif user_choice == 2:
         menus.menu_2()
-        view_tasks_type = input("Choose one numerical option:\n")
-        if len(all_tasks) > 0:
-            for task in all_tasks:
-                print(task.describe())
-        else:
-            print("You have no tasks to show.")
+        view_tasks_type = int(input("Choose one numerical option:\n"))
+        if view_tasks_type == 1:
+            if len(all_tasks) > 0:
+                for task in all_tasks:
+                    print(task.describe())
+            else:
+                print("You have no tasks to show.")
     elif user_choice == 3:
         title_input = input("Enter task title:\n")
         for task in all_tasks:
