@@ -21,7 +21,7 @@ def filter_tasks(tasks, done=False):
     pass
 
 
-def sort_tasks():
+def sort_tasks(tasks, key_func, reverse=False):
     """Accepts a function (e.g. lambda t: PRIORITY_WEIGHTS[t.priority]) to sort by."""
     pass
 
