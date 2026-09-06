@@ -62,17 +62,11 @@ while True:
 
     menus.menu_1()
 
-    # try:
-    #     user_choice = int(input("Choose one numerical option:\n"))
-    # except ValueError:
-    #     print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
-    #     continue   #⬅️ skip everything below, go re-print the menu and ask again
-
     user_choice = validate_input()
 
     # ⬇️Add tasks — give it a title and a priority (low/medium/high).
     if user_choice == False:
-        continue
+        continue                       #⬅️ if False, skip everything below, go re-print the menu and ask again
     elif user_choice == 1:
 
         if len(all_tasks) < 20:
