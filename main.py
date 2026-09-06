@@ -101,19 +101,24 @@ while True:
         else:
             print(f"You have reached your limit of {MAX_TASKS} tasks. Complete some tasks before adding more.")
     elif user_choice == 2:
-        menus.menu_2()
-        view_tasks_type = validate_input()
-        if view_tasks_type == 1:
-            if len(all_tasks) > 0:
+        while True:
+            menus.menu_2()
+            view_tasks_type = validate_input()
+            if view_tasks_type == 1:
+                if len(all_tasks) > 0:
+                    for task in all_tasks:
+                        print(task.describe())
+                else:
+                    print("You have no tasks to show.")
+            elif view_tasks_type == 2:
                 for task in all_tasks:
-                    print(task.describe())
-            else:
-                print("You have no tasks to show.")
-        elif view_tasks_type == 2:
-            for task in all_tasks:
-                if task.done == True:
-                    print(task.describe())
-            pass                                        #⬅️⚠️ Currently here. Do completed tasks need to go in their own list? If no task done, then list empty, user notified.
+                    if task.done == True:
+                        print(task.describe())
+            elif view_tasks_type == 3:
+                for task in all_tasks:
+                    if task.done == False:
+                        print(task.describe())
+                pass                                        #⬅️⚠️ Currently here. Do completed tasks need to go in their own list? If no task done, then list empty, user notified.
     elif user_choice == 3:
         title_input = input("Enter task title:\n")
         for task in all_tasks:
