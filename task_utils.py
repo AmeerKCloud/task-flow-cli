@@ -51,5 +51,6 @@ class Menu:
         1. View all tasks
         2. View completed tasks only
         3. View incomplete tasks only
-        4. Return to main menu
+        4. Sort by priority
+        5. Return to main menu
         """)
