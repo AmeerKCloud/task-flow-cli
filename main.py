@@ -100,19 +100,12 @@ while True:
                 menus.menu_2()
                 view_tasks_type = validate_input()
                 if view_tasks_type == 1:
-                    if len(all_tasks) > 0:
-                        for task in all_tasks:
-                            print(task.describe())
-                    else:
-                        print("You have no tasks to show.")
+                    for task in all_tasks:
+                        print(task.describe())
                 elif view_tasks_type == 2:
-                    for task in all_tasks:
-                        if task.done == True:
-                            print(task.describe())
+                    filter_tasks(tasks=all_tasks, done=True)
                 elif view_tasks_type == 3:
-                    for task in all_tasks:
-                        if task.done == False:
-                            print(task.describe())
+                    filter_tasks(tasks=all_tasks)
                 else:
                     break
         else:
