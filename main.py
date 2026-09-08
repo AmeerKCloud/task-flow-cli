@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, validate_priority, filter_tasks, validate_input
+from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, validate_input, validate_priority
 
 menus = Menu()
 
@@ -106,6 +106,12 @@ while True:
                     filter_tasks(tasks=all_tasks, done=True)
                 elif view_tasks_type == 3:
                     filter_tasks(tasks=all_tasks)
+                elif view_tasks_type == 4:
+                    sort_tasks(
+                        tasks= all_tasks, 
+                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority], 
+                        reverse=True
+                    )
                 else:
                     break
         else:
