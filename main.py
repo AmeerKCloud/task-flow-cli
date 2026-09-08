@@ -109,7 +109,7 @@ while True:
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
                         tasks= all_tasks,                                           #⬅️ all task objects list. ⚠️ CURRENTLY HERE.
-                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️
+                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️ temporary lamba func. returns value of the priority attribute of each task object.
                         reverse=True                                                #⬅️
                     )
                 else:
