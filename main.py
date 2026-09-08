@@ -108,9 +108,9 @@ while True:
                     filter_tasks(tasks=all_tasks)
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
-                        tasks= all_tasks, 
-                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority], 
-                        reverse=True
+                        tasks= all_tasks,                                           #⬅️ all task objects list.
+                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️
+                        reverse=True                                                #⬅️
                     )
                 else:
                     break
