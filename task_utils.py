@@ -24,7 +24,6 @@ def filter_tasks(tasks, done=False):
 def sort_tasks(tasks, key_func, reverse=False):
     """Accepts a function (e.g. lambda t: PRIORITY_WEIGHTS[t.priority]) to sort by."""
     return sorted(tasks, key=key_func, reverse=reverse)
-    pass
 
 
 def validate_input():
