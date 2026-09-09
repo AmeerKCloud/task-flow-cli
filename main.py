@@ -141,10 +141,10 @@ while True:
 # NOTE:
 #[1] lambda: a small, unnamed function in a single line, right where you need it, 
 # instead of writing a full def block somewhere else in your file and giving it a name.
+#   - Are meant to stay small and disposable.
 #   - Almost always as a quick, throwaway function passed into another function that expects 
 #     one — situations where writing a full named def elsewhere would be overkill for something 
 #     used exactly once, right here.
-#   - Are meant to stay small and disposable.
 #   - There's no explicit return keyword, because a lambda is always just one expression that gets 
 #     evaluated and handed back. 
 #   - You typically don't even store it in a variable; you just write it directly at the spot where 
