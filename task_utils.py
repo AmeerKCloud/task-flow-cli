@@ -42,8 +42,7 @@ class Menu:
         2. List tasks
         3. Mark task done
         4. Show stats
-        5. Sort by priority
-        6. Exit
+        5. Exit
         """)
 
     def menu_2(self):

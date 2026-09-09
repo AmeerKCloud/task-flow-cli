@@ -112,6 +112,7 @@ while True:
                         key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️ temporary lamba func. returns value of the priority attribute of each task object.
                         reverse=True                                                
                     )
+                    print(sorted_by_priority)
                 else:
                     break
         else:
