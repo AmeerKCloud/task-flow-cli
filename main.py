@@ -109,7 +109,7 @@ while True:
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
                         tasks= all_tasks,                                           #⬅️ all task objects list.
-                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️[1] lambda func. returns value of the priority attribute of each task object.
+                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️[1] lambda: temporary func. returns value of the priority attribute of each task object.
                         reverse=True                                                
                     )
                     print(sorted_by_priority)
@@ -144,7 +144,7 @@ while True:
 #   - Almost always as a quick, throwaway function passed into another function that expects 
 #     one — situations where writing a full named def elsewhere would be overkill for something 
 #     used exactly once, right here.
-#   - there's no explicit return keyword, because a lambda is always just one expression that gets 
+#   - There's no explicit return keyword, because a lambda is always just one expression that gets 
 #     evaluated and handed back. 
 #   - You typically don't even store it in a variable; you just write it directly at the spot where 
 #     a function is expected as an argument
