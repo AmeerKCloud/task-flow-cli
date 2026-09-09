@@ -144,3 +144,7 @@ while True:
 #   - Almost always as a quick, throwaway function passed into another function that expects 
 #     one — situations where writing a full named def elsewhere would be overkill for something 
 #     used exactly once, right here.
+#   - there's no explicit return keyword, because a lambda is always just one expression that gets 
+#     evaluated and handed back. 
+#   - You typically don't even store it in a variable; you just write it directly at the spot where 
+#     a function is expected as an argument
