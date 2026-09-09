@@ -148,4 +148,4 @@ while True:
 #   - There's no explicit return keyword, because a lambda is always just one expression that gets 
 #     evaluated and handed back. 
 #   - You typically don't even store it in a variable; you just write it directly at the spot where 
-#     a function is expected as an argument
+#     a function is expected as an argument.
