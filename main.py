@@ -109,7 +109,7 @@ while True:
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
                         tasks= all_tasks,                                           #⬅️ all task objects list.
-                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️ temporary lamba func. returns value of the priority attribute of each task object.
+                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️[1] lambda func. returns value of the priority attribute of each task object.
                         reverse=True                                                
                     )
                     print(sorted_by_priority)
@@ -136,3 +136,8 @@ while True:
         print(f"{user_choice} is not a option. Try again.")
 
 # Saved to github..
+
+
+# NOTE:
+#[1] lambda: a small, unnamed function in a single line, right where you need it, 
+# instead of writing a full def block somewhere else in your file and giving it a name.
