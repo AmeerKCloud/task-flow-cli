@@ -18,7 +18,6 @@ def filter_tasks(tasks, done=False):
     for task in tasks:
         if task.done == done:
             print(task.describe())
-    pass
 
 
 def sort_tasks(tasks, key_func, reverse=False):
