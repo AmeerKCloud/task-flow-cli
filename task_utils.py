@@ -15,9 +15,10 @@ def validate_priority():
 
 def filter_tasks(tasks, done=False):
     """Returns tasks matching a status, ie done = True or False."""
+    matching_tasks = []
     for task in tasks:
         if task.done == done:
-            print(task.describe())
+            matching_tasks.append(task.describe())
 
 
 def sort_tasks(tasks, key_func, reverse=False):
