@@ -129,6 +129,7 @@ while True:
         pass
     elif user_choice == 4:
         menus.menu_3()
+        view_stat_type = validate_input()                                           #⚠️ Currently here.
         print_summary(all_tasks=all_tasks)
         pass
     elif user_choice == 5:
