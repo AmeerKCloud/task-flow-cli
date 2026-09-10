@@ -128,6 +128,7 @@ while True:
                     print(f"You've already completed this task: {task.title}")
         pass
     elif user_choice == 4:
+        menus.menu_3()
         print_summary(all_tasks=all_tasks)
         pass
     elif user_choice == 5:
