@@ -60,9 +60,9 @@ class Menu:
     def menu_3(self):
         print("""
         === ⭐ ===
-        1. View summary of 
-        2. View completed tasks only
-        3. View incomplete tasks only
+        1. View summary of all tasks
+        2. View your next 3 tasks
+        3. View your last 5 completed tasks
         4. Sort by priority
         5. Return to main menu
         """)
