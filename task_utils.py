@@ -19,6 +19,7 @@ def filter_tasks(tasks, done=False):
     for task in tasks:
         if task.done == done:
             matching_tasks.append(task.describe())
+    return matching_tasks
 
 
 def sort_tasks(tasks, key_func, reverse=False):
