@@ -149,7 +149,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github..
+# Saved to github...
 
 
 # NOTE:
