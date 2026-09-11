@@ -99,7 +99,9 @@ while True:
             while True:
                 menus.menu_2()
                 view_tasks_type = validate_input()
-                if view_tasks_type == 1:
+                if view_stat_type == False:
+                    continue
+                elif view_tasks_type == 1:
                     for task in all_tasks:
                         print(task.describe())
                 elif view_tasks_type == 2:
