@@ -138,8 +138,11 @@ while True:
         elif view_stat_type == 1:
             print_summary(all_tasks=all_tasks)
         elif view_stat_type == 2:
-            completed = filter_tasks(tasks=all_tasks, done=True)
-            print(completed[:3])
+            incomplete_tasks = filter_tasks(tasks=all_tasks)
+            print(incomplete_tasks[:3])                                     #⬅️ prints ur next 3 incomplete tasks.
+        elif view_stat_type == 3:
+            completed_tasks = filter_tasks(tasks=all_tasks, done=True)
+            print(completed_tasks[-5:])
 
     elif user_choice == 5:
         break
