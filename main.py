@@ -137,7 +137,8 @@ while True:
             continue
         elif view_stat_type == 1:
             print_summary(all_tasks=all_tasks)
-        pass
+        elif view_stat_type == 2:
+            
     elif user_choice == 5:
         break
     else:
