@@ -14,7 +14,7 @@ def validate_priority():
 
 
 def filter_tasks(tasks, done=False):
-    """Returns a list of taks objects matching a status, ie done = True or False."""
+    """Returns a list of task objects matching a status, ie done = True or False."""
     matching_tasks = []
     for task in tasks:
         if task.done == done:
