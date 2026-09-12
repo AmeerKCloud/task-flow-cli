@@ -139,7 +139,8 @@ while True:
             print_summary(all_tasks=all_tasks)
         elif view_stat_type == 2:
             incomplete_tasks = filter_tasks(tasks=all_tasks)
-            print(incomplete_tasks[:3])                                     #⬅️ prints ur next 3 incomplete tasks.
+            for task in incomplete_tasks:
+                print(task.describe())                                     #⬅️ prints ur next 3 incomplete tasks.
         elif view_stat_type == 3:
             completed_tasks = filter_tasks(tasks=all_tasks, done=True)
             print(completed_tasks[-5:])                                     #⬅️ prints ur last 5 completed tasks.
