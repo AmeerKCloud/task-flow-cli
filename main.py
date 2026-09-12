@@ -107,7 +107,9 @@ while True:
                 elif view_tasks_type == 2:
                     filter_tasks(tasks=all_tasks, done=True)
                 elif view_tasks_type == 3:
-                    filter_tasks(tasks=all_tasks)
+                    incomplete_tasks = filter_tasks(tasks=all_tasks)
+                    for task in incomplete_tasks:
+                        print(task.describe())                                           #⚠️ Currently here.
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
                         tasks= all_tasks,                                           #⬅️ all task objects list.
@@ -131,7 +133,7 @@ while True:
         pass
     elif user_choice == 4:
         menus.menu_3()
-        view_stat_type = validate_input()                                           #⚠️ Currently here.
+        view_stat_type = validate_input()
 
         if view_stat_type == False:
             continue
