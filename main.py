@@ -109,7 +109,7 @@ while True:
                 elif view_tasks_type == 3:
                     incomplete_tasks = filter_tasks(tasks=all_tasks)
                     for task in incomplete_tasks:
-                        print(task.describe())                                           #⚠️ Currently here.
+                        print(task.describe())                                      #⚠️ Currently here.
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
                         tasks= all_tasks,                                           #⬅️ all task objects list.
