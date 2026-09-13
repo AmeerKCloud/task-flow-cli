@@ -37,7 +37,7 @@ def validate_input():
 
 class Menu:
     def menu_1(self):
-        """The first main menu."""
+        """The main menu."""
         print("""
         === TaskFlow ===
         1. Add task
@@ -48,6 +48,7 @@ class Menu:
         """)
 
     def menu_2(self):
+        """List tasks menu"""
         print("""
         === 🌸 ===
         1. View all tasks
@@ -58,6 +59,7 @@ class Menu:
         """)
 
     def menu_3(self):
+        """3rd menu: shows stats."""
         print("""
         === ⭐ ===
         1. View summary of all tasks
