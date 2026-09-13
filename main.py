@@ -105,7 +105,7 @@ while True:
                     for task in all_tasks:
                         print(task.describe())
                 elif view_tasks_type == 2:
-                    filter_tasks(tasks=all_tasks, done=True)
+                    done_tasks = filter_tasks(tasks=all_tasks, done=True)
                 elif view_tasks_type == 3:
                     incomplete_tasks = filter_tasks(tasks=all_tasks)
                     for task in incomplete_tasks:
