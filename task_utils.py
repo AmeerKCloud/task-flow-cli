@@ -48,7 +48,7 @@ class Menu:
         """)
 
     def menu_2(self):
-        """List tasks menu"""
+        """2nd menu: Lists tasks."""
         print("""
         === 🌸 ===
         1. View all tasks
