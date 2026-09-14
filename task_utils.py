@@ -34,8 +34,8 @@ def get_stats(all_tasks):
         if task.done == True:
             completed_count += 1
 
-    percent_done = round((completed_count / total_tasks) * 100)
-    pass
+    percent_done = round((completed_count / total_tasks) * 100, 2)
+    return (completed_count, percent_done,)
 
 def validate_input():
     try:
