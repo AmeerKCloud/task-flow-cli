@@ -26,12 +26,15 @@ def sort_tasks(tasks, key_func, reverse=False):
     """Accepts a function (e.g. lambda t: PRIORITY_WEIGHTS[t.priority]) to sort by."""
     return sorted(tasks, key=key_func, reverse=reverse)
 
-def get_stats(tasks):
+def get_stats(all_tasks):
     """Return the stats as a tuple (completed_count, percent_done, streak_score)."""
+    total_tasks = len(all_tasks)
     completed_count = 0
-    for task in tasks:
+    for task in all_tasks:
         if task.done == True:
             completed_count += 1
+
+    percent_done = round((completed_count / total_tasks) * 100)
     pass
 
 def validate_input():
