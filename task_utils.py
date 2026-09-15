@@ -1,5 +1,7 @@
 # module: helper functions, constants
 
+import random
+
 VALID_PRIORITIES = ("low", "medium", "high")
 
 PRIORITY_WEIGHTS = {
@@ -46,6 +48,10 @@ def validate_input():
         print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
         return False
 
+def random_motivational_quote():
+    rand_quotes = ["You got this!!", "One step at a time!", "Do better!", "Don't quit now!", "You're almost there!", "Quitting is for losers"]
+    rand_quote = random.choice(rand_quotes)
+    print(rand_quote)
 class Menu:
     def menu_1(self):
         """The main menu."""
