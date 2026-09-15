@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, validate_input, validate_priority
+from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, validate_input, validate_priority
 
 menus = Menu()
 
@@ -34,13 +34,8 @@ total_completed = 0
 def print_summary(all_tasks):
     """Recieves the 'all_tasks' list; calculates & prints the # & % 
     of tasks completed from the current list of task objects."""
-    num_tasks_completed = 0
-    total_tasks = len(all_tasks)
-    for task in all_tasks:
-        if task.done == True:
-            num_tasks_completed += 1
 
-    percent_completed = round((num_tasks_completed / total_tasks) * 100)
+    stats = get_stats(all_tasks=all_tasks)
 
     print(f"""Total number of tasks: {total_tasks}
     Tasks completed: {num_tasks_completed}
