@@ -34,8 +34,9 @@ def get_stats(all_tasks):
         if task.done == True:
             completed_count += 1
     streak_score = 2 ** completed_count
+    is_even = completed_count % 2 == 0
     percent_done = round((completed_count / total_tasks) * 100, 2)
-    return (completed_count, percent_done, streak_score)
+    return (completed_count, percent_done, streak_score, is_even)
 
 def validate_input():
     try:
