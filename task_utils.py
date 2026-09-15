@@ -27,7 +27,7 @@ def sort_tasks(tasks, key_func, reverse=False):
     return sorted(tasks, key=key_func, reverse=reverse)
 
 def get_stats(all_tasks):
-    """Return the stats as a tuple (completed_count, percent_done, streak_score)."""
+    """Return the stats as a tuple (completed_count, percent_done, streak_score, is_even)."""
     total_tasks = len(all_tasks)
     completed_count = 0
     for task in all_tasks:
