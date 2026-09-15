@@ -35,12 +35,12 @@ def print_summary(all_tasks):
     """Recieves the 'all_tasks' list; calculates & prints the # & % 
     of tasks completed from the current list of task objects."""
 
-    stats = get_stats(all_tasks=all_tasks)
+    completed_count, percent_done, streak_score, is_even = get_stats(all_tasks=all_tasks)
 
-    print(f"""Total number of tasks: {total_tasks}
-    Tasks completed: {num_tasks_completed}
-    Tasks remaining: {total_tasks - num_tasks_completed}
-    % completed: {percent_completed}""")
+    print(f"# of tasks completed: {completed_count}")
+    print(f"Percentage completed: {percent_done}")
+    print(f"Your streak score: {streak_score}")
+    print(f"Is amount completed even? {completed_count}")
 
 def mark_done():
     """
