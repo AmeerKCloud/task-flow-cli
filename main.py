@@ -138,12 +138,12 @@ while True:
             print_summary(all_tasks=all_tasks)
         elif view_stat_type == 2:
             incomplete_tasks = filter_tasks(tasks=all_tasks)
-            for task in incomplete_tasks[:3]:                              #⬅️ Accesses & prints ur next 3 incomplete tasks. Starts @ 0, counts upwards until 3, excluding 3.
-                print(task.describe())
+            for index, task in enumerate(incomplete_tasks[:3]):                          #⬅️ Accesses & prints ur next 3 incomplete tasks. Starts @ 0, counts upwards until 3, excluding 3.
+                print(format_task_line(task=task, task_index=index))
         elif view_stat_type == 3:
             completed_tasks = filter_tasks(tasks=all_tasks, done=True)
-            for task in completed_tasks[-5:]:                              #⬅️ Accesses & prints ur last 5 completed tasks. Counts down backwads -5 from the end of list.
-                print(task.describe())
+            for index, task in enumerate(completed_tasks[-5:]):                          #⬅️ Accesses & prints ur last 5 completed tasks. Counts down backwads -5 from the end of list.
+                print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
         break
