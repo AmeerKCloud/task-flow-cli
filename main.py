@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, validate_input, validate_priority
+from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, format_task_line, validate_input, validate_priority
 
 menus = Menu()
 
@@ -98,7 +98,7 @@ while True:
                     continue
                 elif view_tasks_type == 1:
                     for task in all_tasks:
-                        print(task.describe())
+                        print(format_task_line(task=task, task_index=all_tasks[task]))
                 elif view_tasks_type == 2:
                     done_tasks = filter_tasks(tasks=all_tasks, done=True)
                     for task in done_tasks:
