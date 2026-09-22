@@ -97,8 +97,8 @@ while True:
                 if view_tasks_type == False:
                     continue
                 elif view_tasks_type == 1:
-                    for task in all_tasks:
-                        print(format_task_line(task=task, task_index=all_tasks[task]))
+                    for index in range(len(all_tasks)):
+                        print(format_task_line(task=all_tasks[index], task_index=index))
                 elif view_tasks_type == 2:
                     done_tasks = filter_tasks(tasks=all_tasks, done=True)
                     for task in done_tasks:
