@@ -105,8 +105,8 @@ while True:
                         print(format_task_line(task=done_tasks[index], task_index=index))
                 elif view_tasks_type == 3:
                     incomplete_tasks = filter_tasks(tasks=all_tasks)
-                    for index, task in enumerate(incomplete_tasks):
-                        print(format_task_line(task=task, task_index=index))                                      #⚠️ Currently here.
+                    for index, task in enumerate(incomplete_tasks):                             #⬅️ 'enumerate()' is more effecient than 'range(len(my_list))'
+                        print(format_task_line(task=task, task_index=index))
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
                         tasks= all_tasks,                                           #⬅️ all task objects list.
