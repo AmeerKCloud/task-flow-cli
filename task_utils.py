@@ -54,6 +54,8 @@ def format_task_line(task, task_index):
     "next 3" preview, etc.) instead of writing the same formatting/f-string logic 
     over and over in each menu option."""
 
+    return f"{task_index + 1}. {task.describe()}"
+
 def random_motivational_quote():
     rand_quotes = ["You got this!!", "One step at a time!", "Do better!", "Don't quit now!", "You're almost there!", "Quitting is for losers"]
     rand_quote = random.choice(rand_quotes)
