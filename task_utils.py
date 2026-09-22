@@ -48,7 +48,7 @@ def validate_input():
         print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
         return False
 
-def format_task_line():
+def format_task_line(task_list = False, task = False):
     """takes a task and produces one clean, ready-to-print line of text describing it 
     — something you'd call from multiple places in main.py (List tasks, Show stats' 
     "next 3" preview, etc.) instead of writing the same formatting/f-string logic 
