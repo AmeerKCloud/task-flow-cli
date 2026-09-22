@@ -101,8 +101,8 @@ while True:
                         print(format_task_line(task=all_tasks[index], task_index=index))
                 elif view_tasks_type == 2:
                     done_tasks = filter_tasks(tasks=all_tasks, done=True)
-                    for task in done_tasks:
-                        print(task.describe())
+                    for index in range(len(done_tasks)):
+                        print(format_task_line(task=done_tasks[index], task_index=index))
                 elif view_tasks_type == 3:
                     incomplete_tasks = filter_tasks(tasks=all_tasks)
                     for task in incomplete_tasks:
