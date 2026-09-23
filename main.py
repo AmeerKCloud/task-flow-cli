@@ -105,7 +105,7 @@ while True:
                         print(format_task_line(task=done_tasks[index], task_index=index))
                 elif view_tasks_type == 3:
                     incomplete_tasks = filter_tasks(tasks=all_tasks)
-                    for index, task in enumerate(incomplete_tasks):                             #⬅️ 'enumerate()' is more effecient than 'range(len(my_list))'
+                    for index, task in enumerate(incomplete_tasks):                             #⬅️[2] 'enumerate()' is more effecient than 'range(len(my_list))'
                         print(format_task_line(task=task, task_index=index))
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
@@ -164,3 +164,5 @@ while True:
 #     evaluated and handed back. 
 #   - You typically don't even store it in a variable; you just write it directly at the spot where 
 #     a function is expected as an argument.
+
+#[2] enumerate(): 
