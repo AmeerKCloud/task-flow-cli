@@ -150,7 +150,8 @@ while True:
 
     elif user_choice == 5:
         with open(file="data.txt", mode="w",) as f:
-            for task in 
+            for index, task in enumerate(all_tasks):
+                f.write(format_task_line(task=task, task_index=index))
         break
     else:
         print(f"{user_choice} is not a option. Try again.")
