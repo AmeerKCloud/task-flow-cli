@@ -114,7 +114,7 @@ while True:
                         reverse=True                                                
                     )
                     print(sorted_by_priority)
-                elif view_stat_type == 5:
+                elif view_tasks_type == 5:
                     shuffle_tasks(tasks=all_tasks)
                 else:
                     break
