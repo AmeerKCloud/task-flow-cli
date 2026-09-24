@@ -84,7 +84,7 @@ class PrintMenu:
         3. View incomplete tasks only
         4. Sort by priority
         5. Shuffle my tasks
-        5. Return to main menu
+        6. Return to main menu
         """)
 
     def menu_3(self):
