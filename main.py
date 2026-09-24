@@ -18,9 +18,9 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import Menu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, format_task_line, validate_input, validate_priority
+from task_utils import PrintMenu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, format_task_line, validate_input, validate_priority
 
-menus = Menu()
+print_menus = PrintMenu()
 
 MAX_TASKS = 20      #⬅️ Blocks "Add task" once the 'all_tasks' list is full
 
@@ -55,7 +55,7 @@ def mark_done():
 
 while True:
 
-    menus.menu_1()
+    print_menus.menu_1()
 
     user_choice = validate_input()
 
@@ -92,7 +92,7 @@ while True:
     elif user_choice == 2:
         if len(all_tasks) > 0:
             while True:
-                menus.menu_2()
+                print_menus.menu_2()
                 view_tasks_type = validate_input()
                 if view_tasks_type == False:
                     continue
@@ -129,7 +129,7 @@ while True:
                     print(f"You've already completed this task: {task.title}")
         pass
     elif user_choice == 4:
-        menus.menu_3()
+        print_menus.menu_3()
         view_stat_type = validate_input()
 
         if view_stat_type == False:

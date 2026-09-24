@@ -60,7 +60,7 @@ def random_motivational_quote():
     rand_quotes = ["You got this!!", "One step at a time!", "Do better!", "Don't quit now!", "You're almost there!", "Quitting is for losers"]
     rand_quote = random.choice(rand_quotes)
     print(rand_quote)
-class Menu:
+class PrintMenu:
     def menu_1(self):
         """The main menu."""
         print("""
