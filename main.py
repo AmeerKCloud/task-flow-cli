@@ -116,6 +116,7 @@ while True:
                     print(sorted_by_priority)
                 elif view_tasks_type == 5:
                     shuffle_tasks(tasks=all_tasks)
+                    print("Your tasks have been shuffled.")
                 else:
                     break
         else:
