@@ -41,6 +41,7 @@ def get_stats(all_tasks):
     return (completed_count, percent_done, streak_score, is_even)
 
 def validate_input():
+    """Catches any non-numerical or blank user entries."""
     try:
         user_input = int(input("Choose one numerical option:\n"))
         return user_input
