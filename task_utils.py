@@ -83,6 +83,7 @@ class PrintMenu:
         2. View completed tasks only
         3. View incomplete tasks only
         4. Sort by priority
+        5. Shuffle my tasks
         5. Return to main menu
         """)
 

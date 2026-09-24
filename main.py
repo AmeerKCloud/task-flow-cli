@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import PrintMenu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, format_task_line, validate_input, validate_priority
+from task_utils import PrintMenu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, format_task_line, shuffle_tasks, validate_input, validate_priority
 
 print_menus = PrintMenu()
 
@@ -114,6 +114,8 @@ while True:
                         reverse=True                                                
                     )
                     print(sorted_by_priority)
+                elif view_stat_type == 5:
+                    shuffle_tasks(tasks=all_tasks)
                 else:
                     break
         else:
