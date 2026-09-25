@@ -1,1 +1,2 @@
-[ ]1. Task: drawing| Priority: low| Completed: False|
+[ ] 1. Task: writing| Priority: medium| Completed: False| Frequency: daily
+[X] 2. Task: reading| Priority: low| Completed: True|
