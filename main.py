@@ -152,6 +152,7 @@ while True:
         with open(file="test_data.txt", mode="w") as f:
             for task in all_tasks:
                 if isinstance(task, RecurringTask):
+                    
                     f.write(str(task))
         break
     else:
