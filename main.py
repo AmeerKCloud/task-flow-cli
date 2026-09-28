@@ -157,7 +157,7 @@ while True:
                 else:
                     marker = "one"
                     frequency = ""
-                string_list = [marker, task.title, task.priority, str(task.done), task.frequency]
+                string_list = [marker, task.title, task.priority, str(task.done), frequency]
                 delimeter_string = "|".join(string_list)
                 f.write(delimeter_string + "\n")                                                             # NOTE: Currently here.
         break
