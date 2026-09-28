@@ -151,12 +151,13 @@ while True:
     elif user_choice == 5:
         with open(file="test_data.txt", mode="w") as f:
             for task in all_tasks:
-                if isinstance(task, RecurringTask):                             #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                if isinstance(task, RecurringTask):                        #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                     marker = "recurring"
                     frequency = task.frequency
                     f.write(str(task))
                 else:
                     marker = "one"
+                    frequency = ""
         break
     else:
         print(f"{user_choice} is not a option. Try again.")
