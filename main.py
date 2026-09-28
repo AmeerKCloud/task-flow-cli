@@ -151,9 +151,11 @@ while True:
     elif user_choice == 5:
         with open(file="test_data.txt", mode="w") as f:
             for task in all_tasks:
-                if isinstance(task, RecurringTask):
-                    
+                if isinstance(task, RecurringTask):                             #⬅️[4]  isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                    marker = "recurring"
                     f.write(str(task))
+                else:
+                    marker = "one"
         break
     else:
         print(f"{user_choice} is not a option. Try again.")
@@ -177,3 +179,5 @@ while True:
 # it into a sequence of valid indices (0 through 3) — because range(4) always means "give me 4 numbers, starting from 0."
 
 #[3] enumerate(): It does automatically behind the scenes what range(len(my_list)) do.
+
+#[4] isinstance() is a built-in function that checks whether an object is an instance of a given class (or type). It returns True or False.
