@@ -154,13 +154,12 @@ while True:
                 if isinstance(task, RecurringTask):                        #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                     marker = "recurring"
                     frequency = task.frequency
-                    f.write(str(task))
                 else:
                     marker = "one"
                     frequency = ""
-                string_list = [marker, task.title, task.priority, str(task.done)]
+                string_list = [marker, task.title, task.priority, str(task.done), task.frequency]
                 delimeter_string = "|".join(string_list)
-                f.write(delimeter_string)                                                             # NOTE: Currently here.
+                f.write(delimeter_string + "\n")                                                             # NOTE: Currently here.
         break
     else:
         print(f"{user_choice} is not a option. Try again.")
