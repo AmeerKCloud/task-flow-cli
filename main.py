@@ -151,7 +151,8 @@ while True:
     elif user_choice == 5:
         with open(file="test_data.txt", mode="w") as f:
             for task in all_tasks:
-                f.write(str(task))
+                if isinstance(task, RecurringTask):
+                    f.write(str(task))
         break
     else:
         print(f"{user_choice} is not a option. Try again.")
