@@ -153,6 +153,7 @@ while True:
             for task in all_tasks:
                 if isinstance(task, RecurringTask):                             #⬅️[4]  isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                     marker = "recurring"
+                    frequency = task.frequency
                     f.write(str(task))
                 else:
                     marker = "one"
