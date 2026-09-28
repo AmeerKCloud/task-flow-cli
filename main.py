@@ -150,6 +150,7 @@ while True:
 
     elif user_choice == 5:
         with open(file="test_data.txt", mode="w") as f:
+            string_list = []
             for task in all_tasks:
                 if isinstance(task, RecurringTask):                        #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                     marker = "recurring"
@@ -158,6 +159,7 @@ while True:
                 else:
                     marker = "one"
                     frequency = ""
+                string_list = []
         break
     else:
         print(f"{user_choice} is not a option. Try again.")
