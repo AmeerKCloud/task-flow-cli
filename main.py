@@ -149,7 +149,7 @@ while True:
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
-        with open(file="test_data.txt", mode="w",) as f:
+        with open(file="test_data.txt", mode="w") as f:
             for task in all_tasks:
                 f.write(str(task))
         break
