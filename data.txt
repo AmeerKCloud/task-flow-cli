@@ -1,2 +1,0 @@
-[ ] 1. Task: writing| Priority: medium| Completed: False| Frequency: daily
-[X] 2. Task: reading| Priority: low| Completed: True|

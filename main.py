@@ -154,18 +154,22 @@ while True:
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
-        with open(file="data.txt", mode="w") as f:
-            for task in all_tasks:
-                if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
-                    marker = "recurring"
-                    frequency = task.frequency
-                else:
-                    marker = "one"
-                    frequency = ""
-                string_list = [marker, task.title, task.priority, str(task.done), frequency]
-                data_string = "|".join(string_list)
-                f.write(data_string + "\n")                                                             # NOTE: Currently here.
-        break
+        if all_tasks:
+            with open(file="data.txt", mode="w") as f:
+                for task in all_tasks:
+                    if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                        marker = "recurring"
+                        frequency = task.frequency
+                    else:
+                        marker = "one"
+                        frequency = ""
+                    string_list = [marker, task.title, task.priority, str(task.done), frequency]
+                    data_string = "|".join(string_list)
+                    f.write(data_string + "\n")                                                             # NOTE: Currently here.
+            break
+        else:
+            print("No new changes made.")
+            break
     else:
         print(f"{user_choice} is not a option. Try again.")
 
