@@ -158,8 +158,8 @@ while True:
                     marker = "one"
                     frequency = ""
                 string_list = [marker, task.title, task.priority, str(task.done), frequency]
-                final_data_string = "|".join(string_list)
-                f.write(final_data_string + "\n")                                                             # NOTE: Currently here.
+                data_string = "|".join(string_list)
+                f.write(data_string + "\n")                                                             # NOTE: Currently here.
         break
     else:
         print(f"{user_choice} is not a option. Try again.")
