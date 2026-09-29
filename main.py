@@ -55,6 +55,9 @@ def mark_done():
 
 while True:
 
+    with open("data.txt") as f:
+        pass
+
     print_menus.menu_1()
 
     user_choice = validate_input()
