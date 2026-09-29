@@ -55,7 +55,7 @@ def mark_done():
 
 while True:
 
-    with open(file="data.txt") as f:
+    with open(file="data.txt") as f:                                                             # NOTE: Currently here.
         for line in f:
             clean_string = line.strip()                 #⬅️ Removes any spaces on either side of a string & new lines from a string.
             string_list = clean_string.split("|")       #⬅️ Splits a string into a several strings list at a given character.
@@ -172,7 +172,7 @@ while True:
                         frequency = ""
                     string_list = [marker, task.title, task.priority, str(task.done), frequency]
                     data_string = "|".join(string_list)
-                    f.write(data_string + "\n")                                                             # NOTE: Currently here.
+                    f.write(data_string + "\n")
             break
         else:
             print("No new changes made.")
