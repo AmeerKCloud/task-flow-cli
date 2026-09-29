@@ -59,6 +59,12 @@ while True:
         for line in f:
             clean_string = line.strip()                 #⬅️ Removes any spaces on either side of a string & new lines from a string.
             string_list = clean_string.split("|")       #⬅️ Splits a string into a several strings list at a given character.
+            if string_list[0] == "one":
+                if string_list[3] == "True":
+                    one_time_task = Task(title=string_list[1], priority=string_list[2], done=True)
+                else:
+                    one_time_task = Task(title=string_list[1], priority=string_list[2])
+                all_tasks.append(one_time_task)
 
 
     print_menus.menu_1()
