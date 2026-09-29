@@ -57,8 +57,9 @@ while True:
 
     with open(file="data.txt") as f:
         for line in f:
-            print(line)
-        # data = f.read()
+            clean_string = line.strip()                 #⬅️ Removes any spaces on either side of a string & new lines from a string.
+            string_list = clean_string.split("|")       #⬅️ Splits a string into a several strings list at a given character.
+
 
     print_menus.menu_1()
 
