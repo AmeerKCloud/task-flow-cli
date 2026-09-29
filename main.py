@@ -65,6 +65,12 @@ while True:
                 else:
                     one_time_task = Task(title=string_list[1], priority=string_list[2])
                 all_tasks.append(one_time_task)
+            else:
+                if string_list[3] == "True":
+                    habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], done=True, frequency=string_list[4])
+                else:
+                    habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
+                all_tasks.append(habitual_task)
 
 
     print_menus.menu_1()
