@@ -55,8 +55,10 @@ def mark_done():
 
 while True:
 
-    with open("data.txt") as f:
-        pass
+    with open(file="data.txt") as f:
+        for line in f:
+            print(line)
+        # data = f.read()
 
     print_menus.menu_1()
 
