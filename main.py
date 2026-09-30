@@ -19,6 +19,7 @@
 
 from tasks import Task, RecurringTask
 from task_utils import PrintMenu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, format_task_line, shuffle_tasks, validate_input, validate_priority
+import os
 
 print_menus = PrintMenu()
 
@@ -55,22 +56,23 @@ def mark_done():
 
 while True:
 
-    with open(file="data.txt") as f:                                                             # NOTE: Currently here.
-        for line in f:
-            clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from a string.
-            string_list = clean_string.split("|")       #⬅️ Splits a string into a several strings list at a given character.
-            if string_list[0] == "one":
-                if string_list[3] == "True":
-                    one_time_task = Task(title=string_list[1], priority=string_list[2], done=True)
+    if os.path.exists("data.txt"):                  #⬅️ Checks for the data files existence; prevents 'FileNotFoundError' on first time program run, b4 any data file created.
+        with open(file="data.txt") as f:                                                             # NOTE: Currently here.
+            for line in f:
+                clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from a string.
+                string_list = clean_string.split("|")       #⬅️ Splits a string into a several strings list at a given character.
+                if string_list[0] == "one":
+                    if string_list[3] == "True":
+                        one_time_task = Task(title=string_list[1], priority=string_list[2], done=True)
+                    else:
+                        one_time_task = Task(title=string_list[1], priority=string_list[2])
+                    all_tasks.append(one_time_task)
                 else:
-                    one_time_task = Task(title=string_list[1], priority=string_list[2])
-                all_tasks.append(one_time_task)
-            else:
-                if string_list[3] == "True":
-                    habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], done=True, frequency=string_list[4])
-                else:
-                    habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
-                all_tasks.append(habitual_task)
+                    if string_list[3] == "True":
+                        habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], done=True, frequency=string_list[4])
+                    else:
+                        habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
+                    all_tasks.append(habitual_task)
 
 
     print_menus.menu_1()
