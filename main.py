@@ -114,6 +114,7 @@ while True:
             while True:
                 print_menus.menu_2()
                 view_tasks_type = validate_input()
+
                 if view_tasks_type == False:
                     continue
                 elif view_tasks_type == 1:
@@ -188,7 +189,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github...
+# Saved to github....
 
 
 # NOTE:
