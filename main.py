@@ -57,7 +57,7 @@ while True:
 
     with open(file="data.txt") as f:                                                             # NOTE: Currently here.
         for line in f:
-            clean_string = line.strip()                 #⬅️ Removes any spaces on either side of a string & new lines from a string.
+            clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from a string.
             string_list = clean_string.split("|")       #⬅️ Splits a string into a several strings list at a given character.
             if string_list[0] == "one":
                 if string_list[3] == "True":

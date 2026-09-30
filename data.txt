@@ -1,4 +1,0 @@
-one|reading|low|False|
-recurring|writing|high|False|d
-recurring|flying|medium|False|d
-recurring|surfing|low|False|w
