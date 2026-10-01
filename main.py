@@ -172,18 +172,16 @@ while True:
     elif user_choice == 5:
         if all_tasks:
             with open(file="data.txt", mode="w") as f:
-                contents = f.read()
-                if not contents:
-                    for task in all_tasks:
-                        if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
-                            marker = "recurring"
-                            frequency = task.frequency
-                        else:
-                            marker = "one"
-                            frequency = ""
-                        string_list = [marker, task.title, task.priority, str(task.done), frequency]
-                        data_string = "|".join(string_list)
-                        f.write(data_string + "\n")
+                for task in all_tasks:
+                    if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                        marker = "recurring"
+                        frequency = task.frequency
+                    else:
+                        marker = "one"
+                        frequency = ""
+                    string_list = [marker, task.title, task.priority, str(task.done), frequency]
+                    data_string = "|".join(string_list)
+                    f.write(data_string + "\n")
             break
         else:
             print("No new changes made.")
