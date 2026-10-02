@@ -171,7 +171,7 @@ while True:
 
     elif user_choice == 5:
         if all_tasks:
-            if os.path.exists("data.txt"):
+            if os.path.exists("data.txt"):                          #⬅️ If the data file already exists.
                 with open(file="data.txt") as f:
                     for line in f:
                         clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from, a string.
