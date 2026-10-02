@@ -181,7 +181,7 @@ while True:
                             if task.title == string_list[1]:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
                                 pass
                             else:
-                                with open(file="data.txt", mode="w") as f:
+                                with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
                                     for task in all_tasks:
                                         if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                                             marker = "recurring"
