@@ -171,26 +171,39 @@ while True:
 
     elif user_choice == 5:
         if all_tasks:
-            with open(file="data.txt") as f:
-                for line in f:
-                    clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from, a string.
-                    string_list = clean_string.split("|")       #⬅️ Splits a string into a several strings list at a given character, here '|'.
+            if os.path.exists("data.txt"):
+                with open(file="data.txt") as f:
+                    for line in f:
+                        clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from, a string.
+                        string_list = clean_string.split("|")       #⬅️ Splits a string into a several strings list at a given character, here '|'.
 
+                        for task in all_tasks:
+                            if task.title == string_list[1]:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
+                                pass
+                            else:
+                                with open(file="data.txt", mode="w") as f:
+                                    for task in all_tasks:
+                                        if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                                            marker = "recurring"
+                                            frequency = task.frequency
+                                        else:
+                                            marker = "one"
+                                            frequency = ""
+                                        string_list = [marker, task.title, task.priority, str(task.done), frequency]
+                                        data_string = "|".join(string_list)
+                                        f.write(data_string + "\n")
+            else:
+                with open(file="data.txt", mode="w") as f:
                     for task in all_tasks:
-                        if task.title == string_list[1]:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
-                            pass
+                        if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                            marker = "recurring"
+                            frequency = task.frequency
                         else:
-                            with open(file="data.txt", mode="w") as f:
-                                for task in all_tasks:
-                                    if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
-                                        marker = "recurring"
-                                        frequency = task.frequency
-                                    else:
-                                        marker = "one"
-                                        frequency = ""
-                                    string_list = [marker, task.title, task.priority, str(task.done), frequency]
-                                    data_string = "|".join(string_list)
-                                    f.write(data_string + "\n")
+                            marker = "one"
+                            frequency = ""
+                        string_list = [marker, task.title, task.priority, str(task.done), frequency]
+                        data_string = "|".join(string_list)
+                        f.write(data_string + "\n")
             break
         else:
             print("No new changes made.")
