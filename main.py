@@ -169,7 +169,7 @@ while True:
             for index, task in enumerate(completed_tasks[-5:]):                          #⬅️ Accesses & prints ur last 5 completed tasks. Counts down backwads -5 from the end of list.
                 print(format_task_line(task=task, task_index=index))
 
-    elif user_choice == 5:
+    elif user_choice == 5:                   #⚠️ Currently here. IMPORTANT: Major bug in code under this option. Data.txt is written to ad infinatum.
         if all_tasks:
             if os.path.exists("data.txt"):                          #⬅️ If the data file already exists.
                 with open(file="data.txt") as f:
@@ -211,7 +211,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github....
+# Saved to github...
 
 
 # NOTE:

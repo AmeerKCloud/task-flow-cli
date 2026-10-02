@@ -1,2 +1,0 @@
-one|writing|medium|False|
-recurring|flying|high|False|d
