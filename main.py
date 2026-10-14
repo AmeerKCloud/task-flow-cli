@@ -177,9 +177,9 @@ while True:
                 with open(file="data.txt") as f:
                     for line in f:
                         clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from, a string.
-                        string_list = clean_string.split("|")       #⬅️ Splits a string into a several-strings-list at a given character, here '|'.
+                        string_list = clean_string.split("|")       #⬅️ Splits a string into a multi-strings-list at a given character, here '|'.
 
-                        for task in all_tasks:
+                        for task in all_tasks:                      #⬅️ For task object in task objects list.
                             if task.title == string_list[1]:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
                                 pass
                             else:
