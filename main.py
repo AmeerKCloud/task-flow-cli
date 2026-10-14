@@ -110,7 +110,7 @@ while True:
         else:
             print(f"You have reached your limit of {MAX_TASKS} tasks. Complete some tasks before adding more.")
     elif user_choice == 2:
-        if len(all_tasks) > 0:
+        if all_tasks:
             while True:
                 print_menus.menu_2()
                 view_tasks_type = validate_input()
