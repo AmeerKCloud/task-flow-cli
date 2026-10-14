@@ -171,7 +171,7 @@ while True:
 
     elif user_choice == 5:                   #⚠️ Currently here. IMPORTANT: Major bug in code under this option. Data.txt is written to ad infinatum.
         if all_tasks:
-            if os.path.exists("data.txt"):                          #⬅️ If the data file already exists.
+            if os.path.exists("data.txt"):                          #⬅️ If the data file already exists, read the file.
                 with open(file="data.txt") as f:
                     for line in f:
                         clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from, a string.
@@ -193,7 +193,7 @@ while True:
                                         data_string = "|".join(string_list)
                                         f.write(data_string + "\n")
             else:
-                with open(file="data.txt", mode="w") as f:
+                with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exists, write/create the file.
                     for task in all_tasks:
                         if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                             marker = "recurring"
