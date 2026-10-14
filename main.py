@@ -108,7 +108,7 @@ while True:
                     habitual_task = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
                 all_tasks.append(habitual_task)
         else:
-            print(f"You have reached your limit of {MAX_TASKS} tasks. Complete some tasks before adding more.")
+            print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
     elif user_choice == 2:
         if all_tasks:
             while True:
