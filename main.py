@@ -143,15 +143,17 @@ while True:
         else:
             print("You currently have no tasks to show.")
     elif user_choice == 3:
-        title_input = input("Enter task title:\n")
-        for task in all_tasks:
-            if task.title == title_input:
-                if task.done == False:
-                    task.done = True
-                    mark_done()
-                else:
-                    print(f"You've already completed this task: {task.title}")
-        pass
+        if all_tasks:
+            title_input = input("Enter task title:\n")
+            for task in all_tasks:
+                if task.title == title_input:
+                    if task.done == False:
+                        task.done = True
+                        mark_done()
+                    else:
+                        print(f"You've already completed this task: {task.title}")
+        else:
+            print("You currently have no tasks.")
     elif user_choice == 4:
         print_menus.menu_3()
         view_stat_type = validate_input()
