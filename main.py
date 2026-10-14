@@ -193,11 +193,11 @@ while True:
                                         data_string = "|".join(string_list)
                                         f.write(data_string + "\n")
             else:
-                with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exists, write/create the file.
+                with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exist, write/create the file.
                     for task in all_tasks:
                         if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                             marker = "recurring"
-                            frequency = task.frequency
+                            frequency = task.frequency                   #⬅️ 'Daily' or 'Weekly' frequency.
                         else:
                             marker = "one"
                             frequency = ""
