@@ -109,7 +109,8 @@ while True:
                 all_tasks.append(habitual_task)
         else:
             print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
-    elif user_choice == 2:
+
+    elif user_choice == 2:                          #⬅️⚠️ Choosing this option duplicates tast object in all_tasks list.
         if all_tasks:
             while True:
                 print_menus.menu_2()
