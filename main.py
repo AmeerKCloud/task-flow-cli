@@ -110,7 +110,7 @@ while True:
         else:
             print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
 
-    elif user_choice == 2:                          #⬅️⚠️ Choosing this option duplicates tast object in all_tasks list.
+    elif user_choice == 2:                          #⬅️⚠️BUG#3: Choosing this option duplicates tast object in all_tasks list.
         if all_tasks:
             while True:
                 print_menus.menu_2()
@@ -172,7 +172,7 @@ while True:
             for index, task in enumerate(completed_tasks[-5:]):                          #⬅️ Accesses & prints ur last 5 completed tasks. Counts down backwads -5 from the end of list.
                 print(format_task_line(task=task, task_index=index))
 
-    elif user_choice == 5:                   #⚠️ Currently here. IMPORTANT: Major bug in code under this option. Data.txt is written to ad infinatum.
+    elif user_choice == 5:                   #⚠️BUG#1: Currently here. IMPORTANT: Major bug in code under this option. Data.txt is written to ad infinatum.
         if all_tasks:
             if os.path.exists("data.txt"):                          #⬅️ If the data file already exists, read the file.
                 with open(file="data.txt") as f:
@@ -186,7 +186,7 @@ while True:
                                 pass
                             else:
                                 with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
-                                    for task in all_tasks:                          #⬅️⚠️ Is this 2nd for-loop necessarry?
+                                    for task in all_tasks:                          #⬅️⚠️BUG#2: Is this 2nd for-loop necessarry?
                                         if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                                             marker = "recurring"
                                             frequency = task.frequency
