@@ -186,7 +186,7 @@ while True:
                                 pass
                             else:
                                 with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
-                                    for task in all_tasks:                          #⬅️⚠️BUG#2: Is this 2nd for-loop necessarry?
+                                    for task in all_tasks:                          #⬅️⚠️BUG#2(?): Is this 2nd for-loop necessarry?
                                         if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                                             marker = "recurring"
                                             frequency = task.frequency
