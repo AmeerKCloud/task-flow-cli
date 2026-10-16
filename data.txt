@@ -1,11 +1,2 @@
 one|reading|medium|False|
-one|reading|medium|False|
-recurring|writing|low|False|d
-one|reading|medium|False|
-recurring|writing|low|False|d
-one|reading|medium|False|
-recurring|writing|low|False|d
-one|reading|medium|False|
-recurring|writing|low|False|d
-one|reading|medium|False|
-recurring|writing|low|False|d
+

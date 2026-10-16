@@ -186,16 +186,15 @@ while True:
                                 pass
                             else:
                                 with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
-                                    for task in all_tasks:                          #⬅️⚠️BUG#2(?): Is this 2nd for-loop necessarry?
-                                        if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
-                                            marker = "recurring"
-                                            frequency = task.frequency
-                                        else:
-                                            marker = "one"
-                                            frequency = ""
-                                        string_list = [marker, task.title, task.priority, str(task.done), frequency]
-                                        data_string = "|".join(string_list)
-                                        f.write(data_string + "\n")
+                                    if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                                        marker = "recurring"
+                                        frequency = task.frequency
+                                    else:
+                                        marker = "one"
+                                        frequency = ""
+                                    string_list = [marker, task.title, task.priority, str(task.done), frequency]
+                                    data_string = "|".join(string_list)
+                                    f.write(data_string + "\n")
             else:
                 with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exist, write/create the file.
                     for task in all_tasks:
