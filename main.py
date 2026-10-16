@@ -181,9 +181,10 @@ while True:
                         string_list = clean_string.split("|")       #⬅️ Splits a string into a multi-strings-list at a given character, here '|'.
 
                         for task in all_tasks:                      #⬅️ For task object in all task objects list.
+                            print(f"# of items in all_tasks list: {all_tasks}")
                             if task.title == string_list[1]:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
                                 print("That task already exists.")
-                                pass
+                                # pass
                             else:
                                 with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
                                     if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
