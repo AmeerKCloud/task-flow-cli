@@ -176,7 +176,7 @@ while True:
         if all_tasks:
             if os.path.exists("data.txt"):                          #⬅️ If the data file already exists, read the file.
                 with open(file="data.txt") as f:
-                    for line in f:                  #⚠️BUG#1: Currently here. IMPORTANT: Major bug in code under this option. Data.txt is written to ad infinatum.
+                    for line in f:                  #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
                         clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from, a string.
                         string_list = clean_string.split("|")       #⬅️ Splits a string into a multi-strings-list at a given character, here '|'.
 
