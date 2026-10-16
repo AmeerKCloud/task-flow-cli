@@ -172,16 +172,16 @@ while True:
             for index, task in enumerate(completed_tasks[-5:]):                          #⬅️ Accesses & prints ur last 5 completed tasks. Counts down backwads -5 from the end of list.
                 print(format_task_line(task=task, task_index=index))
 
-    elif user_choice == 5:                   #⚠️BUG#1: Currently here. IMPORTANT: Major bug in code under this option. Data.txt is written to ad infinatum.
+    elif user_choice == 5:
         if all_tasks:
             if os.path.exists("data.txt"):                          #⬅️ If the data file already exists, read the file.
                 with open(file="data.txt") as f:
-                    for line in f:
+                    for line in f:                  #⚠️BUG#1: Currently here. IMPORTANT: Major bug in code under this option. Data.txt is written to ad infinatum.
                         clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from, a string.
                         string_list = clean_string.split("|")       #⬅️ Splits a string into a multi-strings-list at a given character, here '|'.
 
                         for task in all_tasks:                      #⬅️ For task object in all task objects list.
-                            print(f"# of items in all_tasks list: {all_tasks}")
+                            print(f"# of items in all_tasks list: {len(all_tasks)}")
                             if task.title == string_list[1]:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
                                 print("That task already exists.")
                                 # pass
