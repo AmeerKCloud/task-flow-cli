@@ -173,7 +173,7 @@ while True:
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:                   #⚠️BUG#1: Currently here. IMPORTANT: Major bug in code under this option. Data.txt is written to ad infinatum.
-        for _ in range(len(all_tasks)):
+        if all_tasks:
             if os.path.exists("data.txt"):                          #⬅️ If the data file already exists, read the file.
                 with open(file="data.txt") as f:
                     for line in f:
