@@ -26,6 +26,9 @@ print_menus = PrintMenu()
 MAX_TASKS = 20      #⬅️ Blocks "Add task" once the 'all_tasks' list is full
 
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
+stored_tasks_in_f = []
+
+#⬇️ Store tasks as a list of Task/RecurringTask objects inside program.
 all_tasks = []
 
 total_completed = 0
@@ -64,12 +67,14 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                     one_time_task = Task(title=string_list[1], priority=string_list[2], done=True)
                 else:
                     one_time_task = Task(title=string_list[1], priority=string_list[2])
+                stored_tasks_in_f.append(one_time_task)
                 all_tasks.append(one_time_task)
             else:
                 if string_list[3] == "True":
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], done=True, frequency=string_list[4])
                 else:
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
+                stored_tasks_in_f.append(habitual_task)
                 all_tasks.append(habitual_task)
 
 
@@ -244,6 +249,10 @@ while True:
 
 #_______________________ Reserve Code ________________________:
 
+
+
+    # Draft 1:
+
     # elif user_choice == 5:
     #     if all_tasks:
     #         with open(file="data.txt", mode="w") as f:
@@ -257,6 +266,53 @@ while True:
     #                 string_list = [marker, task.title, task.priority, str(task.done), frequency]
     #                 data_string = "|".join(string_list)
     #                 f.write(data_string + "\n")
+    #         break
+    #     else:
+    #         print("No new changes made.")
+    #         break
+    # else:
+    #     print(f"{user_choice} is not a option. Try again.")
+
+
+
+    # Draft 2:
+
+    #     elif user_choice == 5:
+    #     if all_tasks:
+    #         if os.path.exists("data.txt"):                          #⬅️ If the data file already exists, read the file.
+    #             with open(file="data.txt") as f:
+    #                 for line in f:                  #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
+    #                     clean_string = line.strip()                 #⬅️ Removes any spaces on either side of, & new lines from, a string.
+    #                     string_list = clean_string.split("|")       #⬅️ Splits a string into a multi-strings-list at a given character, here '|'.
+
+    #                     for task in all_tasks:                      #⬅️ For task object in all task objects list.
+    #                         print(f"# of items in all_tasks list: {len(all_tasks)}")
+    #                         if task.title == string_list[1]:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
+    #                             print("That task already exists.")
+    #                             # pass
+    #                         else:
+    #                             with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
+    #                                 if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+    #                                     marker = "recurring"
+    #                                     frequency = task.frequency
+    #                                 else:
+    #                                     marker = "one"
+    #                                     frequency = ""
+    #                                 string_list = [marker, task.title, task.priority, str(task.done), frequency]
+    #                                 data_string = "|".join(string_list)
+    #                                 f.write(data_string + "\n")
+    #         else:
+    #             with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exist, write/create the file.
+    #                 for task in all_tasks:
+    #                     if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+    #                         marker = "recurring"
+    #                         frequency = task.frequency                   #⬅️ 'Daily' or 'Weekly' frequency.
+    #                     else:
+    #                         marker = "one"
+    #                         frequency = ""
+    #                     string_list = [marker, task.title, task.priority, str(task.done), frequency]
+    #                     data_string = "|".join(string_list)
+    #                     f.write(data_string + "\n")
     #         break
     #     else:
     #         print("No new changes made.")
