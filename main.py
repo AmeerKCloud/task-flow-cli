@@ -183,7 +183,7 @@ while True:
                 for stored_task in stored_tasks_in_f:                  #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
                     for task in all_tasks:                      #⬅️ For task object in all task objects list.
                         if task.title == stored_task.title:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
-                            print("That task already exists.")
+                            print(f"Task '{task.title}' already exists. NOT added to data file")
                         else:
                             with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
                                 if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
