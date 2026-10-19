@@ -180,8 +180,8 @@ while True:
     elif user_choice == 5:
         if all_tasks:
             if os.path.exists("data.txt") and stored_tasks_in_f:             #⬅️ If the data file already exists, read the file.
-                for stored_task in stored_tasks_in_f:                  #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
-                    for task in all_tasks:                      #⬅️ For task object in all task objects list.
+                for task in all_tasks:                      #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
+                    for stored_task in stored_tasks_in_f:                #⬅️ For task object in stored tasks in data file list.
                         if task.title == stored_task.title:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
                             print(f"Task '{task.title}' already exists. NOT added to data file")
                         else:
