@@ -184,6 +184,7 @@ while True:
                     for stored_task in stored_tasks_in_f:                #⬅️ For task object in stored tasks in data file list.
                         if task.title == stored_task.title:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
                             print(f"Task '{task.title}' already exists. NOT added to data file")
+                            break
                         else:
                             with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
                                 if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
