@@ -183,21 +183,22 @@ while True:
                 for task in all_tasks:                      #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
                     counter = 0
                     for stored_task in stored_tasks_in_f:                #⬅️ For task object in stored tasks in data file list.
-                        if task.title == stored_task.title:        #⬅️ If task already exists in data.txt, then pass. Prevents duplicates.
-                            counter += 1
-                        if counter > 0:
-                            print(f"Task '{task.title}' already exists. NOT added to data file")
-                        else:
-                            with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
-                                if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
-                                    marker = "recurring"
-                                    frequency = task.frequency
-                                else:
-                                    marker = "one"
-                                    frequency = ""
-                                string_list = [marker, task.title, task.priority, str(task.done), frequency]
-                                data_string = "|".join(string_list)
-                                f.write(data_string + "\n")
+                        if task.title == stored_task.title:        #⬅️ If task title matches a task title already stored in data.txt file...
+                            counter += 1                           #⬅️ Than counter increases.
+
+                    if counter > 0:
+                        print(f"Task '{task.title}' already exists. NOT added to data file")
+                    else:
+                        with open(file="data.txt", mode="a") as f:            #⬅️ mode="a" means append.
+                            if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                                marker = "recurring"
+                                frequency = task.frequency
+                            else:
+                                marker = "one"
+                                frequency = ""
+                            string_list = [marker, task.title, task.priority, str(task.done), frequency]
+                            data_string = "|".join(string_list)
+                            f.write(data_string + "\n")
             else:
                 with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exist, write/create the file.
                     for task in all_tasks:
