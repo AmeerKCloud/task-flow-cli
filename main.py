@@ -183,7 +183,7 @@ while True:
                 for task in all_tasks:                      #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
                     counter = 0
                     for stored_task in stored_tasks_in_f:                #⬅️ For task object in stored tasks in data file list.
-                        if task.title == stored_task.title:        #⬅️ If task title matches a task title already stored in data.txt file...
+                        if task.title == stored_task.title and task.frequency == stored_task.frequency:        #⬅️ If task title matches a task title already stored in data.txt file...
                             counter += 1                           #⬅️ Than counter increases.
 
                     if counter > 0:
