@@ -77,6 +77,9 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                 stored_tasks_in_f.append(habitual_task)
                 all_tasks.append(habitual_task)
 
+        with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
+            pass
+
 
 while True:
 
