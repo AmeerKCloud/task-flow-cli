@@ -219,7 +219,7 @@ while True:
                         f.write(data_string + "\n")
             break
         else:
-            for stored_task in stored_data_tasks:
+            for stored_task in stored_data_tasks:               #⚠️BUG#1a: .
                 with open(file="data.txt", mode="w") as f:
                     if isinstance(stored_task, RecurringTask):
                         marker = "recurring"

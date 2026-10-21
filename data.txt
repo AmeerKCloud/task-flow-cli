@@ -1,2 +1,2 @@
-one|writing|medium|False|
-one|reading|medium|False|
+one|first|medium|False|
+one|second|medium|False|
