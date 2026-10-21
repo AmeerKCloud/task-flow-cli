@@ -119,7 +119,7 @@ while True:
             print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
 
     elif user_choice == 2:
-        if all_tasks:
+        if stored_data_tasks:
             while True:
                 print_menus.menu_2()
                 view_tasks_type = validate_input()
@@ -127,25 +127,25 @@ while True:
                 if view_tasks_type == False:
                     continue
                 elif view_tasks_type == 1:
-                    for index in range(len(all_tasks)):
-                        print(format_task_line(task=all_tasks[index], task_index=index))
+                    for index in range(len(stored_data_tasks)):
+                        print(format_task_line(task=stored_data_tasks[index], task_index=index))
                 elif view_tasks_type == 2:
-                    done_tasks = filter_tasks(tasks=all_tasks, done=True)
+                    done_tasks = filter_tasks(tasks=stored_data_tasks, done=True)
                     for index in range(len(done_tasks)):
                         print(format_task_line(task=done_tasks[index], task_index=index))
                 elif view_tasks_type == 3:
-                    incomplete_tasks = filter_tasks(tasks=all_tasks)
+                    incomplete_tasks = filter_tasks(tasks=stored_data_tasks)
                     for index, task in enumerate(incomplete_tasks):                             #⬅️[3] 'enumerate()' is more effecient than 'range(len(my_list))'
                         print(format_task_line(task=task, task_index=index))
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
-                        tasks= all_tasks,                                           #⬅️ all task objects list.
+                        tasks= stored_data_tasks,                                           #⬅️ all task objects list.
                         key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️[1] lambda: temporary func. returns value of the priority attribute of each task object.
                         reverse=True                                                
                     )
                     print(sorted_by_priority)
                 elif view_tasks_type == 5:
-                    shuffle_tasks(tasks=all_tasks)
+                    shuffle_tasks(tasks=stored_data_tasks)
                     print("Your tasks have been shuffled.")
                 else:
                     break
