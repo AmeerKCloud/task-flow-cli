@@ -181,7 +181,7 @@ while True:
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
-        if stored_data_tasks:
+        if all_tasks:
             if os.path.exists("data.txt") and stored_data_tasks:             #⬅️ If the data file already exists, read the file.
                 for task in all_tasks:                      #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
                     counter = 0
@@ -219,6 +219,17 @@ while True:
                         f.write(data_string + "\n")
             break
         else:
+            for stored_task in stored_data_tasks:
+                with open(file="data.txt", mode="w") as f:
+                    if isinstance(stored_task, RecurringTask):
+                        marker = "recurring"
+                        frequency = stored_task.frequency
+                    else:
+                        marker = "one"
+                        frequency = ""
+                    string_list = [marker, stored_task.title, stored_task.priority, str(stored_task.done), frequency]
+                    data_string = "|".join(string_list)
+                    f.write(data_string + "\n")
             print("No new changes made.")
             break
     else:
