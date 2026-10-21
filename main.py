@@ -181,7 +181,7 @@ while True:
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
-        if all_tasks:
+        if stored_data_tasks:
             if os.path.exists("data.txt") and stored_data_tasks:             #⬅️ If the data file already exists, read the file.
                 for task in all_tasks:                      #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
                     counter = 0
