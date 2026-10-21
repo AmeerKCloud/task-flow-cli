@@ -68,14 +68,14 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                 else:
                     one_time_task = Task(title=string_list[1], priority=string_list[2])
                 stored_data_tasks.append(one_time_task)
-                all_tasks.append(one_time_task)
+                # all_tasks.append(one_time_task)
             else:
                 if string_list[3] == "True":
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], done=True, frequency=string_list[4])
                 else:
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
                 stored_data_tasks.append(habitual_task)
-                all_tasks.append(habitual_task)
+                # all_tasks.append(habitual_task)
 
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
             pass
