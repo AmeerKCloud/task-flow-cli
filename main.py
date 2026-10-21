@@ -219,7 +219,7 @@ while True:
                         f.write(data_string + "\n")
             break
         else:
-            for stored_task in stored_data_tasks:               #⚠️BUG#1a: .
+            for stored_task in stored_data_tasks:               #⚠️BUG#1a: first data item doest get re-stored within data.txt file, find out why?.
                 with open(file="data.txt", mode="w") as f:
                     if isinstance(stored_task, RecurringTask):
                         marker = "recurring"
@@ -235,7 +235,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github..
+# Saved to github...
 
 
 # NOTE:
