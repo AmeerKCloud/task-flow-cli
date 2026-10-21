@@ -26,7 +26,7 @@ print_menus = PrintMenu()
 MAX_TASKS = 20      #⬅️ Blocks "Add task" once the 'all_tasks' list is full
 
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
-stored_tasks_in_f = []
+stored_data_tasks = []
 
 #⬇️ Store tasks as a list of Task/RecurringTask objects inside program.
 all_tasks = []
@@ -67,14 +67,14 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                     one_time_task = Task(title=string_list[1], priority=string_list[2], done=True)
                 else:
                     one_time_task = Task(title=string_list[1], priority=string_list[2])
-                stored_tasks_in_f.append(one_time_task)
+                stored_data_tasks.append(one_time_task)
                 all_tasks.append(one_time_task)
             else:
                 if string_list[3] == "True":
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], done=True, frequency=string_list[4])
                 else:
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
-                stored_tasks_in_f.append(habitual_task)
+                stored_data_tasks.append(habitual_task)
                 all_tasks.append(habitual_task)
 
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
@@ -182,19 +182,19 @@ while True:
 
     elif user_choice == 5:
         if all_tasks:
-            if os.path.exists("data.txt") and stored_tasks_in_f:             #⬅️ If the data file already exists, read the file.
+            if os.path.exists("data.txt") and stored_data_tasks:             #⬅️ If the data file already exists, read the file.
                 for task in all_tasks:                      #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
                     counter = 0
-                    for stored_task in stored_tasks_in_f:                #⬅️ For task object in stored tasks in data file list.
+                    for stored_task in stored_data_tasks:                #⬅️ For task object in stored tasks in data file list.
                         if task.title == stored_task.title:        #⬅️ If task-object title matches a stored-task-object title already stored in data.txt file...
                             counter += 1                           #⬅️ Than counter increases.
 
                     if counter > 0:
                         print(f"Task '{task.title}' already exists. NOT added to data file")
                     else:
-                        stored_tasks_in_f.append(task)
+                        stored_data_tasks.append(task)
 
-                for stored_task in stored_tasks_in_f:
+                for stored_task in stored_data_tasks:
                     with open(file="data.txt", mode="w") as f:            #⬅️ mode="a" means append.
                         if isinstance(stored_task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                             marker = "recurring"
