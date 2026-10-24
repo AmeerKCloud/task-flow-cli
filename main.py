@@ -183,7 +183,7 @@ while True:
     elif user_choice == 5:
         if all_tasks:
             if os.path.exists("data.txt") and stored_data_tasks:             #⬅️ If the data file already exists, read the file.
-                for task in all_tasks:                      #⚠️BUG#1: after every new data line gets added, for loop runs over that new line, reads old objects & adds it, runs ad infinitum.
+                for task in all_tasks:
                     counter = 0
                     for stored_task in stored_data_tasks:                #⬅️ For task object in stored tasks in data file list.
                         if task.title == stored_task.title:        #⬅️ If task-object title matches a stored-task-object title already stored in data.txt file...
@@ -219,8 +219,8 @@ while True:
                         f.write(data_string + "\n")
             break
         else:
-            for stored_task in stored_data_tasks:               #⚠️BUG#1a: first data item doest get re-stored within data.txt file, find out why?.
-                with open(file="data.txt", mode="w") as f:
+            with open(file="data.txt", mode="w") as f:            #⚠️BUG#1a: Resolved, see notes.
+                for stored_task in stored_data_tasks:
                     if isinstance(stored_task, RecurringTask):
                         marker = "recurring"
                         frequency = stored_task.frequency
@@ -230,7 +230,7 @@ while True:
                     string_list = [marker, stored_task.title, stored_task.priority, str(stored_task.done), frequency]
                     data_string = "|".join(string_list)
                     f.write(data_string + "\n")
-            print("No new changes made.")
+                print("No new changes made.")
             break
     else:
         print(f"{user_choice} is not a option. Try again.")
@@ -258,7 +258,9 @@ while True:
 #[4] isinstance() is a built-in function that checks whether an object is an instance of a given class (or type). It returns True or False.
 
 
-
+# ⚠️BUG1a FIXED: 'with open(..., mode="w")' should be out of loop otherwise previous line in 'data.txt' will be erased & overwritten by next 
+# task-object everytime the loop runs & the file is opened.
+# - Solution: open once b4 loop, then every loop writes the new task data line.
 
 
 
