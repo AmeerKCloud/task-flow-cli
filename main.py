@@ -126,7 +126,7 @@ while True:
 
                 if view_tasks_type == False:
                     continue
-                elif view_tasks_type == 1:
+                elif view_tasks_type == 1:                          #⚠️ Currently here. Only tasks in stored_data_tasks get printed, not 'all_tasks'.
                     for index in range(len(stored_data_tasks)):
                         print(format_task_line(task=stored_data_tasks[index], task_index=index))
                 elif view_tasks_type == 2:
