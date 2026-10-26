@@ -194,8 +194,8 @@ while True:
                     else:
                         stored_data_tasks.append(task)
 
-                for stored_task in stored_data_tasks:
-                    with open(file="data.txt", mode="w") as f:            #⬅️ mode="a" means append.
+                with open(file="data.txt", mode="w") as f:            #⬅️ mode="w" means write.
+                    for stored_task in stored_data_tasks:
                         if isinstance(stored_task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                             marker = "recurring"
                             frequency = stored_task.frequency
