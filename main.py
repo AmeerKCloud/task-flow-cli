@@ -28,6 +28,8 @@ MAX_TASKS = 20      #⬅️ Blocks "Add task" once the 'all_tasks' list is full
 #⬇️ Store tasks as a list of Task/RecurringTask objects.
 stored_data_tasks = []
 
+new_tasks = []
+
 #⬇️ Store tasks as a list of Task/RecurringTask objects inside program.
 all_tasks = []
 
