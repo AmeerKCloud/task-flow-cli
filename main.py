@@ -129,6 +129,9 @@ while True:
                 elif view_tasks_type == 1:                          #⚠️ Currently here. Only tasks in stored_data_tasks get printed, not 'all_tasks'.
                     for index in range(len(stored_data_tasks)):
                         print(format_task_line(task=stored_data_tasks[index], task_index=index))
+
+                    for index in range(len(all_tasks)):
+                        print(format_task_line(task=all_tasks[index], task_index=index))
                 elif view_tasks_type == 2:
                     done_tasks = filter_tasks(tasks=stored_data_tasks, done=True)
                     for index in range(len(done_tasks)):
