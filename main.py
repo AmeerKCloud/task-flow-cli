@@ -187,9 +187,9 @@ while True:
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
-        if all_tasks:
+        if new_tasks:
             if os.path.exists("data.txt") and stored_data_tasks:             #⬅️ If the data file already exists, read the file.
-                for task in all_tasks:
+                for task in new_tasks:
                     counter = 0
                     for stored_task in stored_data_tasks:                #⬅️ For task object in stored tasks in data file list.
                         if task.title == stored_task.title:        #⬅️ If task-object title matches a stored-task-object title already stored in data.txt file...
@@ -213,7 +213,7 @@ while True:
                         f.write(data_string + "\n")
             else:
                 with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exist, write/create the file.
-                    for task in all_tasks:
+                    for task in new_tasks:
                         if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
                             marker = "recurring"
                             frequency = task.frequency                   #⬅️ 'Daily' or 'Weekly' frequency.
