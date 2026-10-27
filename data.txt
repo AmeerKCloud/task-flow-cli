@@ -1,0 +1,2 @@
+one|reading|low|False|
+recurring|writing|medium|False|d
