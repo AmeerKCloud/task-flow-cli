@@ -188,7 +188,7 @@ while True:
 
     elif user_choice == 5:
         if new_tasks:
-            if os.path.exists("data.txt") and stored_data_tasks:             #⬅️ If the data file already exists, read the file.
+            if os.path.exists("data.txt") and stored_data_tasks:          #⬅️ If the data file already exists & data stores in list, read the file.
                 for task in new_tasks:
                     counter = 0
                     for stored_task in stored_data_tasks:                #⬅️ For task object in stored tasks in data file list.
