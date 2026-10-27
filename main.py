@@ -243,7 +243,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github...
+# Saved to github....
 
 
 # NOTE:
@@ -270,6 +270,9 @@ while True:
 # task-object everytime the loop runs & the file is opened.
 # - Solution: open once b4 loop, then every loop writes the new task data line.
 
+# ⚠️BUG3: Whenever i add a new task, then shuffle the 'all_tasks' list, and then select option 5 'exit' in the main menu, the program thinks 
+# the new task is an old task that already exists in data.txt and thus triggers the print statement 'Task 'climbing' already exists. NOT added to data file'. 
+# Find out why this is happening and fix it.
 
 
 #_______________________ Reserve Code ________________________:
