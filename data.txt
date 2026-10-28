@@ -1,5 +1,1 @@
-recurring|flying|high|False|w
-recurring|writing|medium|False|d
-one|climbing|low|False|
-one|surfing|medium|False|
 one|reading|low|False|
