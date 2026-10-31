@@ -83,7 +83,7 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
             pass
 
-    all_tasks = stored_data_tasks.copy()          #⬅️ Assign a copy of stored tasks to the all_task list using '.copy()' mthod.
+    all_tasks = stored_data_tasks.copy()        #⬅️ BUG 3 resolved: Assign a copy of stored tasks to the all_task list using '.copy()' mthod.
 
 
 while True:
@@ -270,9 +270,11 @@ while True:
 # task-object everytime the loop runs & the file is opened.
 # - Solution: open once b4 loop, then every loop writes the new task data line.
 
-# ⚠️BUG3: Whenever i add a new task, then shuffle the 'all_tasks' list, and then select option 5 'exit' in the main menu, the program thinks 
+# ⚠️BUG3 RESOLVED: Whenever i add a new task, then shuffle the 'all_tasks' list, and then select option 5 'exit' in the main menu, the program thinks 
 # the new task is an old task that already exists in data.txt and thus triggers the print statement 'Task 'climbing' already exists. NOT added to data file'. 
 # Find out why this is happening and fix it.
+# - all_tasks = stored_data_tasks ❌ this caused any changes made to 'all_tasks' to also be made to the original 'stored_data_tasks' list.
+#   > This caused 
 
 
 #_______________________ Reserve Code ________________________:
