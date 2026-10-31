@@ -83,7 +83,7 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
             pass
 
-    all_tasks = stored_data_tasks          #⬅️ Combine the two separate task object lists into the main program list.
+    all_tasks = stored_data_tasks.copy()          #⬅️ Combine the two separate task object lists into the main program list.
 
 
 while True:
