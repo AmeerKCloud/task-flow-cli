@@ -243,7 +243,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github....
+# Saved to github...
 
 
 # NOTE:
@@ -273,8 +273,11 @@ while True:
 # ⚠️BUG3 RESOLVED: Whenever i add a new task, then shuffle the 'all_tasks' list, and then select option 5 'exit' in the main menu, the program thinks 
 # the new task is an old task that already exists in data.txt and thus triggers the print statement 'Task 'climbing' already exists. NOT added to data file'. 
 # Find out why this is happening and fix it.
-# - all_tasks = stored_data_tasks ❌ this caused any changes made to 'all_tasks' to also be made to the original 'stored_data_tasks' list.
-#   > This caused 
+# - 'all_tasks = stored_data_tasks' ❌: This doesn't copy the list. It gives the same list a second name, so anything added to all_tasks is also in stored_data_tasks
+#   > 1: You add a task, such as climbing, and it goes into new_tasks.
+#   > 2: Line 124 extends all_tasks with new_tasks, which also puts climbing in stored_data_tasks.
+#   > 3: When you exit, lines 194-198 check each new task against stored_data_tasks. 
+#   > 4: climbing finds itself there, so counter goes above 0 and the "already exists" message prints.
 
 
 #_______________________ Reserve Code ________________________:

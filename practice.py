@@ -1,6 +1,8 @@
-my_list = []
+my_list = ["hello"]
 
-if my_list:
-    print("Exists")
-else:
-    print("Not exists")
+new_list = my_list
+
+new_list.append("world")
+
+print(my_list)
+
