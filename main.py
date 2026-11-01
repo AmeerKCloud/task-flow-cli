@@ -83,7 +83,7 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
             pass
 
-    all_tasks = stored_data_tasks.copy()        #⬅️ BUG#3 resolved: Assign a copy of stored tasks to the all_task list using '.copy()' mthod.
+    all_tasks = stored_data_tasks.copy()        #⬅️ BUG#3 resolved: Assign a copy of stored tasks to the all_task list using '.copy()' mthod. See notes for explanation.
 
 
 while True:
