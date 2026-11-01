@@ -278,7 +278,10 @@ while True:
 #   > 2: Line 124 extends all_tasks with new_tasks, which also puts climbing in stored_data_tasks.
 #   > 3: When you exit, lines 194-198 check each new task against stored_data_tasks. 
 #   > 4: climbing finds itself there, so counter goes above 0 and the "already exists" message prints.
-
+#       - Why the task still gets saved:
+#           > The message is right that line 203 skips the append, but the task is already in stored_data_tasks from step 2. 
+#             The loop at line 206 then writes everything in that list to data.txt, including climbing.
+# - 'all_tasks = stored_data_tasks.copy()' ✅:
 
 #_______________________ Reserve Code ________________________:
 
