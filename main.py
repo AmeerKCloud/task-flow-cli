@@ -283,7 +283,8 @@ while True:
 #             The loop at line 206 then writes everything in that list to data.txt, including climbing.
 # - 'all_tasks = stored_data_tasks.copy()' ✅: --> The fix:
 #   > Assign a copy of stored tasks to the all_task list using '.copy()' mthod without altering the original 'stored_data_tasks'.
-#   > 
+#   > stored_data_tasks then only contains what was loaded from the file, so the duplicate check works and a real duplicate won't 
+#     be saved. Marking a task done still works because both lists point to the same task objects.
 
 #_______________________ Reserve Code ________________________:
 
