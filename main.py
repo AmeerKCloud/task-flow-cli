@@ -281,7 +281,9 @@ while True:
 #       - Why the task still gets saved:
 #           > The message is right that line 203 skips the append, but the task is already in stored_data_tasks from step 2. 
 #             The loop at line 206 then writes everything in that list to data.txt, including climbing.
-# - 'all_tasks = stored_data_tasks.copy()' ✅:
+# - 'all_tasks = stored_data_tasks.copy()' ✅: --> The fix:
+#   > Assign a copy of stored tasks to the all_task list using '.copy()' mthod.
+#   > 
 
 #_______________________ Reserve Code ________________________:
 
