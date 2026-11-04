@@ -25,16 +25,16 @@ print_menus = PrintMenu()
 
 MAX_TASKS = 20      #⬅️ Blocks "Add task" once the 'all_tasks' list is full
 
-#⬇️ Store tasks as a list of Task/RecurringTask objects.
+#⬇️ Loads/re-loads & stores tasks already stored within data.txt as a list of Task/RecurringTask objects.
 stored_data_tasks = []
 
-#⬇️ Store tasks that user added just now, but did not save to data.txt.
+#⬇️ Temporarily store tasks that user added just now, but did not save to data.txt.
 new_tasks = []
 
 #⬇️ Store all tasks as a list of Task/RecurringTask objects inside program.
 all_tasks = []
 
-total_completed = 0
+total_completed = 0         #⬅️ Tally of total number of tasks completed anytime a task is marked done.
 
 #⬇️ Main 'main.py' program from here onwards:
 
@@ -111,7 +111,7 @@ while True:
                 else:
                     one_time_task = Task(title=title_input, priority=priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
                 new_tasks.append(one_time_task)
-                all_tasks.append(one_time_task)
+                all_tasks.append(one_time_task)                                        #⬅️ Add new task object to both 'new' & 'all' tasks lists.
             elif task_type == 2:
                 frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
                 if priority_input == "":                                            #⬅️ if empty strng input in 'priority_input', 'RecurringTask' class then assigns default "medium".
@@ -242,7 +242,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github....
+# Saved to github...
 
 
 # NOTE:
