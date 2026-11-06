@@ -67,6 +67,10 @@ def random_motivational_quote():
 
 def shuffle_tasks(tasks):
     random.shuffle(tasks)
+
+def file_handing(path_name, mode="r"):
+    """Handles the file by either reading or writing to it."""
+
 class PrintMenu:
     def menu_1(self):
         """The main menu."""
