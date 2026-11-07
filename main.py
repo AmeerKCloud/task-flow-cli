@@ -287,3 +287,58 @@ while True:
 
 #_______________________ Reserve Code ________________________:
 
+
+    # elif user_choice == 5:
+    #     if new_tasks:
+    #         if os.path.exists("data.txt") and stored_data_tasks:          #⬅️ If the data file already exists & data stores in list, read the file.
+    #             for task in new_tasks:
+    #                 counter = 0
+    #                 for stored_task in stored_data_tasks:                #⬅️ For task object in stored tasks in data file list.
+    #                     if task.title == stored_task.title:        #⬅️ If task-object title matches a stored-task-object title already stored in data.txt file...
+    #                         counter += 1                           #⬅️ Than counter increases.
+
+    #                 if counter > 0:
+    #                     print(f"Task '{task.title}' already exists. NOT added to data file")
+    #                 else:
+    #                     stored_data_tasks.append(task)
+
+    #             with open(file="data.txt", mode="w") as f:            #⬅️ mode="w" means write. BUG#1a: Resolved, see notes.
+    #                 for stored_task in stored_data_tasks:
+    #                     if isinstance(stored_task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+    #                         marker = "recurring"
+    #                         frequency = stored_task.frequency
+    #                     else:
+    #                         marker = "one"
+    #                         frequency = ""
+    #                     string_list = [marker, stored_task.title, stored_task.priority, str(stored_task.done), frequency]
+    #                     data_string = "|".join(string_list)
+    #                     f.write(data_string + "\n")
+    #         else:
+    #             with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exist, write/create the file.
+    #                 for task in new_tasks:
+    #                     if isinstance(task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+    #                         marker = "recurring"
+    #                         frequency = task.frequency                   #⬅️ 'Daily' or 'Weekly' frequency.
+    #                     else:
+    #                         marker = "one"
+    #                         frequency = ""
+    #                     string_list = [marker, task.title, task.priority, str(task.done), frequency]
+    #                     data_string = "|".join(string_list)
+    #                     f.write(data_string + "\n")
+    #         break
+    #     else:
+    #         with open(file="data.txt", mode="w") as f:            #BUG#1a: Resolved, see notes.
+    #             for stored_task in stored_data_tasks:
+    #                 if isinstance(stored_task, RecurringTask):
+    #                     marker = "recurring"
+    #                     frequency = stored_task.frequency
+    #                 else:
+    #                     marker = "one"
+    #                     frequency = ""
+    #                 string_list = [marker, stored_task.title, stored_task.priority, str(stored_task.done), frequency]
+    #                 data_string = "|".join(string_list)
+    #                 f.write(data_string + "\n")
+    #             print("No new changes made.")
+    #         break
+    # else:
+    #     print(f"{user_choice} is not a option. Try again.")
