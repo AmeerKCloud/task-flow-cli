@@ -68,9 +68,19 @@ def random_motivational_quote():
 def shuffle_tasks(tasks):
     random.shuffle(tasks)
 
-def file_handing(file_name, mode="r"):
+def file_handling(file_name, mode="r"):
     """Handles the file by either reading or writing to it."""
-    with open(file=file_name, mode=mode)
+    with open(file=file_name, mode=mode) as f:            #⬅️ mode="w" means write. BUG#1a: Resolved, see notes.
+        for stored_task in stored_data_tasks:
+            if isinstance(stored_task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
+                marker = "recurring"
+                frequency = stored_task.frequency
+            else:
+                marker = "one"
+                frequency = ""
+            string_list = [marker, stored_task.title, stored_task.priority, str(stored_task.done), frequency]
+            data_string = "|".join(string_list)
+            f.write(data_string + "\n")
 
 class PrintMenu:
     def menu_1(self):
