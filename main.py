@@ -207,18 +207,8 @@ while True:
                 file_handling(file_name="data.txt", task_list=new_tasks, task_class=RecurringTask, mode="w")
             break
         else:
-            with open(file="data.txt", mode="w") as f:            #BUG#1a: Resolved, see notes.
-                for stored_task in stored_data_tasks:
-                    if isinstance(stored_task, RecurringTask):
-                        marker = "recurring"
-                        frequency = stored_task.frequency
-                    else:
-                        marker = "one"
-                        frequency = ""
-                    string_list = [marker, stored_task.title, stored_task.priority, str(stored_task.done), frequency]
-                    data_string = "|".join(string_list)
-                    f.write(data_string + "\n")
-                print("No new changes made.")
+            file_handling(file_name="data.txt", task_list=stored_data_tasks, task_class=RecurringTask, mode="w")
+            print("No new changes made.")
             break
     else:
         print(f"{user_choice} is not a option. Try again.")
