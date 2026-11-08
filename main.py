@@ -202,18 +202,7 @@ while True:
                         stored_data_tasks.append(task)
 
                 file_handling(file_name="data.txt", task_list=stored_data_tasks, task_class=RecurringTask, mode="w")
-                
-                # with open(file="data.txt", mode="w") as f:            #⬅️ mode="w" means write. BUG#1a: Resolved, see notes.
-                #     for stored_task in stored_data_tasks:
-                #         if isinstance(stored_task, RecurringTask):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
-                #             marker = "recurring"
-                #             frequency = stored_task.frequency
-                #         else:
-                #             marker = "one"
-                #             frequency = ""
-                #         string_list = [marker, stored_task.title, stored_task.priority, str(stored_task.done), frequency]
-                #         data_string = "|".join(string_list)
-                #         f.write(data_string + "\n")
+
             else:
                 with open(file="data.txt", mode="w") as f:               #⬅️ Else If the data file doesnt already exist, write/create the file.
                     for task in new_tasks:

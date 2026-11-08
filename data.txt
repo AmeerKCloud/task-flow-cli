@@ -1,2 +1,3 @@
 one|reading|medium|False|
 recurring|writing|low|False|d
+one|flying|medium|False|
