@@ -70,18 +70,16 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                     one_time_task = Task(title=string_list[1], priority=string_list[2], done=True)
                 else:
                     one_time_task = Task(title=string_list[1], priority=string_list[2])
-                stored_data_tasks.append(one_time_task)
+                all_tasks.append(one_time_task)
             else:
                 if string_list[3] == "True":
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], done=True, frequency=string_list[4])
                 else:
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
-                stored_data_tasks.append(habitual_task)
+                all_tasks.append(habitual_task)
 
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
             pass
-
-    all_tasks = stored_data_tasks.copy()        #⬅️ BUG#3 resolved: Assign a copy of stored tasks to the all_task list using '.copy()' mthod. See notes for explanation.
 
 
 while True:
@@ -110,7 +108,6 @@ while True:
                     one_time_task = Task(title=title_input)
                 else:
                     one_time_task = Task(title=title_input, priority=priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
-                new_tasks.append(one_time_task)
                 all_tasks.append(one_time_task)                                        #⬅️ Add new task object to both 'new' & 'all' tasks lists.
             elif task_type == 2:
                 frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
@@ -118,7 +115,6 @@ while True:
                     habitual_task = RecurringTask(title=title_input, frequency=frequency)
                 else:
                     habitual_task = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
-                new_tasks.append(habitual_task)
                 all_tasks.append(habitual_task)
 
         else:
@@ -188,20 +184,15 @@ while True:
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
-        if new_tasks:
+        if all_tasks:
             if os.path.exists("data.txt") and stored_data_tasks:          #⬅️ If the data file already exists & data stores in list, read the file.
-                for task in new_tasks:
-                    counter = 0
-                    for stored_task in stored_data_tasks:                #⬅️ For task object in stored tasks in data file list.
-                        if task.title == stored_task.title:        #⬅️ If task-object title matches a stored-task-object title already stored in data.txt file...
-                            counter += 1                           #⬅️ Than counter increases.
+                for task in all_tasks:
 
-                    if counter > 0:
+                    if all_tasks.count(task) > 1:
+                        all_tasks.remove(task)
                         print(f"Task '{task.title}' already exists. NOT added to data file")
-                    else:
-                        stored_data_tasks.append(task)
 
-                file_handling(file_name="data.txt", task_list=stored_data_tasks, task_class=RecurringTask, mode="w")
+                file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
 
             else:
                 file_handling(file_name="data.txt", task_list=new_tasks, task_class=RecurringTask, mode="w")

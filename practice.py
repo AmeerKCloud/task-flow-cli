@@ -1,8 +1,11 @@
-my_list = ["hello"]
+list_1 = ["one", "two", "three", "two"]
 
-new_list = my_list
+occurance = 0
 
-new_list.append("world")
+for item in list_1:
+    print(item)
+    for item in list_1:
+        if item == item:
 
-print(my_list)
+        print(f"Inner loop: {item}")
 
