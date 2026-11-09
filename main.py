@@ -82,21 +82,21 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
             pass
 
-#⬇️ Part 2 — Menu & User Interaction: Build while loop menu that keeps running until user exits [While Loop]
-
+#⬇️ Part 2 — Menu & User Interaction: 4. Build while loop menu that keeps running until user exits [While Loop]
 while True:
 
     print_menus.menu_1()
 
     user_choice = validate_input()
 
-    # ⬇️Add tasks — give it a title and a priority (low/medium/high).
+    #⬇️ Part 2 — Menu & User Interaction: 5. Inside the loop, use if/elif/else to branch on the user's menu choice. [If/Elif/Else, Conditionals]
     if user_choice == False:
-        continue                       #⬅️ if False, skip everything below, go re-print the menu and ask again
+        continue                       #⬅️ 'continue': if False, skip everything below, go re-print the menu and ask again
     elif user_choice == 1:
 
         if len(all_tasks) < 20:
 
+            #⬇️ Part 2 — Menu & User Interaction: 6. Use input() to collect task title, priority, and frequency. [User Inputs]
             title_input = input("Enter task title:\n")
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
             task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
@@ -206,7 +206,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github..
+# Saved to github...
 
 
 # NOTE:
