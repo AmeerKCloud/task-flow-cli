@@ -134,7 +134,7 @@ while True:
                 elif view_tasks_type == 2:
                     done_tasks = filter_tasks(tasks=all_tasks, done=True)   #⬅️ 'done_tasks' list contains all tasks marked 'done'.
                     for index in range(len(done_tasks)):
-                        print(format_task_line(task=done_tasks[index], task_index=index))
+                        print_task(task=done_tasks[index], task_index=index)
                 elif view_tasks_type == 3:
                     incomplete_tasks = filter_tasks(tasks=all_tasks)
                     for index, task in enumerate(incomplete_tasks):                             #⬅️[3] 'enumerate()' is more effecient than 'range(len(my_list))'
