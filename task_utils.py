@@ -45,6 +45,8 @@ def get_stats(all_tasks):
 
 def validate_input():
     """Catches any non-numerical or blank user entries."""
+
+    #⬇️ Part 2 — Menu & User Interaction: 7. Wrap all numeric menu input (like "pick task # to complete") in try/except to catch bad input, and validate the value is actually an int using isinstance() before using it. [Try-Except, Type-Checking, Booleans]
     try:
         user_input = int(input("Choose one numerical option:\n"))
         return user_input
