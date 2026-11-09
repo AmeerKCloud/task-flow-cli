@@ -78,6 +78,8 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
                 all_tasks.append(habitual_task)
 
+        stored_length = len(all_tasks)
+
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
             pass
 
@@ -184,7 +186,7 @@ while True:
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
-        if all_tasks:
+        if len(all_tasks) > stored_length:
             if os.path.exists("data.txt") and stored_data_tasks:          #⬅️ If the data file already exists & data stores in list, read the file.
                 for task in all_tasks:
 
