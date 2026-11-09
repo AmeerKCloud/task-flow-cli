@@ -4,7 +4,7 @@ import random
 
 VALID_PRIORITIES = ("low", "medium", "high")        #⬅️ Constant variable: tuple containing priority weights.
 
-#⬇️ Constant variable: dict. containing priority weights as keys with # values for easy processing in main.py program when filtering by priority.
+#⬇️ Part 3 — Data & Logic: 24. Priority weights dict. Used to convert priority text into numbers so tasks can be sorted by actual importance instead of alphabetically. Used inside sort_tasks(). [Dictionaries]
 PRIORITY_WEIGHTS = {
     "low" : 1,
     "medium" : 2,
