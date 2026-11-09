@@ -82,6 +82,7 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
             pass
 
+#⬇️ Part 2 — Menu & User Interaction: Build while loop menu that keeps running until user exits [While Loop]
 
 while True:
 
