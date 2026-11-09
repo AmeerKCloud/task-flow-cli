@@ -25,12 +25,6 @@ print_menus = PrintMenu()
 
 MAX_TASKS = 20      #⬅️ Blocks "Add task" once the 'all_tasks' list is full
 
-#⬇️ Loads/re-loads & stores tasks already stored within data.txt as a list of Task/RecurringTask objects.
-stored_data_tasks = []
-
-#⬇️ Temporarily store tasks that user added just now, but did not save to data.txt.
-new_tasks = []
-
 #⬇️ Store all tasks as a list of Task/RecurringTask objects inside program.
 all_tasks = []
 
