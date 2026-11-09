@@ -30,6 +30,7 @@ def sort_tasks(tasks, key_func, reverse=False):
     """Accepts a function (e.g. lambda t: PRIORITY_WEIGHTS[t.priority]) to sort by."""
     return sorted(tasks, key=key_func, reverse=reverse)
 
+#⬇️ Part 7 — Functions Review: 24. At least one function that returns a value (e.g., get_stats()).
 def get_stats(all_tasks):
     """Return the stats as a tuple (completed_count, percent_done, streak_score, is_even)."""
     total_tasks = len(all_tasks)
