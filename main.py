@@ -195,10 +195,10 @@ while True:
                 file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
 
             else:
-                file_handling(file_name="data.txt", task_list=new_tasks, task_class=RecurringTask, mode="w")
+                file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             break
         else:
-            file_handling(file_name="data.txt", task_list=stored_data_tasks, task_class=RecurringTask, mode="w")
+            file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             print("No new changes made.")
             break
     else:
