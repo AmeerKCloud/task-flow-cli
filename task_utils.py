@@ -2,8 +2,9 @@
 
 import random
 
-VALID_PRIORITIES = ("low", "medium", "high")
+VALID_PRIORITIES = ("low", "medium", "high")        #⬅️ Constant variable: tuple containing priority weights.
 
+#⬇️ Constant variable: dict. containing priority weights as keys with # values for easy processing in program when filtering by priority.
 PRIORITY_WEIGHTS = {
     "low" : 1,
     "medium" : 2,
