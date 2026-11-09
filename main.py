@@ -44,7 +44,7 @@ def print_summary(all_tasks):
     print(f"Is amount completed even? {completed_count}")
 
 
-#⬇️ Part 7 — Functions Review, 23: At least one function with inputs but no return (e.g., print_task(task)).
+#⬇️ Part 7 — Functions Review: 23. At least one function with inputs but no return (e.g., print_task(task)).
 def print_task(task, task_index):
     print(format_task_line(task=task, task_index=task_index))
 
