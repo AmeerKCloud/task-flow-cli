@@ -86,7 +86,7 @@ def file_handling(file_name, task_list, task_class, mode="r",):         #⚠️ 
 
 class PrintMenu:
 
-    #⬇️ PART 7: 22) All functions without parameters.
+    #⬇️ Part 7 — Functions Review: 22. All functions without parameters.
     def menu_1(self):
         """The main menu."""
         print("""
