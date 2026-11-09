@@ -132,7 +132,7 @@ while True:
 
                 if view_tasks_type == False:
                     continue
-                elif view_tasks_type == 1:                      #⚠️BUG2: Currently here. Only tasks in all_tasks get printed, not 'all_tasks'.
+                elif view_tasks_type == 1:               
                     for index in range(len(all_tasks)):
                         print(format_task_line(task=all_tasks[index], task_index=index))
 
