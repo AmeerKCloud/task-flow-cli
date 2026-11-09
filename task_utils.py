@@ -52,7 +52,7 @@ def validate_input():
         return False
 
 def format_task_line(task, task_index):
-    """takes a task and produces one clean, ready-to-print line of text describing it 
+    """takes a task & it's index# & produces one clean, ready-to-print line of text describing it 
     — something you'd call from multiple places in main.py (List tasks, Show stats' 
     "next 3" preview, etc.) instead of writing the same formatting/f-string logic 
     over and over in each menu option."""
@@ -86,7 +86,7 @@ def file_handling(file_name, task_list, task_class, mode="r",):         #⚠️ 
 
 class PrintMenu:
 
-    #⬇️ All functions without inputs.
+    #⬇️ PART 7: 22) All functions without parameters.
     def menu_1(self):
         """The main menu."""
         print("""
