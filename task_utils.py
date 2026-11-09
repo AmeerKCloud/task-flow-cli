@@ -4,7 +4,7 @@ import random
 
 VALID_PRIORITIES = ("low", "medium", "high")        #⬅️ Constant variable: tuple containing priority weights.
 
-#⬇️ Constant variable: dict. containing priority weights as keys with # values for easy processing in program when filtering by priority.
+#⬇️ Constant variable: dict. containing priority weights as keys with # values for easy processing in main.py program when filtering by priority.
 PRIORITY_WEIGHTS = {
     "low" : 1,
     "medium" : 2,
@@ -13,6 +13,7 @@ PRIORITY_WEIGHTS = {
 
 
 def validate_priority():
+    """Enter function explanation here."""
     pass
 
 
@@ -84,6 +85,8 @@ def file_handling(file_name, task_list, task_class, mode="r",):         #⚠️ 
             f.write(data_string + "\n")
 
 class PrintMenu:
+
+    #⬇️ All functions without inputs.
     def menu_1(self):
         """The main menu."""
         print("""
