@@ -192,7 +192,7 @@ while True:
 
             else:
                 file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-            break
+            break               #⚠️ Is this break necessary??
         else:
             file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             print("No new changes made.")
