@@ -43,6 +43,9 @@ def print_summary(all_tasks):
     print(f"Your streak score: {streak_score}")
     print(f"Is amount completed even? {completed_count}")
 
+def print_task(task, task_index):
+    print(format_task_line(task=task, task_index=task_index))
+
 def mark_done():
     """
     Increments 'total_completed' every time a task is marked done.
@@ -126,7 +129,7 @@ while True:
                     continue
                 elif view_tasks_type == 1:               
                     for index in range(len(all_tasks)):
-                        print(format_task_line(task=all_tasks[index], task_index=index))
+                        print_task(task=all_tasks[index], task_index=index)
 
                 elif view_tasks_type == 2:
                     done_tasks = filter_tasks(tasks=all_tasks, done=True)   #⬅️ 'done_tasks' list contains all tasks marked 'done'.
