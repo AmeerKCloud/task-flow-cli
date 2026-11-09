@@ -130,7 +130,9 @@ while True:
 
                 if view_tasks_type == False:
                     continue
-                elif view_tasks_type == 1:               
+                elif view_tasks_type == 1:
+
+                    #⬇️ Part 2 — Menu & User Interaction: 7. Print a formatted task list using a for loop & f-strings. [For Loop, User Outputs, String Manipulation]
                     for index in range(len(all_tasks)):
                         print_task(task=all_tasks[index], task_index=index)
 
