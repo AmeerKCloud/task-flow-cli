@@ -101,11 +101,11 @@ while True:
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
             task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
-            create_task(title = title_input, priority = priority_input, task_type = task_type)                  #⚠️ Currently here
-
             if priority_input != "" and priority_input not in VALID_PRIORITIES:      #⬅️ Checks 4 input in 'priority_input' other than empty strng & those allowed.
                 print("That is not a valid option.")
                 priority_input = ""
+
+            create_task(title = title_input, priority = priority_input)                  #⚠️ Currently here
 
             if task_type == 1:
                 if priority_input == "":                                             #⬅️ if empty strng input in 'priority_input', 'Task' class then assigns default "medium".
@@ -253,8 +253,8 @@ while True:
 #   > stored_data_tasks then only contains what was loaded from the file, so the duplicate check works and a real duplicate won't 
 #     be saved. Marking a task done still works because both lists point to the same task objects.
 
-#_______________________ Reserve Code ________________________:
 
+#_______________________ Reserve Code 1 ________________________:
 
     # elif user_choice == 5:
     #     if new_tasks:
@@ -310,3 +310,21 @@ while True:
     #         break
     # else:
     #     print(f"{user_choice} is not a option. Try again.")
+
+
+
+#_______________________ Reserve Code 2 ________________________:
+
+            # if task_type == 1:
+            #     if priority_input == "":                                             #⬅️ if empty strng input in 'priority_input', 'Task' class then assigns default "medium".
+            #         one_time_task = Task(title=title_input)
+            #     else:
+            #         one_time_task = Task(title=title_input, priority=priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
+            #     all_tasks.append(one_time_task)                                        #⬅️ Add new task object to both 'new' & 'all' tasks lists.
+            # elif task_type == 2:
+            #     frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
+            #     if priority_input == "":                                            #⬅️ if empty strng input in 'priority_input', 'RecurringTask' class then assigns default "medium".
+            #         habitual_task = RecurringTask(title=title_input, frequency=frequency)
+            #     else:
+            #         habitual_task = RecurringTask(title=title_input, priority=priority_input, frequency=frequency)
+            #     all_tasks.append(habitual_task)
