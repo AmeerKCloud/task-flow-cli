@@ -1,5 +1,13 @@
-list_1 = ["one", "two", "three", "two"]
+my_dict = {
+    "car" : "jeep",
+    "truck" : "ford",
+    "plane" : "boeing",
+}
 
-occurance = 0
+print(my_dict)
+
+my_dict.pop("plane")
+
+print(my_dict)
 
 
