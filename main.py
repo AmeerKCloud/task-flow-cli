@@ -110,7 +110,7 @@ while True:
                 all_tasks.append(one_time_task)                                        #⬅️ Add new task object to both 'new' & 'all' tasks lists.
             elif task_type == 2:
                 frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
-                habitual_task = create_task(title = title_input, priority = priority_input)
+                habitual_task = create_task(title = title_input, priority = priority_input, frequency = frequency)
                 all_tasks.append(habitual_task)                                                 #⚠️ Currently here, test it.
 
         else:
