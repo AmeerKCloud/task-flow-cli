@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import PrintMenu, VALID_PRIORITIES, PRIORITY_WEIGHTS, filter_tasks, sort_tasks, get_stats, format_task_line, shuffle_tasks, validate_input, validate_priority, file_handling
+from task_utils import PrintMenu, VALID_PRIORITIES, PRIORITY_WEIGHTS, create_task, filter_tasks, sort_tasks, get_stats, format_task_line, shuffle_tasks, validate_input, validate_priority, file_handling
 import os
 
 print_menus = PrintMenu()
