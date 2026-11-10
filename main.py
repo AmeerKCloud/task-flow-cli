@@ -101,6 +101,8 @@ while True:
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
             task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
+            create_task(title = title_input, priority = priority_input, task_type = task_type)                  #⚠️ Currently here
+
             if priority_input != "" and priority_input not in VALID_PRIORITIES:      #⬅️ Checks 4 input in 'priority_input' other than empty strng & those allowed.
                 print("That is not a valid option.")
                 priority_input = ""
