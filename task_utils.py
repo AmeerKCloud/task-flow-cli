@@ -1,5 +1,6 @@
 # module: helper functions, constants
 
+from tasks import Task, RecurringTask
 import random
 
 VALID_PRIORITIES = ("low", "medium", "high")        #⬅️ Constant variable: tuple containing priority weights.
@@ -16,6 +17,12 @@ def validate_priority():
     """Enter function explanation here."""
     pass
 
+def create_task(**kwargs):
+    """Builds a Task or RecurringTask from keyword arguments.
+
+    A non-empty 'frequency' means RecurringTask; otherwise a plain Task.
+    Any key left out (e.g. priority) falls back to the constructor's default.
+    """
 
 def filter_tasks(tasks, done=False):
     """Returns a list of task objects matching a status, ie done = True or False."""
