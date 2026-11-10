@@ -6,8 +6,8 @@ my_dict = {
 
 print(my_dict)
 
-my_dict.pop("plane", "")
+item = my_dict.pop("plane", "")
 
-print(my_dict)
+print(item)
 
 

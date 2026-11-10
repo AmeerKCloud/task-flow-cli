@@ -24,6 +24,12 @@ def create_task(**kwargs):
     Any key left out (e.g. priority) falls back to the constructor's default.
     """
 
+    frequency = kwargs.pop("frequency", "")
+
+    if frequency:
+        return RecurringTask(frequency=frequency, **kwargs)
+    return Task(**kwargs)
+
 def filter_tasks(tasks, done=False):
     """Returns a list of task objects matching a status, ie done = True or False."""
     matching_tasks = []
