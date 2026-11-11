@@ -24,11 +24,8 @@ def create_task(**kwargs):
     Any key left out (e.g. priority) falls back to the constructor's default.
     """
 
-    priority = kwargs.pop("priority", "")
+    priority = kwargs.pop("priority")
     frequency = kwargs.pop("frequency", "")
-
-    if priority == "":
-
 
     if frequency:
         return RecurringTask(frequency=frequency, **kwargs)
