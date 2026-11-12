@@ -96,7 +96,7 @@ def shuffle_tasks(tasks):
     random.shuffle(tasks)
 
 def file_handling(file_name, task_list, task_class, mode="r",):         #⚠️ Has not been imported into main.py yet.
-    """Handles the file by either reading or writing to it."""
+    """Handles the file by either reading from or writing to it."""
     with open(file=file_name, mode=mode) as f:            #⬅️ mode="w" means write. BUG#1a: Resolved, see notes.
         for stored_task in task_list:
             if isinstance(stored_task, task_class):                   #⬅️[4] isinstance() checks whether an object is an instance of a given class (or type); returns True or False.
