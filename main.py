@@ -189,14 +189,14 @@ while True:
 
             if len(all_tasks) > stored_length:                #⚠️ Currently also here.
                     counter = 0
-                    for stored_task in stored_data_tasks:
+                    for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
                         for task in all_tasks:
                             if stored_task.title == task.title:
                                 counter += 1
-                                if counter > 1:
+                                if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
                                     print(f"Task '{task.title}' already exists. NOT added to data file")
                                     all_tasks.remove(task)
-                        counter = 0
+                        counter = 0                         #⬅️ Counter gets reset to 0 for next iteration.
 
                     file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             else:
