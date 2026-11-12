@@ -77,7 +77,7 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
                 all_tasks.append(habitual_task)
 
-        stored_length = len(all_tasks)
+        stored_length = len(all_tasks)      #⬅️ This is the total # of all task objects currently read from 'data.txt' file.
 
         # with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
         #     pass
@@ -170,11 +170,11 @@ while True:
             print_summary(all_tasks=all_tasks)
         elif view_stat_type == 2:
             incomplete_tasks = filter_tasks(tasks=all_tasks)
-            for index, task in enumerate(incomplete_tasks[:3]):                          #⬅️ Accesses & prints ur next 3 incomplete tasks. Starts @ 0, counts upwards until 3, excluding 3.
+            for index, task in enumerate(incomplete_tasks[:3]):              #⬅️ Accesses & prints ur next 3 incomplete tasks. Starts @ 0, counts upwards until 3, excluding 3.
                 print(format_task_line(task=task, task_index=index))
         elif view_stat_type == 3:
             completed_tasks = filter_tasks(tasks=all_tasks, done=True)
-            for index, task in enumerate(completed_tasks[-5:]):                          #⬅️ Accesses & prints ur last 5 completed tasks. Counts down backwads -5 from the end of list.
+            for index, task in enumerate(completed_tasks[-5:]):              #⬅️ Accesses & prints ur last 5 completed tasks. Counts down backwads -5 from the end of list.
                 print(format_task_line(task=task, task_index=index))
 
     elif user_choice == 5:
