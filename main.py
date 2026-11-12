@@ -179,7 +179,7 @@ while True:
 
     elif user_choice == 5:
 
-        with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
+        with open(file="data.txt", mode="w") as f:      #⬅️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
             pass
 
         if len(all_tasks) > stored_length:
