@@ -18,7 +18,8 @@ def validate_priority():
     pass
 
 def create_task(**kwargs):
-    """Builds a Task or RecurringTask from keyword arguments.
+    """Builds a Task or RecurringTask from keyword arguments based on if 
+    'frequency' argument is detected.
 
     A non-empty 'frequency' means RecurringTask; otherwise a plain Task.
     Any key left out (e.g. priority) falls back to the constructor's default.
