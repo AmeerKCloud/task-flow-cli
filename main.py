@@ -72,13 +72,15 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                     one_time_task = Task(title=string_list[1], priority=string_list[2], done=True)
                 else:
                     one_time_task = Task(title=string_list[1], priority=string_list[2])
-                all_tasks.append(one_time_task)
+                stored_data_tasks.append(one_time_task)
             else:
                 if string_list[3] == "True":
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], done=True, frequency=string_list[4])
                 else:
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
-                all_tasks.append(habitual_task)
+                stored_data_tasks.append(habitual_task)
+
+        all_tasks.copy(stored_data_tasks)
 
         stored_length = len(all_tasks)      #⬅️ This is the total # of all task objects currently read from 'data.txt' file.
 
