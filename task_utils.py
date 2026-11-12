@@ -30,13 +30,13 @@ def create_task(**kwargs):
     if frequency:
         if priority:
             return RecurringTask(frequency=frequency, priority= priority, **kwargs)
-        else:
-            return RecurringTask(frequency=frequency, **kwargs)
+        
+        return RecurringTask(frequency=frequency, **kwargs)     #⬅️ if 'priority' not exists, then this is read. 'else' can be used here, but not ncessary.
 
-    if priority:
+    if priority:                                         #⬅️ if 'frequency' not exists, then this is read. 'else' can be used here, but not ncessary.
         return Task(priority=priority, **kwargs)
-    else:
-        return Task(**kwargs)
+    
+    return Task(**kwargs)        #⬅️ if 'priority' not exists, then this is read. 'else' can be used here, but not ncessary.
 
 def filter_tasks(tasks, done=False):
     """Returns a list of task objects matching a status, ie done = True or False."""
