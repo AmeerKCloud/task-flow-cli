@@ -95,7 +95,7 @@ def random_motivational_quote():
 def shuffle_tasks(tasks):
     random.shuffle(tasks)
 
-def file_handling(file_name, task_list, task_class, mode="r",):         #⚠️ Has not been imported into main.py yet.
+def file_handling(file_name, task_list, task_class, mode="r",):         #⬅️
     """Handles the file by either reading from or writing to it."""
     with open(file=file_name, mode=mode) as f:            #⬅️ mode="w" means write. BUG#1a: Resolved, see notes.
         for stored_task in task_list:

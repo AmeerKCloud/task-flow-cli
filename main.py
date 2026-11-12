@@ -79,8 +79,8 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
 
         stored_length = len(all_tasks)      #⬅️ This is the total # of all task objects currently read from 'data.txt' file.
 
-        # with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
-        #     pass
+        with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
+            pass
 
 #⬇️ Part 2 — Menu & User Interaction: 4. Build while loop menu that keeps running until user exits [While Loop]
 while True:
@@ -179,8 +179,8 @@ while True:
 
     elif user_choice == 5:
 
-        with open(file="data.txt", mode="w") as f:      #⬅️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
-            pass
+        # with open(file="data.txt", mode="w") as f:      #⬅️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
+        #     pass
 
         if len(all_tasks) > stored_length:
             if os.path.exists("data.txt"):          #⬅️ If the data file already exists & data stores in list, read the file.
