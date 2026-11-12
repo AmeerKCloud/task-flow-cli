@@ -196,6 +196,7 @@ while True:
                                 if counter > 1:
                                     print(f"Task '{task.title}' already exists. NOT added to data file")
                                     all_tasks.remove(task)
+                        counter = 0
 
                     file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             else:
