@@ -80,7 +80,7 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
                     habitual_task = RecurringTask(title=string_list[1], priority=string_list[2], frequency=string_list[4])
                 stored_data_tasks.append(habitual_task)
 
-        all_tasks = stored_data_tasks.copy()
+        all_tasks = stored_data_tasks.copy()        #⬅️ '.copy()' returns a duplicate of the original list being copied & creates new list. Original list not affected by any changes to new list.
         stored_length = len(stored_data_tasks)      #⬅️ This is the total # of all task objects currently read from 'data.txt' file.
 
         # with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
