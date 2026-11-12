@@ -79,8 +79,8 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
 
         stored_length = len(all_tasks)      #⬅️ This is the total # of all task objects currently read from 'data.txt' file.
 
-        with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
-            pass
+        # with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
+        #     pass
 
 #⬇️ Part 2 — Menu & User Interaction: 4. Build while loop menu that keeps running until user exits [While Loop]
 while True:
@@ -179,28 +179,27 @@ while True:
 
     elif user_choice == 5:
 
-        # with open(file="data.txt", mode="w") as f:      #⬅️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
-        #     pass
+        if os.path.exists("data.txt"):          #⬅️ If the data file already exists & data stores in list, read the file.
+            # with open(file="data.txt", mode="w") as f:      #⬅️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
+            #     pass
 
-        if len(all_tasks) > stored_length:
-            if os.path.exists("data.txt"):          #⬅️ If the data file already exists & data stores in list, read the file.
-                for task in all_tasks:
+            if len(all_tasks) > stored_length:
+                    for task in all_tasks:
+                        if all_tasks.count(task) > 1:
+                            all_tasks.remove(task)
+                            print(f"Task '{task.title}' already exists. NOT added to data file")
 
-                    if all_tasks.count(task) > 1:
-                        all_tasks.remove(task)
-                        print(f"Task '{task.title}' already exists. NOT added to data file")
-
-                file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-
+                    file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             else:
+                """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
+                then only rewrite back what already was stored"""
                 file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-            break               #⚠️ Is this break necessary??
+                print("No new changes made.")
+                break                                   #⬅️ Breaks programs main while-loop to exit program
+
         else:
-            """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
-            then only rewrite back what already was stored"""
             file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-            print("No new changes made.")
-            break
+        break                                                                                               #⬅️ Breaks programs main while-loop to exit program
     else:
         print(f"{user_choice} is not a option. Try again.")
 

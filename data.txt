@@ -2,3 +2,4 @@ one|reading|medium|False|
 one|writing|medium|False|
 one|flying|medium|False|
 recurring|climbing|low|False|w
+recurring|learning|medium|False|d
