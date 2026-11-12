@@ -28,8 +28,15 @@ def create_task(**kwargs):
     frequency = kwargs.pop("frequency", "")
 
     if frequency:
-        return RecurringTask(frequency=frequency, **kwargs)
-    return Task(**kwargs)
+        if priority:
+            return RecurringTask(frequency=frequency, priority= priority, **kwargs)
+        else:
+            return RecurringTask(frequency=frequency, **kwargs)
+
+    if priority:
+        return Task(priority=priority, **kwargs)
+    else:
+        return Task(**kwargs)
 
 def filter_tasks(tasks, done=False):
     """Returns a list of task objects matching a status, ie done = True or False."""
