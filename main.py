@@ -196,6 +196,8 @@ while True:
                 file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             break               #⚠️ Is this break necessary??
         else:
+            """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
+            then only rewrite back what already was stored"""
             file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             print("No new changes made.")
             break
