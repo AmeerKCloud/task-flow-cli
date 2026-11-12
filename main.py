@@ -184,10 +184,11 @@ while True:
             #     pass
 
             if len(all_tasks) > stored_length:
-                    for task in all_tasks:
-                        if all_tasks.count(task) > 1:
-                            all_tasks.remove(task)
-                            print(f"Task '{task.title}' already exists. NOT added to data file")
+                    for task_object_loop_1 in all_tasks:
+                        for task_object_loop_2 in all_tasks:
+                            if task_object_loop_1.title == task_object_loop_2.title:
+                                print(f"Task '{task_object_loop_2.title}' already exists. NOT added to data file")
+                                all_tasks.remove(task_object_loop_2)
 
                     file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
             else:
