@@ -83,8 +83,8 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
         all_tasks = stored_data_tasks.copy()        #⬅️ '.copy()' returns a duplicate of the original list being copied & creates new list. Original list not affected by any changes to new list.
         stored_length = len(stored_data_tasks)      #⬅️ This is the total # of all task objects currently read from 'data.txt' file.
 
-        with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
-            pass
+        # with open(file="data.txt", mode="w") as f:      #⬅️ Clears file after extracting all stored data into the task-objects lists.
+        #     pass
 
 #⬇️ Part 2 — Menu & User Interaction: 4. Build while loop menu that keeps running until user exits [While Loop]
 while True:
@@ -184,8 +184,8 @@ while True:
     elif user_choice == 5:
 
         if os.path.exists("data.txt"):                        #⬅️ If the data file already exists & data stores in list, read the file.
-            # with open(file="data.txt", mode="w") as f:      #⬅️⚠️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
-            #     pass
+            with open(file="data.txt", mode="w") as f:      #⬅️⚠️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
+                pass
 
             if len(all_tasks) > stored_length:                #⬅️ If the length of all_tasks is greater than the length of stored_tasks, this means new tasks were added.
                     counter = 0
