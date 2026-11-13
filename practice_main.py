@@ -1,11 +1,11 @@
 import os
 
-if os.path.exists("data.txt"):
-    with open(file="data.txt") as f:
-        contents = f.read()
-        if contents.strip():
-            print(contents)
-        else:
-            print("File is empty.")
+# if os.path.exists("test.txt"):
+#     print("Exists")
+# else:
+#     print("Not exists.")
 
 
+while True:
+    with open(file="test.txt", mode="w") as f:
+        f.write(input("Enter something:\n"))
