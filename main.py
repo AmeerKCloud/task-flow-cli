@@ -187,7 +187,7 @@ while True:
             # with open(file="data.txt", mode="w") as f:      #⬅️⚠️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
             #     pass
 
-            if len(all_tasks) > stored_length:                #⚠️ Currently also here.
+            if len(all_tasks) > stored_length:                #⬅️ If the length of all_tasks is greater than the length of stored_tasks, this means new tasks were added.
                     counter = 0
                     for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
                         for task in all_tasks:
