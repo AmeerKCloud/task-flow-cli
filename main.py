@@ -82,6 +82,8 @@ if os.path.exists("data.txt"):                  #⬅️ Checks for the data file
 
         all_tasks = stored_data_tasks.copy()        #⬅️ '.copy()' returns a duplicate of the original list being copied & creates new list. Original list not affected by any changes to new list.
         stored_length = len(stored_data_tasks)      #⬅️ This is the total # of all task objects currently read from 'data.txt' file.
+else:
+    stored_length = 0
 
 #⬇️ Part 2 — Menu & User Interaction: 4. Build while loop menu that keeps running until user exits [While Loop]
 while True:
@@ -180,32 +182,28 @@ while True:
 
     elif user_choice == 5:
 
-        if os.path.exists("data.txt"):                        #⬅️⚠️ Is this necessarry? If the data file already exists & data stores in list, read the file.
-            with open(file="data.txt", mode="w") as f:      #⬅️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
-                pass
+        with open(file="data.txt", mode="w") as f:      #⬅️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
+            pass
 
-            if len(all_tasks) > stored_length:                #⬅️ If the length of all_tasks is greater than the length of stored_tasks, this means new tasks were added.
-                    counter = 0
-                    for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
-                        for task in all_tasks:
-                            if stored_task.title == task.title:
-                                counter += 1
-                                if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
-                                    print(f"Task '{task.title}' already exists. NOT added to data file")
-                                    all_tasks.remove(task)
-                        counter = 0                         #⬅️ Counter gets reset to 0 for next iteration.
+        if len(all_tasks) > stored_length:                #⬅️ If the length of all_tasks is greater than the length of stored_tasks, this means new tasks were added.
+            counter = 0
+            for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
+                for task in all_tasks:
+                    if stored_task.title == task.title:
+                        counter += 1
+                        if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
+                            print(f"Task '{task.title}' already exists. NOT added to data file")
+                            all_tasks.remove(task)
+                counter = 0                         #⬅️ Counter gets reset to 0 for next iteration.
 
-                    file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-            else:
-                """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
-                then only rewrite back what already was stored"""
-                file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-                print("No new changes made.")
-                break                                   #⬅️ Breaks programs main while-loop to exit program
-
-        else:
             file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-        break                                                                                               #⬅️ Breaks programs main while-loop to exit program
+            break
+        else:
+            """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
+            then only rewrite back what already was stored"""
+            file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
+            print("No new changes made.")
+            break                                   #⬅️ Breaks programs main while-loop to exit program
     else:
         print(f"{user_choice} is not a option. Try again.")
 
