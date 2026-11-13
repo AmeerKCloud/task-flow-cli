@@ -184,8 +184,8 @@ while True:
     elif user_choice == 5:
 
         if os.path.exists("data.txt"):                        #⬅️ If the data file already exists & data stores in list, read the file.
-            # with open(file="data.txt", mode="w") as f:      #⬅️⚠️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
-            #     pass
+            with open(file="data.txt", mode="w") as f:      #⬅️⚠️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
+                pass
 
             if len(all_tasks) > stored_length:                #⚠️ Currently also here.
                     counter = 0
