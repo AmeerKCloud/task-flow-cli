@@ -102,7 +102,8 @@ while True:
             #⬇️ Part 2 — Menu & User Interaction: 6. Use input() to collect task title, priority, and frequency. [User Inputs]
             title_input = input("Enter task title:\n")
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").lower()
-            task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))
+
+            task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10: 'w'' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
 
             if task_type == 1:
                 one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
@@ -209,6 +210,11 @@ while True:
 
 # Saved to github....
 
+# TODO:
+# - Whats left is to shuffle tasks & see if shuffled order is saved to data.txt
+# - Also, check for any errores & note them
+# - Review any areas that need to be made more effecient.
+# - Mark all of the relevant concepts mentioned in the project document to their relevant sections of the code for future referencing/reviewing.
 
 # NOTE:
 #[1] lambda: a small, unnamed function in a single line, right where you need it, 
