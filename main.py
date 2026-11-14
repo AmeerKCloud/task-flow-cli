@@ -144,6 +144,8 @@ while True:
                         key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️[1] lambda: temporary func. returns value of the priority attribute of each task object.
                         reverse=True                                                
                     )
+                    for index in range(len(sorted_by_priority)):
+                        print_task()
                     print(sorted_by_priority)
                 elif view_tasks_type == 5:
                     shuffle_tasks(tasks=all_tasks)
