@@ -212,8 +212,8 @@ while True:
 
 # TODO: Whats left is:
 # - Still need to figure out the use of priority-weights dictionary
-# - to shuffle tasks & see if shuffled order is saved to data.txt
-# - See if tasks are marked done, then shuffled, & then saved without issue.
+# - to shuffle tasks & see if shuffled order is saved to data.txt   ✅
+# - See if tasks are marked done, then shuffled, & then saved without issue.  ✅
 # - Also, check for any errores & note them
 # - Review any areas that need to be made more effecient.
 # - Mark all of the relevant concepts mentioned in the project document to their relevant sections of the code for future referencing/reviewing.
