@@ -145,7 +145,7 @@ while True:
                         reverse=True                                                
                     )
                     for index in range(len(sorted_by_priority)):
-                        print_task()
+                        print_task(task=sorted_by_priority[index], task_index=index)
                     print(sorted_by_priority)
                 elif view_tasks_type == 5:
                     shuffle_tasks(tasks=all_tasks)
