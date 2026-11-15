@@ -103,9 +103,10 @@ while True:
             title_input = input("Enter task title:\n")
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").strip().lower()  #⬅️ '.strip()' removes spaces.
 
-            if not validate_priority(priority_input) or "":
-                print("Priority must be low, medium, or high")
-                continue
+            if priority_input != "":
+                if not validate_priority(priority_input):
+                    print("Priority must be low, medium, or high")
+                    continue                                            #⬅️ 'continue' takes back to main menu.
 
             task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10: 'w'' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
 
@@ -145,7 +146,7 @@ while True:
                 elif view_tasks_type == 4:
                     sorted_by_priority = sort_tasks(
                         tasks= all_tasks,                                           #⬅️ all task objects list.
-                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️[1] lambda: temporary func. returns value of the priority attribute of each task object.
+                        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1] lambda: temporary func. returns value of the priority attribute of each task object.
                         reverse=True                                                
                     )
                     for index in range(len(sorted_by_priority)):
