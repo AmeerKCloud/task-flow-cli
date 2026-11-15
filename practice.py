@@ -1,13 +1,5 @@
-my_dict = {
-    "car" : "jeep",
-    "truck" : "ford",
-    "plane" : "boeing",
-}
+usr_inpt = input("Say something")
 
-print(my_dict)
-
-item = my_dict.pop("plane", "")
-
-print(item)
+print(type(usr_inpt))
 
 
