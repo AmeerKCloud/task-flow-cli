@@ -103,7 +103,8 @@ while True:
             title_input = input("Enter task title:\n")
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").strip().lower()  #⬅️ '.strip()' removes spaces.
 
-            if not validate_priority(priority_input):
+            if not validate_priority(priority_input) or "":
+                print("Priority must be low, medium, or high")
                 continue
 
             task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10: 'w'' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
