@@ -101,7 +101,10 @@ while True:
 
             #⬇️ Part 2 — Menu & User Interaction: 6. Use input() to collect task title, priority, and frequency. [User Inputs]
             title_input = input("Enter task title:\n")
-            priority_input = input("Enter one of the following choices (low/medium/high priority):\n").strip().lower()
+            priority_input = input("Enter one of the following choices (low/medium/high priority):\n").strip().lower()  #⬅️ '.strip()' removes spaces.
+
+            if not validate_priority(priority_input):
+                continue
 
             task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10: 'w'' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
 

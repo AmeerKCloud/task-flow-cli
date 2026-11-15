@@ -1,5 +1,5 @@
-usr_inpt = input("Say something")
+usr_inpt = input("Say something:\n")
 
-print(type(usr_inpt))
+print(usr_inpt)
 
 
