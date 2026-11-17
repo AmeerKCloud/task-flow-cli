@@ -101,7 +101,7 @@ def get_stats(all_tasks):
     else:
         is_even = False
 
-    percent_done = round((completed_count / total_tasks) * 100, 2)
+    percent_done = round((completed_count / total_tasks) * 100, 2)          #⬅️ Concept: Mathematical Operations: Floating Point Numbers
     return (completed_count, percent_done, streak_score, is_even)
 
 def validate_input():
