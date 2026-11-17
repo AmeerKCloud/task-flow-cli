@@ -223,6 +223,11 @@ while True:
 # - Review any areas that need to be made more effecient.
 # - Mark all of the relevant concepts mentioned in the project document to their relevant sections of the code for future referencing/reviewing.
 
+# IMPORTANT: Concepts I need to expand on/ practice more:
+# - lambda
+# - .count() method
+# - enumerate() class
+
 # NOTE:
 #[1] lambda: a small, unnamed function in a single line, right where you need it, 
 # instead of writing a full def block somewhere else in your file and giving it a name.
