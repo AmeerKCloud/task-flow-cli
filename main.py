@@ -103,7 +103,7 @@ while True:
             title_input = input("Enter task title:\n")
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").strip().lower()  #⬅️ '.strip()' removes spaces.
 
-            if priority_input != "":
+            if priority_input != "":                                #⬅️ If priority input is not an empty string, then this code bloc gets triggered.
                 if not validate_priority(priority_input):
                     print("Priority must be low, medium, or high")
                     continue                                            #⬅️ 'continue' takes back to main menu.
