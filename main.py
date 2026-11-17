@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import PrintMenu, VALID_PRIORITIES, PRIORITY_WEIGHTS, create_task, filter_tasks, sort_tasks, get_stats, format_task_line, shuffle_tasks, validate_input, validate_priority, file_handling
+from task_utils import PrintMenu, VALID_PRIORITIES, PRIORITY_WEIGHTS, create_task, filter_tasks, sort_tasks, sort_priority, get_stats, format_task_line, print_task, shuffle_tasks, validate_input, validate_priority, file_handling
 import os
 
 print_menus = PrintMenu()
@@ -45,11 +45,6 @@ def print_summary(all_tasks):
     print(f"Percentage completed: {percent_done}")
     print(f"Your streak score: {streak_score}")
     print(f"Is amount completed even? {completed_count}")
-
-
-#⬇️ Part 7 — Functions Review: 23. At least one function with inputs but no return (e.g., print_task(task)).
-def print_task(task, task_index):
-    print(format_task_line(task=task, task_index=task_index))
 
 def mark_done():
     """
@@ -148,21 +143,27 @@ while True:
                     priority_order = validate_input()
 
                     if priority_order == 1:
-                        sorted_by_priority = sort_tasks(
-                            tasks= all_tasks,                                           #⬅️ all task objects list.
-                            key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
-                            reverse=True                                                
-                        )
+                        sorted_by_priority = sort_priority(all_tasks=all_tasks, reverse=True)
                         for index in range(len(sorted_by_priority)):
                             print_task(task=sorted_by_priority[index], task_index=index)
+                        # sorted_by_priority = sort_tasks(
+                        #     tasks= all_tasks,                                           #⬅️ all task objects list.
+                        #     key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
+                        #     reverse=True                                                
+                        # )
+                        # for index in range(len(sorted_by_priority)):
+                        #     print_task(task=sorted_by_priority[index], task_index=index)
                     else:
-                        sorted_by_priority = sort_tasks(
-                            tasks= all_tasks,                                           #⬅️ all task objects list.
-                            key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
-                            reverse=True                                                
-                        )
+                        sorted_by_priority = sort_priority(all_tasks=all_tasks)
                         for index in range(len(sorted_by_priority)):
                             print_task(task=sorted_by_priority[index], task_index=index)
+                        # sorted_by_priority = sort_tasks(
+                        #     tasks= all_tasks,                                           #⬅️ all task objects list.
+                        #     key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
+                        #     reverse=True                                                
+                        # )
+                        # for index in range(len(sorted_by_priority)):
+                        #     print_task(task=sorted_by_priority[index], task_index=index)
                 elif view_tasks_type == 5:
                     shuffle_tasks(tasks=all_tasks)
                     print("Your tasks have been shuffled.")

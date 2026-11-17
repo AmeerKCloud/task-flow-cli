@@ -77,8 +77,7 @@ def sort_priority(all_tasks, reverse):
         key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
         reverse=reverse                                                
     )
-    for index in range(len(sorted_by_priority)):
-        print_task(task=sorted_by_priority[index], task_index=index)
+    return sorted_by_priority
 
 #⬇️ Part 7 — Functions Review: 24. At least one function that returns a value (e.g., get_stats()).
 def get_stats(all_tasks):
