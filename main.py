@@ -146,24 +146,10 @@ while True:
                         sorted_by_priority = sort_priority(all_tasks=all_tasks, reverse=True)
                         for index in range(len(sorted_by_priority)):
                             print_task(task=sorted_by_priority[index], task_index=index)
-                        # sorted_by_priority = sort_tasks(
-                        #     tasks= all_tasks,                                           #⬅️ all task objects list.
-                        #     key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
-                        #     reverse=True                                                
-                        # )
-                        # for index in range(len(sorted_by_priority)):
-                        #     print_task(task=sorted_by_priority[index], task_index=index)
                     else:
                         sorted_by_priority = sort_priority(all_tasks=all_tasks)
                         for index in range(len(sorted_by_priority)):
                             print_task(task=sorted_by_priority[index], task_index=index)
-                        # sorted_by_priority = sort_tasks(
-                        #     tasks= all_tasks,                                           #⬅️ all task objects list.
-                        #     key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
-                        #     reverse=True                                                
-                        # )
-                        # for index in range(len(sorted_by_priority)):
-                        #     print_task(task=sorted_by_priority[index], task_index=index)
                 elif view_tasks_type == 5:
                     shuffle_tasks(tasks=all_tasks)
                     print("Your tasks have been shuffled.")

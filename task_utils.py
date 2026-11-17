@@ -22,7 +22,7 @@ PRIORITY_WEIGHTS = {
     "high" : 3,
     }
 
-def create_task(**kwargs):
+def create_task(**kwargs):                                                  #⬅️ [1]'**kwargs' explained, see notes.
     """Builds a Task or RecurringTask from keyword arguments based on if 
     'frequency' argument is detected.
 
@@ -71,7 +71,12 @@ def sort_tasks(tasks, key_func, reverse=False):
     """Accepts a function (e.g. lambda t: PRIORITY_WEIGHTS[t.priority]) to sort by."""
     return sorted(tasks, key=key_func, reverse=reverse)
 
-def sort_priority(all_tasks, reverse):
+def sort_priority(**kwargs):
+    """Returns a list in either highest-to-lowest priority (or the opposite) 
+    order of task objects based on their priority attribute."""
+    all_tasks = kwargs.pop("all_tasks")
+    reverse = kwargs.pop("reverse", False)
+
     sorted_by_priority = sort_tasks(
         tasks= all_tasks,                                           #⬅️ all task objects list.
         key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
@@ -170,3 +175,8 @@ class PrintMenu:
         4. Sort by priority
         5. Return to main menu
         """)
+
+
+#___________________________________ NOTES:____________________________________
+
+#[1]`**kwargs` lets a function accept any number of keyword arguments (like `title="Buy milk"`) and collects them into a single dictionary inside the function.
