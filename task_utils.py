@@ -52,10 +52,33 @@ def filter_tasks(tasks, done=False):
             matching_tasks.append(task)
     return matching_tasks
 
+def format_task_line(task, task_index):
+    """takes a task & it's index# & produces one clean, ready-to-print line of text describing it 
+    — something you'd call from multiple places in main.py (List tasks, Show stats' 
+    "next 3" preview, etc.) instead of writing the same formatting/f-string logic 
+    over and over in each menu option."""
+
+    if task.done == False:
+        return f"[ ] {task_index + 1}. {task.describe()}"
+    else:
+        return f"[X] {task_index + 1}. {task.describe()}"
+
+#⬇️ Part 7 — Functions Review: 23. At least one function with inputs but no return (e.g., print_task(task)).
+def print_task(task, task_index):
+    print(format_task_line(task=task, task_index=task_index))
 
 def sort_tasks(tasks, key_func, reverse=False):
     """Accepts a function (e.g. lambda t: PRIORITY_WEIGHTS[t.priority]) to sort by."""
     return sorted(tasks, key=key_func, reverse=reverse)
+
+def sort_priority(all_tasks, reverse):
+    sorted_by_priority = sort_tasks(
+        tasks= all_tasks,                                           #⬅️ all task objects list.
+        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
+        reverse=reverse                                                
+    )
+    for index in range(len(sorted_by_priority)):
+        print_task(task=sorted_by_priority[index], task_index=index)
 
 #⬇️ Part 7 — Functions Review: 24. At least one function that returns a value (e.g., get_stats()).
 def get_stats(all_tasks):
@@ -80,17 +103,6 @@ def validate_input():
     except ValueError:
         print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
         return False
-
-def format_task_line(task, task_index):
-    """takes a task & it's index# & produces one clean, ready-to-print line of text describing it 
-    — something you'd call from multiple places in main.py (List tasks, Show stats' 
-    "next 3" preview, etc.) instead of writing the same formatting/f-string logic 
-    over and over in each menu option."""
-
-    if task.done == False:
-        return f"[ ] {task_index + 1}. {task.describe()}"
-    else:
-        return f"[X] {task_index + 1}. {task.describe()}"
 
 def random_motivational_quote():
     rand_quotes = ["You got this!!", "One step at a time!", "Do better!", "Don't quit now!", "You're almost there!", "Quitting is for losers"]
@@ -138,6 +150,15 @@ class PrintMenu:
         4. Sort by priority
         5. Shuffle my tasks
         6. Return to main menu
+        """)
+
+    def menu_2a(self):
+        """View by priority"""
+
+        print("""
+        === 📏 ===
+        1. Highest to lowest
+        2. Lowest to highest
         """)
 
     def menu_3(self):
