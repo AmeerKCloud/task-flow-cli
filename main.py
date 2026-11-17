@@ -37,14 +37,14 @@ total_completed = 0         #⬅️ Tally of total number of tasks completed any
 
 def print_summary(all_tasks):
     """Recieves the 'all_tasks' list; calculates & prints the # & % 
-    of tasks completed from the current list of task objects."""
+    of tasks completed from the current list of task objects as well as the odd or even."""
 
     completed_count, percent_done, streak_score, is_even = get_stats(all_tasks=all_tasks)   #⚠️ 'is_even' what is it for again?
 
     print(f"# of tasks completed: {completed_count}")
     print(f"Percentage completed: {percent_done}")
     print(f"Your streak score: {streak_score}")
-    print(f"Is amount completed even? {completed_count}")
+    print(f"Is amount completed even? {is_even}")
 
 def mark_done():
     """
