@@ -5,6 +5,13 @@ import random
 
 VALID_PRIORITIES = ("low", "medium", "high")        #⬅️ Constant variable: tuple containing priority weights.
 
+#⬇️ Part 3 — Data & Logic: 24. Priority weights dict. Used to convert priority text into numbers so tasks can be sorted by actual importance instead of alphabetically. Used inside sort_tasks(). [Dictionaries]
+PRIORITY_WEIGHTS = {
+    "low" : 1,
+    "medium" : 2,
+    "high" : 3,
+    }
+
 def validate_priority(priority):
     """takes the priority text the user typed and checks it against VALID_PRIORITIES, the tuple ("low", "medium", "high"). 
     It returns True if the text is in there and False if not. It doesn't print anything or ask the user for anything. 
@@ -14,13 +21,6 @@ def validate_priority(priority):
         return True
     else:
         return False
-
-#⬇️ Part 3 — Data & Logic: 24. Priority weights dict. Used to convert priority text into numbers so tasks can be sorted by actual importance instead of alphabetically. Used inside sort_tasks(). [Dictionaries]
-PRIORITY_WEIGHTS = {
-    "low" : 1,
-    "medium" : 2,
-    "high" : 3,
-    }
 
 def create_task(**kwargs):                                                  #⬅️ [1]'**kwargs' explained, see notes.
     """Builds a Task or RecurringTask from keyword arguments based on if 
