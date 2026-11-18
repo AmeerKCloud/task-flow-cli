@@ -18,7 +18,7 @@
 
 
 from tasks import Task, RecurringTask
-from task_utils import PrintMenu, create_task, filter_tasks, sort_tasks, sort_priority, get_stats, format_task_line, print_task, shuffle_tasks, validate_input, validate_priority, file_handling
+from task_utils import PrintMenu, create_task, filter_tasks, sort_priority, get_stats, format_task_line, print_task, shuffle_tasks, validate_input, validate_priority, file_handling
 import os
 
 print_menus = PrintMenu()
@@ -103,7 +103,7 @@ while True:
                     print("Priority must be low, medium, or high")
                     continue                                            #⬅️ 'continue' takes back to main menu.
 
-            task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10: 'w'' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
+            task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
 
             if task_type == 1:
                 one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
