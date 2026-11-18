@@ -139,17 +139,21 @@ while True:
                     for index, task in enumerate(incomplete_tasks):                             #⬅️[3] 'enumerate()' is more effecient than 'range(len(my_list))'
                         print(format_task_line(task=task, task_index=index))
                 elif view_tasks_type == 4:
-                    print_menus.menu_2a()
-                    priority_order = validate_input(input("Choose one numerical option:\n"))
+                    while True:
+                        print_menus.menu_2a()
+                        priority_order = validate_input(input("Choose one numerical option:\n"))
 
-                    if priority_order == 1:
-                        sorted_by_priority = sort_priority(all_tasks=all_tasks, reverse=True)
-                        for index in range(len(sorted_by_priority)):
-                            print_task(task=sorted_by_priority[index], task_index=index)
-                    else:
-                        sorted_by_priority = sort_priority(all_tasks=all_tasks)
-                        for index in range(len(sorted_by_priority)):
-                            print_task(task=sorted_by_priority[index], task_index=index)
+                        if not priority_order:
+                            continue
+
+                        if priority_order == 1:
+                            sorted_by_priority = sort_priority(all_tasks=all_tasks, reverse=True)
+                            for index in range(len(sorted_by_priority)):
+                                print_task(task=sorted_by_priority[index], task_index=index)
+                        else:
+                            sorted_by_priority = sort_priority(all_tasks=all_tasks)
+                            for index in range(len(sorted_by_priority)):
+                                print_task(task=sorted_by_priority[index], task_index=index)
                 elif view_tasks_type == 5:
                     shuffle_tasks(tasks=all_tasks)
                     print("Your tasks have been shuffled.")
