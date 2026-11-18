@@ -85,7 +85,7 @@ while True:
 
     print_menus.menu_1()
 
-    user_choice = validate_input()
+    user_choice = validate_input(input("Choose one numerical option:\n"))
 
     #⬇️ Part 2 — Menu & User Interaction: 5. Inside the loop, use if/elif/else to branch on the user's menu choice. [If/Elif/Else, Conditionals]
     if user_choice == False:
@@ -103,7 +103,7 @@ while True:
                     print("Priority must be low, medium, or high")
                     continue                                            #⬅️ 'continue' takes back to main menu.
 
-            task_type = int(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
+            task_type = validate_input(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
 
             if task_type == 1:
                 one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
@@ -114,7 +114,6 @@ while True:
                 all_tasks.append(habitual_task)
             else:
                 print("That is not an option. Enter only 1 or 2.")
-                
 
         else:
             print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
@@ -123,7 +122,7 @@ while True:
         if all_tasks:
             while True:
                 print_menus.menu_2()
-                view_tasks_type = validate_input()
+                view_tasks_type = validate_input(input("Choose one numerical option:\n"))
 
                 if view_tasks_type == False:
                     continue
@@ -143,7 +142,7 @@ while True:
                         print(format_task_line(task=task, task_index=index))
                 elif view_tasks_type == 4:
                     print_menus.menu_2a()
-                    priority_order = validate_input()
+                    priority_order = validate_input(input("Choose one numerical option:\n"))
 
                     if priority_order == 1:
                         sorted_by_priority = sort_priority(all_tasks=all_tasks, reverse=True)
@@ -174,7 +173,7 @@ while True:
             print("You currently have no tasks.")
     elif user_choice == 4:
         print_menus.menu_3()
-        view_stat_type = validate_input()
+        view_stat_type = validate_input(input("Choose one numerical option:\n"))
 
         if view_stat_type == False:
             continue

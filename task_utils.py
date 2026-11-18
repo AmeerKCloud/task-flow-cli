@@ -104,12 +104,12 @@ def get_stats(all_tasks):
     percent_done = round((completed_count / total_tasks) * 100, 2)          #⬅️ Concept: Mathematical Operations: Floating Point Numbers
     return (completed_count, percent_done, streak_score, is_even)
 
-def validate_input():
+def validate_input(input_prompt):
     """Catches any non-numerical or blank user entries."""
 
     #⬇️ Part 2 — Menu & User Interaction: 7. Wrap all numeric menu input (like "pick task # to complete") in try/except to catch bad input, and validate the value is actually an int using isinstance() before using it. [Try-Except, Type-Checking, Booleans]
     try:
-        user_input = int(input("Choose one numerical option:\n"))
+        user_input = int(input_prompt)
         return user_input
     except ValueError:
         print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
