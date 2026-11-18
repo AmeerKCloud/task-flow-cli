@@ -114,6 +114,7 @@ while True:
                 all_tasks.append(habitual_task)
             else:
                 print("That is not an option. Enter only 1 or 2.")
+                continue
 
         else:
             print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
