@@ -103,7 +103,7 @@ while True:
                     print("Priority must be low, medium, or high")
                     continue                                            #⬅️ 'continue' takes back to main menu.
 
-            task_type = validate_input(input("Task type — (1) One-time or (2) Recurring?:\n"))     #⚠️ Produces 'ValueError: invalid literal for int() with base 10' error mssge when non-int/num input entered. Perhaps 'try-except' needed?
+            task_type = validate_input(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
             if task_type == 1:
                 one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.

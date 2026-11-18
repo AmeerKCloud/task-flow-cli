@@ -79,7 +79,7 @@ def sort_priority(**kwargs):
 
     sorted_by_priority = sort_tasks(
         tasks= all_tasks,                                           #⬅️ all task objects list.
-        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️⚠️ This section not completed? [1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
+        key_func=lambda task: PRIORITY_WEIGHTS[task.priority],      #⬅️[1, 1a] lambda: temporary func. returns value of the priority attribute of each task object.
         reverse=reverse                                                
     )
     return sorted_by_priority
