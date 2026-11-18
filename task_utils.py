@@ -112,7 +112,7 @@ def validate_input(input_prompt):
         user_input = int(input_prompt)
         return user_input
     except ValueError:
-        print("Invalid entry. Cannot leave field blank or enter non-numerical entry")
+        print("Invalid entry. Cannot leave field blank, enter non-numerical entry, or enter a choice not provided in the menu")
         return False
 
 def random_motivational_quote():

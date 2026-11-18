@@ -112,8 +112,6 @@ while True:
                 frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
                 habitual_task = create_task(title = title_input, priority = priority_input, frequency = frequency)
                 all_tasks.append(habitual_task)
-            else:
-                print("That is not an option. Enter only 1 or 2.")
 
         else:
             print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
