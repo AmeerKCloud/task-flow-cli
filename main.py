@@ -39,7 +39,7 @@ def print_summary(all_tasks):
     """Recieves the 'all_tasks' list; calculates & prints the # & % 
     of tasks completed from the current list of task objects as well as the odd or even."""
 
-    completed_count, percent_done, streak_score, is_even = get_stats(all_tasks=all_tasks)   #⚠️ 'is_even' what is it for again?
+    completed_count, percent_done, streak_score, is_even = get_stats(all_tasks=all_tasks)   #⬅️ 'is_even' contains bool True or False based on if amount_completed is even or ordd num.
 
     print(f"# of tasks completed: {completed_count}")
     print(f"Percentage completed: {percent_done}")
@@ -217,7 +217,7 @@ while True:
     else:
         print(f"{user_choice} is not a option. Try again.")
 
-# Saved to github...
+# Saved to github....
 
 # TODO: Whats left is:
 # - Still need to figure out the use of priority-weights dictionary
