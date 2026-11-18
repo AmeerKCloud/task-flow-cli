@@ -144,7 +144,7 @@ while True:
                         priority_order = validate_input(input("Choose one numerical option:\n"))
 
                         if not priority_order:
-                            continue
+                            continue                                                                #⚠️ Currently here.
 
                         if priority_order == 1:
                             sorted_by_priority = sort_priority(all_tasks=all_tasks, reverse=True)
