@@ -145,6 +145,7 @@ def file_handling(file_name, task_list, task_class, mode="r",):         #⬅️
 class PrintMenu:
     def __init__(self):
         self.menu_1_choices_numbered = [1,2,3,4,5]
+        self.menu_1a_choices_numbered = [1,2]
         self.menu_2_choices_numbered = [1,2,3,4,5,6]
         self.menu_2a_choices_numbered = [1,2,3]
         self.menu_3_choices_numbered = [1,2,3,4]

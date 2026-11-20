@@ -104,7 +104,7 @@ while True:
                     continue                                            #⬅️ 'continue' takes back to main menu.
 
             print_menus.menu_1a()
-            task_type = validate_input(input("Task type — (1) One-time or (2) Recurring?:\n"))
+            task_type = validate_input(input("Choose one numerical option:\n"))
 
             if task_type == 1:
                 one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
