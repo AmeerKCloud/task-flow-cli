@@ -85,12 +85,12 @@ while True:
 
     print_menus.menu_1()
 
-    user_choice = validate_input(input("Choose one numerical option:\n"), print_menus.menu_1_choices_numbered)
+    menu_1_user_choice = validate_input(input("Choose one numerical option:\n"), print_menus.menu_1_choices_numbered)
 
     #⬇️ Part 2 — Menu & User Interaction: 5. Inside the loop, use if/elif/else to branch on the user's menu choice. [If/Elif/Else, Conditionals]
-    if user_choice == False:
+    if menu_1_user_choice == False:
         continue                       #⬅️ 'continue': if False, skip everything below, go re-print the menu and ask again
-    elif user_choice == 1:
+    elif menu_1_user_choice == 1:
 
         if len(all_tasks) < 20:
 
@@ -104,7 +104,7 @@ while True:
                     continue                                            #⬅️ 'continue' takes back to main menu.
 
             print_menus.menu_1a()
-            task_type = validate_input(input("Choose one numerical option:\n"))
+            task_type = validate_input(input("Choose one numerical option:\n"), print_menus.menu_1a_choices_numbered)
 
             if task_type == 1:
                 one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
@@ -117,7 +117,7 @@ while True:
         else:
             print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
 
-    elif user_choice == 2:
+    elif menu_1_user_choice == 2:
         if all_tasks:
             while True:
                 print_menus.menu_2()
@@ -162,7 +162,7 @@ while True:
                     break
         else:
             print("You currently have no tasks to show.")
-    elif user_choice == 3:
+    elif menu_1_user_choice == 3:
         if all_tasks:
             title_input = input("Enter task title:\n")
             for task in all_tasks:
@@ -174,7 +174,7 @@ while True:
                         print(f"You've already completed this task: {task.title}")
         else:
             print("You currently have no tasks.")
-    elif user_choice == 4:
+    elif menu_1_user_choice == 4:
         while True:
             print_menus.menu_3()
             view_stat_type = validate_input(input("Choose one numerical option:\n"), print_menus.menu_3_choices_numbered)
@@ -191,8 +191,10 @@ while True:
                 completed_tasks = filter_tasks(tasks=all_tasks, done=True)
                 for index, task in enumerate(completed_tasks[-5:]):              #⬅️ Accesses & prints ur last 5 completed tasks. Counts down backwads -5 from the end of list.
                     print(format_task_line(task=task, task_index=index))
+            else:
+                break
 
-    elif user_choice == 5:
+    elif menu_1_user_choice == 5:
 
         with open(file="data.txt", mode="w") as f:      #⬅️ Clears file 'data.txt' b4 writing extracted/new data in order to prevent duplicate data.
             pass
@@ -217,7 +219,7 @@ while True:
             print("No new changes made.")
             break                                   #⬅️ Breaks programs main while-loop to exit program
     else:
-        print(f"{user_choice} is not a option. Try again.")
+        print(f"{menu_1_user_choice} is not a option. Try again.")
 
 # Saved to github....
 
