@@ -180,6 +180,7 @@ class PrintMenu:
         === 📏 ===
         1. Highest to lowest
         2. Lowest to highest
+        3. Return to main menu
         """)
 
     def menu_3(self):
