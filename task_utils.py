@@ -146,7 +146,7 @@ class PrintMenu:
     def __init__(self):
         self.menu_1_choices_numbered = [1,2,3,4,5]
         self.menu_2_choices_numbered = [1,2,3,4,5,6]
-        self.menu_2a_choices_numbered = [1,2]
+        self.menu_2a_choices_numbered = [1,2,3]
         self.menu_3_choices_numbered = [1,2,3,4]
 
     #⬇️ Part 7 — Functions Review: 22. All functions without parameters.
