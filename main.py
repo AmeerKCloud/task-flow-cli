@@ -112,11 +112,11 @@ while True:
                 elif task_type == 1:
                     one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
                     all_tasks.append(one_time_task)
+                    break
                 elif task_type == 2:
                     frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
                     habitual_task = create_task(title = title_input, priority = priority_input, frequency = frequency)
                     all_tasks.append(habitual_task)
-                else:
                     break
 
         else:
