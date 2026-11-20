@@ -161,6 +161,10 @@ class PrintMenu:
         5. Exit
         """)
 
+    def menu_1a(self):
+        """The main menu."""
+        print("Task type — (1) One-time or (2) Recurring")
+
     def menu_2(self):
         """2nd menu: Lists tasks."""
         print("""

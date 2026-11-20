@@ -103,6 +103,7 @@ while True:
                     print("Priority must be low, medium, or high")
                     continue                                            #⬅️ 'continue' takes back to main menu.
 
+            print_menus.menu_1a()
             task_type = validate_input(input("Task type — (1) One-time or (2) Recurring?:\n"))
 
             if task_type == 1:
