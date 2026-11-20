@@ -156,10 +156,12 @@ while True:
                             sorted_by_priority = sort_priority(all_tasks=all_tasks, reverse=True)
                             for index in range(len(sorted_by_priority)):
                                 print_task(task=sorted_by_priority[index], task_index=index)
-                        else:
+                        elif priority_order == 2:
                             sorted_by_priority = sort_priority(all_tasks=all_tasks)
                             for index in range(len(sorted_by_priority)):
                                 print_task(task=sorted_by_priority[index], task_index=index)
+                        else:
+                            break
                 elif view_tasks_type == 5:
                     shuffle_tasks(tasks=all_tasks)
                     print("Your tasks have been shuffled.")
