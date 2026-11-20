@@ -3,4 +3,4 @@ recurring|flying|high|False|w
 one|climbing|medium|False|
 recurring|writing|low|True|d
 one|skiing|medium|False|
-one|laundry|medium|False|
+one|laundry|medium|True|

@@ -103,18 +103,21 @@ while True:
                     print("Priority must be low, medium, or high")
                     continue                                            #⬅️ 'continue' takes back to main menu.
 
-            print_menus.menu_1a()
-            task_type = validate_input(input("Choose one numerical option:\n"), print_menus.menu_1a_choices_numbered)
+            while True:
+                print_menus.menu_1a()
+                task_type = validate_input(input("Choose one numerical option:\n"), print_menus.menu_1a_choices_numbered)
 
-            if task_type == 1:
-                one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
-                all_tasks.append(one_time_task)
-            elif task_type == 2:
-                frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
-                habitual_task = create_task(title = title_input, priority = priority_input, frequency = frequency)
-                all_tasks.append(habitual_task)
-            else:
-                break
+                if not task_type:
+                    continue
+                elif task_type == 1:
+                    one_time_task = create_task(title = title_input, priority = priority_input)      #⬅️ If 'priority_input' not empty strng & matches allowed options, then it is assigned to priority parameter in 'Task' class.
+                    all_tasks.append(one_time_task)
+                elif task_type == 2:
+                    frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
+                    habitual_task = create_task(title = title_input, priority = priority_input, frequency = frequency)
+                    all_tasks.append(habitual_task)
+                else:
+                    break
 
         else:
             print(f"You have reached your limit of {MAX_TASKS} pending tasks. Complete some tasks before adding more.")
