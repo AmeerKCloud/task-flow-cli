@@ -85,7 +85,7 @@ while True:
 
     print_menus.menu_1()
 
-    user_choice = validate_input(input("Choose one numerical option:\n"))
+    user_choice = validate_input(input("Choose one numerical option:\n"), print_menus.menu_1_choices_numbered)
 
     #⬇️ Part 2 — Menu & User Interaction: 5. Inside the loop, use if/elif/else to branch on the user's menu choice. [If/Elif/Else, Conditionals]
     if user_choice == False:
@@ -120,7 +120,7 @@ while True:
         if all_tasks:
             while True:
                 print_menus.menu_2()
-                view_tasks_type = validate_input(input("Choose one numerical option:\n"))
+                view_tasks_type = validate_input(input("Choose one numerical option:\n"), print_menus.menu_2_choices_numbered)
 
                 if view_tasks_type == False:
                     continue
@@ -141,7 +141,7 @@ while True:
                 elif view_tasks_type == 4:
                     while True:
                         print_menus.menu_2a()
-                        priority_order = validate_input(input("Choose one numerical option:\n"))
+                        priority_order = validate_input(input("Choose one numerical option:\n"), print_menus.menu_2a_choices_numbered)
 
                         if not priority_order:
                             continue                                                                #⚠️ Currently here.
@@ -175,7 +175,7 @@ while True:
             print("You currently have no tasks.")
     elif user_choice == 4:
         print_menus.menu_3()
-        view_stat_type = validate_input(input("Choose one numerical option:\n"))
+        view_stat_type = validate_input(input("Choose one numerical option:\n"), print_menus.menu_3_choices_numbered)
 
         if view_stat_type == False:
             continue

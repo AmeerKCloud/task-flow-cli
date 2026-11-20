@@ -104,16 +104,21 @@ def get_stats(all_tasks):
     percent_done = round((completed_count / total_tasks) * 100, 2)          #⬅️ Concept: Mathematical Operations: Floating Point Numbers
     return (completed_count, percent_done, streak_score, is_even)
 
-def validate_input(input_prompt):
+def validate_input(input_prompt, num_choices_list):
     """Catches any non-numerical or blank user entries."""
 
     #⬇️ Part 2 — Menu & User Interaction: 7. Wrap all numeric menu input (like "pick task # to complete") in try/except to catch bad input, and validate the value is actually an int using isinstance() before using it. [Try-Except, Type-Checking, Booleans]
     try:
         user_input = int(input_prompt)
-        return user_input
     except ValueError:
-        print("Invalid entry. Cannot leave field blank, enter non-numerical entry, or enter a choice not provided in the menu")
+        print("Invalid entry. Cannot leave field blank or enter non-numerical entry.")
         return False
+
+    if user_input not in num_choices_list:
+        print("Only enter one of the numerical choices provided in the menu")
+        return False
+    return user_input
+
 
 def random_motivational_quote():
     rand_quotes = ["You got this!!", "One step at a time!", "Do better!", "Don't quit now!", "You're almost there!", "Quitting is for losers"]
@@ -138,6 +143,11 @@ def file_handling(file_name, task_list, task_class, mode="r",):         #⬅️
             f.write(data_string + "\n")
 
 class PrintMenu:
+    def __init__(self):
+        self.menu_1_choices_numbered = [1,2,3,4,5]
+        self.menu_2_choices_numbered = [1,2,3,4,5,6]
+        self.menu_2a_choices_numbered = [1,2]
+        self.menu_3_choices_numbered = [1,2,3,4]
 
     #⬇️ Part 7 — Functions Review: 22. All functions without parameters.
     def menu_1(self):
