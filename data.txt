@@ -1,0 +1,6 @@
+one|reading|medium|False|
+recurring|flying|high|False|w
+one|climbing|medium|False|
+recurring|writing|low|True|d
+one|skiing|medium|False|
+one|Surfing|medium|False|
