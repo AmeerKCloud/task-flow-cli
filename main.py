@@ -184,7 +184,7 @@ while True:
                     else:
                         print(f"You've already completed this task: {task.title}")
                 else:
-                    print(f"Sorry. No task matching the title {task.title} exists.")
+                    print(f"Sorry. No task matching the title {title_input} exists.")       #⚠️ Currently here. Find out how to make it print after checking all objects & then printing.
         else:
             print("You currently have no tasks.")
     elif menu_1_user_choice == 4:
