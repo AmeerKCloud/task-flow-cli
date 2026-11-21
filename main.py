@@ -183,6 +183,8 @@ while True:
                         print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
                     else:
                         print(f"You've already completed this task: {task.title}")
+                else:
+                    print(f"Sorry. No task matching the title {task.title} exists.")
         else:
             print("You currently have no tasks.")
     elif menu_1_user_choice == 4:
