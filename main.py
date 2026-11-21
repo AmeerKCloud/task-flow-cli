@@ -237,7 +237,24 @@ while True:
 # Saved to github...
 
 # TODO: Whats left is:
-# - Check against Claude's checklist of tests and errors.
+# Bugs found by Claude, worst first
+#✅ 1 - Add task crashes every time. main.py line 106 calls validate_input() with only one argument, but the function requires two 
+#     (the prompt and the list of valid choices). Python raises a TypeError as soon as the user reaches "Task type". If your local 
+#     copy differs from what you uploaded, this may already be fixed.
+#✅ 2 - Stats summary crashes when there are no tasks. It divides by zero.
+#✅ 3 - "Return to main menu" doesn't work in the sort submenu. Choosing option 3 prints the list sorted lowest to highest and keeps 
+#     you in the menu. The only way out is closing the program.
+#✅ 4 - "Return to main menu" doesn't work in the stats menu either. Option 4 has no branch, so the menu just re-prompts.
+#⚠️ 5 - A blank line in data.txt crashes startup with an IndexError.
+#⚠️ 6 - A title containing | corrupts the save file. I saved a task titled a|b. It reloaded with priority b, and sorting then crashed 
+#     with a KeyError. A hand-edited bad priority such as urgent crashes the sort the same way.
+#✅ 7 - Blank task titles are accepted.
+# 8 - A blank frequency on a recurring task silently creates a one-time task. Frequency x is also accepted and shows as "unknown".
+# 9 - Mark done gives poor feedback. It prints no confirmation and no "not found" message. It also marks every task that shares the title.
+# 10 - "No new changes made." prints even when you marked tasks done, although those changes are saved.
+# 11 - Duplicate titles are handled inconsistently. A new task matching a stored title shows in your list all session, then is silently 
+#      dropped on exit. Two new tasks with the same title both get saved.
+# 12 - create_task() raises a KeyError if priority is omitted, although its docstring says it falls back to the default.
 
 # IMPORTANT: Concepts I need to expand on/ practice more:
 # - lambda
