@@ -236,7 +236,7 @@ while True:
 
 # Saved to github...
 
-# TODO: Whats left is:
+# TODO: Whats left is (✅=completed, ⚠️=not clear/is it necessary?, ❌=to be completed):
 # Bugs found by Claude, worst first
 #✅ 1 - Add task crashes every time. main.py line 106 calls validate_input() with only one argument, but the function requires two 
 #     (the prompt and the list of valid choices). Python raises a TypeError as soon as the user reaches "Task type". If your local 
