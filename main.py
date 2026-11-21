@@ -96,8 +96,8 @@ while True:
 
             #⬇️ Part 2 — Menu & User Interaction: 6. Use input() to collect task title, priority, and frequency. [User Inputs]
             title_input = input("Enter task title:\n").title()
-            if not title_input:
-                print("Cannot leave task title field blank. Enter task title.")
+            if not title_input or '|' in title_input:
+                print("Cannot leave task title field blank or use '|' in title. Try again.")
                 continue
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").strip().lower()  #⬅️ '.strip()' removes spaces.
 
@@ -249,12 +249,12 @@ while True:
 #⚠️ 6 - A title containing | corrupts the save file. I saved a task titled a|b. It reloaded with priority b, and sorting then crashed 
 #     with a KeyError. A hand-edited bad priority such as urgent crashes the sort the same way.
 #✅ 7 - Blank task titles are accepted.
-# 8 - A blank frequency on a recurring task silently creates a one-time task. Frequency x is also accepted and shows as "unknown".
-# 9 - Mark done gives poor feedback. It prints no confirmation and no "not found" message. It also marks every task that shares the title.
-# 10 - "No new changes made." prints even when you marked tasks done, although those changes are saved.
-# 11 - Duplicate titles are handled inconsistently. A new task matching a stored title shows in your list all session, then is silently 
+#❌ 8 - A blank frequency on a recurring task silently creates a one-time task. Frequency x is also accepted and shows as "unknown".
+#❌ 9 - Mark done gives poor feedback. It prints no confirmation and no "not found" message. It also marks every task that shares the title.
+#❌ 10 - "No new changes made." prints even when you marked tasks done, although those changes are saved.
+#❌ 11 - Duplicate titles are handled inconsistently. A new task matching a stored title shows in your list all session, then is silently 
 #      dropped on exit. Two new tasks with the same title both get saved.
-# 12 - create_task() raises a KeyError if priority is omitted, although its docstring says it falls back to the default.
+#❌ 12 - create_task() raises a KeyError if priority is omitted, although its docstring says it falls back to the default.
 
 # IMPORTANT: Concepts I need to expand on/ practice more:
 # - lambda
