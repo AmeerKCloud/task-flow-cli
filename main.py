@@ -95,7 +95,10 @@ while True:
         if len(all_tasks) < 20:
 
             #⬇️ Part 2 — Menu & User Interaction: 6. Use input() to collect task title, priority, and frequency. [User Inputs]
-            title_input = input("Enter task title:\n")
+            title_input = input("Enter task title:\n").title()
+            if not title_input:
+                print("Cannot leave task title field blank. Enter task title.")
+                continue
             priority_input = input("Enter one of the following choices (low/medium/high priority):\n").strip().lower()  #⬅️ '.strip()' removes spaces.
 
             if priority_input != "":                                #⬅️ If priority input is not an empty string, then this code bloc gets triggered.
