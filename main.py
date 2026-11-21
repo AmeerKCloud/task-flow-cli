@@ -180,6 +180,7 @@ while True:
                     if task.done == False:
                         task.done = True
                         mark_done()
+                        print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
                     else:
                         print(f"You've already completed this task: {task.title}")
         else:
@@ -246,10 +247,10 @@ while True:
 #     you in the menu. The only way out is closing the program.
 #✅ 4 - "Return to main menu" doesn't work in the stats menu either. Option 4 has no branch, so the menu just re-prompts.
 #⚠️ 5 - A blank line in data.txt crashes startup with an IndexError.
-#⚠️ 6 - A title containing | corrupts the save file. I saved a task titled a|b. It reloaded with priority b, and sorting then crashed 
+#✅ 6 - A title containing | corrupts the save file. I saved a task titled a|b. It reloaded with priority b, and sorting then crashed 
 #     with a KeyError. A hand-edited bad priority such as urgent crashes the sort the same way.
 #✅ 7 - Blank task titles are accepted.
-#❌ 8 - A blank frequency on a recurring task silently creates a one-time task. Frequency x is also accepted and shows as "unknown".
+#⚠️ 8 - A blank frequency on a recurring task silently creates a one-time task. Frequency x is also accepted and shows as "unknown".
 #❌ 9 - Mark done gives poor feedback. It prints no confirmation and no "not found" message. It also marks every task that shares the title.
 #❌ 10 - "No new changes made." prints even when you marked tasks done, although those changes are saved.
 #❌ 11 - Duplicate titles are handled inconsistently. A new task matching a stored title shows in your list all session, then is silently 
