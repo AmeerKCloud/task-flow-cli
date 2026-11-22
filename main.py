@@ -186,9 +186,9 @@ while True:
                             mark_done()
                             print(f"Hurray! 🥳 You just completed the following task :{task.title}, {task.priority}, {task.frequency}! 🎉")
                         else:
-                            print(f"You've already completed this task: {task.title}")
+                            print(f"You've already completed this task.")
                     else:
-                        count_down -= 1
+                        count_down -= 1         #⬅️ If the task doesnt match, counter counts down.
                 else:
                     """This else should target task objects without a recurring attribute if user chooses to leave the frequency field empty."""
                     if task.title == title_input and task.priority == priority_input:
@@ -197,7 +197,7 @@ while True:
                             mark_done()
                             print(f"Hurray! 🥳 You just completed the following task :{task.title}, {task.priority}, one time task! 🎉")
                         else:
-                            print(f"You've already completed this task: {task.title}")
+                            print(f"You've already completed this task.")
                     else:
                         count_down -= 1
 
