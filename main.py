@@ -117,7 +117,7 @@ while True:
                     all_tasks.append(one_time_task)
                     break
                 elif task_type == 2:
-                    frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower()
+                    frequency = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower().strip()
                     habitual_task = create_task(title = title_input, priority = priority_input, frequency = frequency)
                     all_tasks.append(habitual_task)
                     break
@@ -176,9 +176,10 @@ while True:
         if all_tasks:
             title_input = input("Enter task title:\n").lower().strip()
             priority_input = input("Enter one of the following (low/medium/high priority):\n").lower().strip()
+            frequency_input = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower().strip()
             count_down = len(all_tasks)
             for task in all_tasks:
-                if task.title == title_input and task.priority == priority_input:
+                if task.title == title_input and task.priority == priority_input and task.frequency == frequency_input:
                     if task.done == False:
                         task.done = True
                         mark_done()
