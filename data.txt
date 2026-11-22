@@ -6,3 +6,4 @@ one|skiing|medium|False|
 one|surfing|medium|False|
 one|hanging Out|high|False|
 one|hiking|low|False|
+one|writing|high|True|
