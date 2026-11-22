@@ -95,7 +95,7 @@ while True:
         if len(all_tasks) < 20:
 
             #⬇️ Part 2 — Menu & User Interaction: 6. Use input() to collect task title, priority, and frequency. [User Inputs]
-            title_input = input("Enter task title:\n").title()
+            title_input = input("Enter task title:\n").lower().strip()
             if not title_input or '|' in title_input:
                 print("Cannot leave task title field blank or use '|' in title. Try again.")
                 continue
@@ -174,9 +174,11 @@ while True:
             print("You currently have no tasks to show.")
     elif menu_1_user_choice == 3:
         if all_tasks:
-            title_input = input("Enter task title:\n")
+            title_input = input("Enter task title:\n").lower().strip()
+            priority_input = input("Enter task title:\n").lower().strip()
             for task in all_tasks:
-                if task.title == title_input:
+                count = len(all_tasks)
+                if task.title == title_input and task.priority:
                     if task.done == False:
                         task.done = True
                         mark_done()
