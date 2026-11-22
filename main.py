@@ -190,6 +190,7 @@ while True:
                     else:
                         count_down -= 1
                 else:
+                    """This else should target task objects without a recurring attribute if user chooses to leave the frequency field empty."""
                     if task.title == title_input and task.priority == priority_input:
                         if task.done == False:
                             task.done = True
