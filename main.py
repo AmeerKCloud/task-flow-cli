@@ -180,7 +180,7 @@ while True:
             count_down = len(all_tasks)
             for task in all_tasks:
                 if frequency_input:
-                    if task.title == title_input and task.priority == priority_input and task.frequency == frequency_input:
+                    if task.title == title_input and task.priority == priority_input and task.frequency == frequency_input:     #⚠️ Also 'AttributeError: 'Task' object has no attribute 'frequency''
                         if task.done == False:
                             task.done = True
                             mark_done()
