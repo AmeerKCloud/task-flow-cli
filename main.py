@@ -99,7 +99,7 @@ while True:
             if not title_input or '|' in title_input:
                 print("Cannot leave task title field blank or use '|' in title. Try again.")
                 continue
-            priority_input = input("Enter one of the following choices (low/medium/high priority):\n").strip().lower()  #⬅️ '.strip()' removes spaces.
+            priority_input = input("Enter one of the following (low/medium/high priority):\n").strip().lower()  #⬅️ '.strip()' removes spaces.
 
             if priority_input != "":                                #⬅️ If priority input is not an empty string, then this code bloc gets triggered.
                 if not validate_priority(priority_input):
@@ -175,10 +175,10 @@ while True:
     elif menu_1_user_choice == 3:
         if all_tasks:
             title_input = input("Enter task title:\n").lower().strip()
-            priority_input = input("Enter task title:\n").lower().strip()
+            priority_input = input("Enter one of the following (low/medium/high priority):\n").lower().strip()
             for task in all_tasks:
                 count = len(all_tasks)
-                if task.title == title_input and task.priority:
+                if task.title == title_input and task.priority == priority_input:
                     if task.done == False:
                         task.done = True
                         mark_done()
