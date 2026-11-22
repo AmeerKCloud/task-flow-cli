@@ -176,8 +176,8 @@ while True:
         if all_tasks:
             title_input = input("Enter task title:\n").lower().strip()
             priority_input = input("Enter one of the following (low/medium/high priority):\n").lower().strip()
+            count_down = len(all_tasks)
             for task in all_tasks:
-                count = len(all_tasks)
                 if task.title == title_input and task.priority == priority_input:
                     if task.done == False:
                         task.done = True
@@ -186,7 +186,10 @@ while True:
                     else:
                         print(f"You've already completed this task: {task.title}")
                 else:
-                    print(f"Sorry. No task matching the title {title_input} exists.")       #⚠️ Currently here. Find out how to make it print after checking all objects & then printing.
+                    count_down -= 1
+
+            if count_down == 0:
+                print(f"Sorry. No task matching the title {title_input} exists.")       #⚠️ Currently here. Find out how to make it print after checking all objects & then printing.
         else:
             print("You currently have no tasks.")
     elif menu_1_user_choice == 4:
