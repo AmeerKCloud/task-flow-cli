@@ -5,4 +5,4 @@ recurring|writing|low|True|d
 one|skiing|medium|False|
 one|Surfing|medium|False|
 one|Hanging Out|high|False|
-one|hiking|low|False|
+one|Hiking|low|False|
