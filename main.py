@@ -186,6 +186,13 @@ while True:
                         print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
                     else:
                         print(f"You've already completed this task: {task.title}")
+                # elif task.title == title_input and task.priority == priority_input:
+                #     if task.done == False:
+                #         task.done = True
+                #         mark_done()
+                #         print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
+                #     else:
+                #         print(f"You've already completed this task: {task.title}")
                 else:
                     count_down -= 1
 
