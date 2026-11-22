@@ -179,22 +179,26 @@ while True:
             frequency_input = input("Enter 'D' for Daily, or 'W' for Weekly:\n").lower().strip()
             count_down = len(all_tasks)
             for task in all_tasks:
-                if task.title == title_input and task.priority == priority_input and task.frequency == frequency_input:
-                    if task.done == False:
-                        task.done = True
-                        mark_done()
-                        print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
+                if frequency_input:
+                    if task.title == title_input and task.priority == priority_input and task.frequency == frequency_input:
+                        if task.done == False:
+                            task.done = True
+                            mark_done()
+                            print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
+                        else:
+                            print(f"You've already completed this task: {task.title}")
                     else:
-                        print(f"You've already completed this task: {task.title}")
-                # elif task.title == title_input and task.priority == priority_input:
-                #     if task.done == False:
-                #         task.done = True
-                #         mark_done()
-                #         print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
-                #     else:
-                #         print(f"You've already completed this task: {task.title}")
+                        count_down -= 1
                 else:
-                    count_down -= 1
+                    if task.title == title_input and task.priority == priority_input:
+                        if task.done == False:
+                            task.done = True
+                            mark_done()
+                            print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
+                        else:
+                            print(f"You've already completed this task: {task.title}")
+                    else:
+                        count_down -= 1
 
             if count_down == 0:
                 print(f"Sorry. No task matching the title {title_input} exists.")       #⚠️ Currently here. Find out how to make it print after checking all objects & then printing.
