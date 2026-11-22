@@ -264,7 +264,7 @@ while True:
     else:
         print(f"{menu_1_user_choice} is not a option. Try again.")
 
-# Saved to github.....
+# Saved to github....
 
 # TODO: Whats left is (✅=fixed/completed, ⚠️=not clear/is it necessary?, ❌=to be fixed/completed):
 # Bugs found by Claude, worst first
