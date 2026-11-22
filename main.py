@@ -237,7 +237,8 @@ while True:
             counter = 0
             for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
                 for task in all_tasks:
-                    if task.frequency:
+                    if task.frequency:              #⚠️ Produces 'AttributeError: 'Task' object has no attribute 'frequency'' error.
+
                         if stored_task.title == task.title and stored_task.priority == task.priority and stored_task.frequency == task.frequency:
                             counter += 1
                             if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
