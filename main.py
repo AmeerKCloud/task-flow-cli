@@ -184,7 +184,7 @@ while True:
                         if task.done == False:
                             task.done = True
                             mark_done()
-                            print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
+                            print(f"Hurray! 🥳 You just completed the following task :{task.title}, {task.priority}, {task.frequency}! 🎉")
                         else:
                             print(f"You've already completed this task: {task.title}")
                     else:
@@ -195,7 +195,7 @@ while True:
                         if task.done == False:
                             task.done = True
                             mark_done()
-                            print(f"Hurray! 🥳 You just completed task {task.title}! 🎉")
+                            print(f"Hurray! 🥳 You just completed the following task :{task.title}, {task.priority}, one time task! 🎉")
                         else:
                             print(f"You've already completed this task: {task.title}")
                     else:
