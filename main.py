@@ -237,7 +237,7 @@ while True:
             counter = 0
             for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
                 for task in all_tasks:
-                    if isinstance(task, RecurringTask):              #⬅️ Verifies that task object being iterated over is an instance of RecurringTask class & thus contains 'frequency' attribute. If not, then proceeds to the 'else' bloc.
+                    if isinstance(task, RecurringTask):              #⬅️ 'isinstance(object, class)' Verifies that task object being iterated over is an instance of RecurringTask class & thus contains 'frequency' attribute. If not, then proceeds to the 'else' bloc.
 
                         if stored_task.title == task.title and stored_task.priority == task.priority and stored_task.frequency == task.frequency:
                             counter += 1
