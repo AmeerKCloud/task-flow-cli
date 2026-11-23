@@ -264,7 +264,7 @@ while True:
     else:
         print(f"{menu_1_user_choice} is not a option. Try again.")
 
-# Saved to github....
+# Saved to github...
 
 # [❌]Potetial Bug indicated by Claude Code:
 # Lines 246 and 252 remove items from all_tasks while the loop is iterating over it. Removing from a list mid-loop makes the loop skip 
