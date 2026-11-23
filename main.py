@@ -153,7 +153,7 @@ while True:
                         priority_order = validate_input(input("Choose one numerical option:\n"), print_menus.menu_2a_choices_numbered)
 
                         if not priority_order:
-                            continue                                                                #⚠️ Currently here.
+                            continue
 
                         if priority_order == 1:
                             sorted_by_priority = sort_priority(all_tasks=all_tasks, reverse=True)
@@ -202,7 +202,7 @@ while True:
                         count_down -= 1
 
             if count_down == 0:
-                print("Sorry. No task matching those requirements exists.")       #⚠️ Currently here. Find out how to make it print after checking all objects & then printing.
+                print("Sorry. No task matching those requirements exists.")
         else:
             print("You currently have no tasks.")
     elif menu_1_user_choice == 4:
