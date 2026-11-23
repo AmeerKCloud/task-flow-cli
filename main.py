@@ -243,13 +243,13 @@ while True:
                             counter += 1
                             if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
                                 print(f"A task with those attributes already exists. NOT added to data file")
-                                all_tasks.remove(task)
+                                all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes
                     else:
                         if stored_task.title == task.title and stored_task.priority == task.priority:
                             counter += 1
                             if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
                                 print(f"A task with those attributes already exists. NOT added to data file")
-                                all_tasks.remove(task)
+                                all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes
 
                 counter = 0                         #⬅️ Counter gets reset to 0 for next iteration.
 
@@ -265,6 +265,11 @@ while True:
         print(f"{menu_1_user_choice} is not a option. Try again.")
 
 # Saved to github...
+
+# [❌]Potetial Bug indicated by Claude Code:
+# Lines 246 and 252 remove items from all_tasks while the loop is iterating over it. Removing from a list mid-loop makes the loop skip 
+# the item right after the removed one, so some duplicates won't be caught. Loop over a copy (for task in all_tasks[:]:) or build a new 
+# list of tasks to keep.
 
 # TODO: Whats left is (✅=fixed/completed, ⚠️=not clear/is it necessary?, ❌=to be fixed/completed):
 # Bugs found by Claude, worst first
