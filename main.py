@@ -262,7 +262,9 @@ while True:
 
                 for task in all_tasks[:]:
                     if isinstance(task, RecurringTask):
-                        
+                        """Currently here. Trying to figure out how to compare the object items inside the all_tasks lists to themselves
+                        so as to remove more than one occurances of each objects."""
+
         else:
             """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
             then only rewrite back what already was stored"""
