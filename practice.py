@@ -1,5 +1,8 @@
-usr_inpt = input("Say something:\n")
+my_list = ["A", "B", "B", "C"]
 
-print(usr_inpt)
+print(my_list)
+
+my_list.remove("B")
+print(my_list)
 
 

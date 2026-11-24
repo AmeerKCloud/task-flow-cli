@@ -236,7 +236,7 @@ while True:
         if len(all_tasks) > stored_length:                #⬅️ If the length of all_tasks is greater than the length of stored_tasks, this means new tasks were added.
             counter = 0
             for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
-                for task in all_tasks:
+                for task in all_tasks[:]:                   #[5] 'all_tasks[:]' creates a new list holding the same task objects. See notes for proper explanation.
                     if isinstance(task, RecurringTask):              #⬅️ 'isinstance(object, class)' function verifies that task object being iterated over is an instance of RecurringTask class & thus contains 'frequency' attribute. If not, then proceeds to the 'else' bloc.
 
                         if stored_task.title == task.title and stored_task.priority == task.priority and getattr(stored_task,"frequency", None) == task.frequency:
@@ -315,6 +315,10 @@ while True:
 
 #[4] isinstance() is a built-in function that checks whether an object is an instance of a given class (or type). It returns True or False.
 
+#[5] all_tasks[:] is a slice of the whole list, which creates a new list holding the same task objects. The loop walks through that copy, 
+# while all_tasks.remove(task) changes only the original. The copy never shifts, so the loop sees every item.
+# The task objects aren't duplicated, only the list that holds them. Both lists point to the same Task objects, so remove(task) finds 
+# and removes the right one. list(all_tasks) and all_tasks.copy() do the same thing.
 
 # ⚠️BUG1a FIXED: 'with open(..., mode="w")' should be out of loop otherwise previous line in 'data.txt' will be erased & overwritten by next 
 # task-object everytime the loop runs & the file is opened.
