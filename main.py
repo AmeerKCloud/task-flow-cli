@@ -234,27 +234,30 @@ while True:
             pass
 
         if len(all_tasks) > stored_length:                #⬅️ If the length of all_tasks is greater than the length of stored_tasks, this means new tasks were added.
-            counter = 0
-            for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
-                for task in all_tasks[:]:                   #[5] 'all_tasks[:]' creates a new list holding the same task objects. See notes for proper explanation.
-                    if isinstance(task, RecurringTask):              #⬅️ 'isinstance(object, class)' function verifies that task object being iterated over is an instance of RecurringTask class & thus contains 'frequency' attribute. If not, then proceeds to the 'else' bloc.
+            if stored_data_tasks:                         #⬅️ If the stored_data_tasks is NOT an empty list.
+                counter = 0
+                for stored_task in stored_data_tasks:     #⬅️ Uses each already stored task object as standard to compare all task objects in 'all_tasks' list.
+                    for task in all_tasks[:]:                   #[5] 'all_tasks[:]' creates a new list holding the same task objects. See notes for proper explanation.
+                        if isinstance(task, RecurringTask):              #⬅️ 'isinstance(object, class)' function verifies that task object being iterated over is an instance of RecurringTask class & thus contains 'frequency' attribute. If not, then proceeds to the 'else' bloc.
 
-                        if stored_task.title == task.title and stored_task.priority == task.priority and getattr(stored_task,"frequency", None) == task.frequency:
-                            counter += 1
-                            if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
-                                print(f"A task with those attributes already exists. NOT added to data file")
-                                all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes. Made changes, needs testing now.
-                    else:
-                        if stored_task.title == task.title and stored_task.priority == task.priority:
-                            counter += 1
-                            if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
-                                print(f"A task with those attributes already exists. NOT added to data file")
-                                all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes. Made changes, needs testing now.
+                            if stored_task.title == task.title and stored_task.priority == task.priority and getattr(stored_task,"frequency", None) == task.frequency:
+                                counter += 1
+                                if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
+                                    print(f"A task with those attributes already exists. NOT added to data file")
+                                    all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes. Made changes, needs testing now.
+                        else:
+                            if stored_task.title == task.title and stored_task.priority == task.priority:
+                                counter += 1
+                                if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
+                                    print(f"A task with those attributes already exists. NOT added to data file")
+                                    all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes. Made changes, needs testing now.
 
-                counter = 0                         #⬅️ Counter gets reset to 0 for next iteration.
+                    counter = 0                         #⬅️ Counter gets reset to 0 for next iteration.
 
-            file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-            break
+                file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
+                break
+            else:
+                """"""
         else:
             """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
             then only rewrite back what already was stored"""
