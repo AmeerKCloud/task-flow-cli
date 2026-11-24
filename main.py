@@ -266,7 +266,7 @@ while True:
 
 # Saved to github...
 
-# [❌]Potetial Bug indicated by Claude Code:
+# [❌]Potetial Bug indicated by Claude Code ( Made changes, needs testing now.):
 # Lines 246 and 252 remove items from all_tasks while the loop is iterating over it. Removing from a list mid-loop makes the loop skip 
 # the item right after the removed one, so some duplicates won't be caught. Loop over a copy (for task in all_tasks[:]:) or build a new 
 # list of tasks to keep.
