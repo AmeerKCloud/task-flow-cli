@@ -243,13 +243,13 @@ while True:
                             counter += 1
                             if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
                                 print(f"A task with those attributes already exists. NOT added to data file")
-                                all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes
+                                all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes. Made changes, needs testing now.
                     else:
                         if stored_task.title == task.title and stored_task.priority == task.priority:
                             counter += 1
                             if counter > 1:                                                            #⬅️ If counter exceeds 1 means there's duplicate of task object, remove it.
                                 print(f"A task with those attributes already exists. NOT added to data file")
-                                all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes
+                                all_tasks.remove(task)                                                              #[❌]Potetial Bug, see notes. Made changes, needs testing now.
 
                 counter = 0                         #⬅️ Counter gets reset to 0 for next iteration.
 
