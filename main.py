@@ -260,10 +260,13 @@ while True:
                 """"""
                 counter = 0
 
-                for task in all_tasks[:]:
-                    if isinstance(task, RecurringTask):
-                        """Currently here. Trying to figure out how to compare the object items inside the all_tasks lists to themselves
-                        so as to remove more than one occurances of each objects."""
+                for l_1_task in all_tasks:
+                    for l_2_task in all_tasks[:]:
+                        if isinstance(task, RecurringTask):
+                            """Currently here. Trying to figure out how to compare the object items inside the all_tasks lists to themselves
+                            so as to remove more than one occurances of each objects."""
+
+                            if l_1_task.title == l_2_task
 
         else:
             """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
