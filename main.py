@@ -260,7 +260,7 @@ while True:
                 """"""
                 counter = 0
 
-                for task_a in all_tasks:
+                for task_a in all_tasks:                #⚠️ Currently here.
                     for task_b in all_tasks[:]:
                         if isinstance(task_a, RecurringTask):
                             """Currently here. Trying to figure out how to compare the object items inside the all_tasks lists to themselves
