@@ -262,15 +262,31 @@ while True:
 
                 #⬇️ For a task object 'task_a' in the original all_tasks list:
                 for task_a in all_tasks:                                #⚠️ Currently here.
-                    #⬇️ For a task object in the copy of the all_tasks list:
-                    for task_b in all_tasks[:]:
-                        #⬇️ If the task object from the original all_tasks list in the outer-loop is an instance of the 'RecurringTask' class...
-                        if isinstance(task_a, RecurringTask):
-                            """Currently here. Trying to figure out how to compare the object items inside the all_tasks lists to themselves
-                            so as to remove more than one occurances of each objects."""
+                    if isinstance(task_a, RecurringTask):
+                        for task_b in all_tasks[:]:
+                            if isinstance(task_b, RecurringTask):
+                                if task_a.title == task_b.title and task_a.priority == task_b.priority and getattr(task_a, "frequency", None) == task_b.frequency:
+                                    counter += 1
+                            if counter > 1:
+                                all_tasks[:].remove(task_b)
+                                counter = 0
+                                print(f"{task_b.title} is a duplicate. Not added to data file")
 
-                            #⬇️ If the attributes of 
-                            if task_a.title == task_b
+
+                    else:
+                        for task_b in all_tasks[:]:
+                            if isinstance(task_b, Task):
+                                if task_a.title == task_b.title and task_a.priority == task_b.priority:
+                                    counter += 1
+
+                            if counter > 0:
+                                all_tasks[:].remove(task_b)
+                                counter = 0
+                                print(f"{task_b.title} is a duplicate. Not added to data file")
+
+                file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
+                break
+
 
         else:
             """If length of 'all_tasks' list has not increased from length of 'stored_length' list, 
