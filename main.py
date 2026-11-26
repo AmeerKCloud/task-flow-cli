@@ -261,7 +261,7 @@ while True:
                 counter = 0
 
                 #⬇️ For a task object 'task_a' in the original all_tasks list:
-                for task_a in all_tasks[:]:                                #⚠️ Currently here.
+                for task_a in all_tasks[:]:                                        #⚠️ Currently here (11/26/2026).
                     if isinstance(task_a, RecurringTask):
                         for task_b in all_tasks:
                             if isinstance(task_b, RecurringTask):
@@ -280,7 +280,7 @@ while True:
                                     counter += 1
 
                             if counter > 1:
-                                all_tasks[:].remove(task_b)
+                                all_tasks.remove(task_b)
                                 counter = 0
                                 print(f"{task_b.title} is a duplicate. Not added to data file")
 
