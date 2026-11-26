@@ -260,12 +260,16 @@ while True:
                 """"""
                 counter = 0
 
-                for task_a in all_tasks:                #⚠️ Currently here.
+                #⬇️ For a task object 'task_a' in the original all_tasks list:
+                for task_a in all_tasks:                                #⚠️ Currently here.
+                    #⬇️ For a task object in the copy of the all_tasks list:
                     for task_b in all_tasks[:]:
+                        #⬇️ If the task object from the original all_tasks list in the outer-loop is an instance of the 'RecurringTask' class...
                         if isinstance(task_a, RecurringTask):
                             """Currently here. Trying to figure out how to compare the object items inside the all_tasks lists to themselves
                             so as to remove more than one occurances of each objects."""
 
+                            #⬇️ If the attributes of 
                             if task_a.title == task_b
 
         else:
