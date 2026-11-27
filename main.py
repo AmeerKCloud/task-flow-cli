@@ -260,31 +260,19 @@ while True:
                 """If currently no stored data tasks exist, & the only task objects are the newly added ones in 'all_tasks'."""
                 counter = 0
 
-                #⬇️ For a task object 'task_a' in the original all_tasks list:
+                #⬇️ For a task object 'task_a' in the copy all_tasks list:
                 for task_a in all_tasks[:]:                                        #⚠️ Currently here (11/26/2026).
-                    if isinstance(task_a, RecurringTask):
-                        for task_b in all_tasks:
-                            if isinstance(task_b, RecurringTask):
-                                if task_a.title == task_b.title and task_a.priority == task_b.priority and getattr(task_a, "frequency", None) == task_b.frequency:
-                                    counter += 1
-                            if counter > 1:
-                                all_tasks.remove(task_b)
-                                counter = 0
-                                print(f"{task_b.title} is a duplicate. Not added to data file")
-
-                    else:
-                        for task_b in all_tasks[:]:
-                            if isinstance(task_b, Task):
-                                if task_a.title == task_b.title and task_a.priority == task_b.priority:
-                                    counter += 1
+                    for task_b in all_tasks:
+                        if isinstance(task_b, RecurringTask):
+                            if task_b.title == task_a.title and task_b.priority == task_a.priority and getattr(task_b, "frequency", None) == task_a.frequency:
+                                counter += 1
 
                             if counter > 1:
                                 all_tasks.remove(task_b)
                                 counter = 0
-                                print(f"{task_b.title} is a duplicate. Not added to data file")
+                                print(f"Task '{task_b.title}' is a duplicate. Not added to data file.")
+                        else:
 
-                file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
-                break
 
 
         else:
