@@ -268,22 +268,22 @@ while True:
                             if task_a.title == task_b.title and task_a.priority == task_b.priority and getattr(task_a, "frequency", None) == task_b.frequency:      # if 'task_a' object is a non-recurring task object & doesnt have a 'frequency' attribute, then instead of an AttributeError being triggered & ends the program, 'None' is returned, & this condition is false.
                                 counter += 1
 
-                            if counter > 1:
-                                all_tasks.remove(task_b)
-                                counter = 0
-                                print(f"Task '{task_b.title}' is a duplicate. Not added to data file.")
+                                if counter > 1:
+                                    all_tasks.remove(task_b)
+                                    counter = 0
+                                    print(f"Task '{task_b.title}' is a duplicate. Not added to data file.")
 
                         else:
                             if task_a.title == task_b.title and task_a.priority == task_b.priority:
                                 counter += 1
 
-                            if counter > 1:
-                                all_tasks.remove(task_b)
-                                counter = 0
-                                print(f"Task '{task_b.title}' is a duplicate. Not added to data file.")
-                            pass
+                                if counter > 1:
+                                    all_tasks.remove(task_b)
+                                    counter = 0
+                                    print(f"Task '{task_b.title}' is a duplicate. Not added to data file.")
 
                 file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
+                break
 
 
 
