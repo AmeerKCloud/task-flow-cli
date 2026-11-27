@@ -257,7 +257,7 @@ while True:
                 file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
                 break
             else:
-                """"""
+                """If currently no stored data tasks exist, & the only task objects are the newly added ones in 'all_tasks'."""
                 counter = 0
 
                 #⬇️ For a task object 'task_a' in the original all_tasks list:
@@ -271,7 +271,6 @@ while True:
                                 all_tasks.remove(task_b)
                                 counter = 0
                                 print(f"{task_b.title} is a duplicate. Not added to data file")
-
 
                     else:
                         for task_b in all_tasks[:]:
