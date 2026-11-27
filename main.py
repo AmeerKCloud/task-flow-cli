@@ -273,7 +273,10 @@ while True:
                                 counter = 0
                                 print(f"Task '{task_b.title}' is a duplicate. Not added to data file.")
 
+                file_handling(file_name="data.txt", task_list=all_tasks, task_class=RecurringTask, mode="w")
+
                         else:
+
 
 
 
