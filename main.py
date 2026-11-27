@@ -263,8 +263,9 @@ while True:
                 #⬇️ For a task object 'task_a' in the copy all_tasks list:
                 for task_a in all_tasks[:]:                                        #⚠️ Currently here (11/26/2026).
                     for task_b in all_tasks:
-                        if isinstance(task_b, RecurringTask):
-                            if task_a.title == task_b.title and task_a.priority == task_b.priority and getattr(task_a, "frequency", None) == task_b.frequency:
+                        if isinstance(task_b, RecurringTask):                      # This ensures that only a recurring 'task_b' object is compared.
+
+                            if task_a.title == task_b.title and task_a.priority == task_b.priority and getattr(task_a, "frequency", None) == task_b.frequency:      # if 'task_a' object is a non-recurring task object & doesnt have a 'frequency' attribute, then instead of an AttributeError being triggered & ends the program, 'None' is returned, & this condition is false.
                                 counter += 1
 
                             if counter > 1:
